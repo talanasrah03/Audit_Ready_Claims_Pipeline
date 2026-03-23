@@ -3,6 +3,9 @@ import re
 import random
 from openai import OpenAI
 
+# =========================
+# INIT CLIENT
+# =========================
 client = OpenAI()
 
 # =========================
@@ -17,10 +20,9 @@ error_count = 0
 # =========================
 # LOOP
 # =========================
-for claim in claims[:100]:
+for i, claim in enumerate(claims[:100]):
     raw_text = claim["raw_text"]
 
-    # 🔥 IMPROVED PROMPT (VERY IMPORTANT)
     prompt = f"""
 You are an expert system extracting structured insurance data.
 
@@ -29,15 +31,14 @@ Extract EXACT values from the text.
 IMPORTANT RULES:
 - Do NOT guess values
 - Do NOT modify numbers
-- Copy the amount EXACTLY as written in the text
-- If a value is missing → return null
+- Copy the amount EXACTLY as written
+- If missing → return null
 - claim_type MUST be exactly one of:
   Vehicle Theft, Single Vehicle Collision, Multi-vehicle Collision, Parked Car
 
 Return ONLY valid JSON.
-No explanations, no markdown.
 
-Expected format:
+Format:
 {{
   "claim_id": null,
   "customer_name": "",
@@ -52,9 +53,6 @@ Text:
 
     content = None
 
-    # =========================
-    # API CALL
-    # =========================
     try:
         response = client.chat.completions.create(
             model="gpt-4o-mini",
@@ -63,6 +61,10 @@ Text:
             response_format={"type": "json_object"}
         )
 
+        # 🔥 DEBUG (IMPORTANT)
+        print(f"\n--- CLAIM {i} ---")
+        print("TOKENS:", response.usage)
+
         content = response.choices[0].message.content
 
         if isinstance(content, str):
@@ -70,7 +72,9 @@ Text:
 
         data = json.loads(content)
 
-    except Exception:
+    except Exception as e:
+        print(f"❌ ERROR on claim {i}: {e}")
+
         try:
             if content:
                 match = re.search(r"\{.*\}", str(content), re.DOTALL)
@@ -80,6 +84,7 @@ Text:
                     raise ValueError
             else:
                 raise ValueError
+
         except:
             data = {
                 "claim_id": None,
@@ -96,7 +101,7 @@ Text:
     data["doc_id"] = claim["doc_id"]
 
     # =========================
-    # 🔥 SIMULATE REALISTIC AI NOISE (for validation demo)
+    # SIMULATE AI NOISE
     # =========================
     if random.random() < 0.2 and data.get("amount"):
         data["amount"] = str(data["amount"]) + " USD"
@@ -104,19 +109,16 @@ Text:
     if random.random() < 0.2 and data.get("claim_type"):
         data["claim_type"] = data["claim_type"].lower()
 
-    # =========================
-    # SAVE RESULT
-    # =========================
     results.append(data)
 
 # =========================
-# SAVE FILE
+# SAVE
 # =========================
 with open("data/processed/extracted_claims_v2.json", "w", encoding="utf-8") as f:
     json.dump(results, f, indent=2, ensure_ascii=False)
 
 # =========================
-# OUTPUT
+# FINAL OUTPUT
 # =========================
 print("\n✅ V2 Extraction complete!")
 print(f"✔️ Processed: {len(results)}")

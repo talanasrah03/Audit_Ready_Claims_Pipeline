@@ -89,11 +89,12 @@ low = sum(1 for r in risk_results if r["risk_level"] == "LOW")
 # =========================
 # SHOW HIGH RISK CASES
 # =========================
-print(f"HIGH risk: {high}")
+
 print("\n🚨 HIGH RISK CLAIMS:\n")
 
 for r in risk_results:
     if r["risk_level"] == "HIGH":
         print(json.dumps(r, indent=2))
+print(f"HIGH risk: {high}")
 print(f"MEDIUM risk: {medium}")
 print(f"LOW risk: {low}")

@@ -3,7 +3,7 @@ import json
 print("USING FILE: cleaned_claims.json")
 
 # =========================
-# LOAD DATA
+# LOAD DATA (✅ FIXED)
 # =========================
 with open("data/processed/cleaned_claims.json", "r", encoding="utf-8") as f:
     predictions = json.load(f)
@@ -11,7 +11,9 @@ with open("data/processed/cleaned_claims.json", "r", encoding="utf-8") as f:
 with open("data/ground_truth/ground_truth.json", "r", encoding="utf-8") as f:
     ground_truth = json.load(f)
 
-# 🔥 DEBUG: SHOW FIRST ITEMS
+# =========================
+# DEBUG SAMPLE
+# =========================
 print("\n--- DEBUG SAMPLE ---")
 print("PREDICTION SAMPLE:", predictions[0])
 print("GROUND TRUTH SAMPLE:", ground_truth[0])
@@ -100,9 +102,10 @@ overall = sum(correct_counts.values()) / (valid_samples * len(correct_counts)) *
 print(f"\n🔥 Overall accuracy: {overall:.2f}%")
 
 print(f"\n❌ Total errors: {len(errors)}")
+print(f"\n📦 Total samples evaluated: {valid_samples}")
 
 # =========================
-# DEBUG: SHOW SOME ERRORS
+# SAMPLE ERRORS
 # =========================
 print("\n--- SAMPLE ERRORS ---")
 for err in errors[:5]:
