@@ -1,84 +1,116 @@
-import pandas as pd
-import random
 import json
+import random
 import os
+from datetime import datetime, timedelta
 
-# Load dataset
-df = pd.read_csv("data/insurance_claims.csv")
+# ---------------------------
+# CONFIG
+# ---------------------------
+NUM_CLAIMS = 1000
 
-# Create output folders
-os.makedirs("raw_claims", exist_ok=True)
-os.makedirs("ground_truth", exist_ok=True)
-
-# Fake names
-fake_names = [
-    "John Doe", "Alice Smith", "Michael Brown", "Sara Johnson",
-    "David Wilson", "Emma Davis", "Daniel Garcia", "Sophia Martinez"
+names = [
+    "Emma Davis", "Michael Brown", "Alice Smith",
+    "David Wilson", "Daniel Garcia", "Sara Johnson",
+    "Sophia Martinez", "John Doe"
 ]
 
-def generate_messy_text(row, claim_id, customer_name):
-    claim_date = str(row.get("incident_date", "unknown"))
-    amount = str(row.get("total_claim_amount", "unknown"))
-    description = str(row.get("incident_type", "unknown"))
+claim_types = [
+    "Single Vehicle Collision",
+    "Multi-vehicle Collision",
+    "Vehicle Theft",
+    "Parked Car"
+]
 
-    include_claim_id = random.random() < 0.5  # 50% chance
+# ---------------------------
+# HELPERS
+# ---------------------------
+def random_date():
+    start_date = datetime(2015, 1, 1)
+    return (start_date + timedelta(days=random.randint(0, 60))).strftime("%Y-%m-%d")
 
-    if include_claim_id:
-        templates = [
-            f"Hello, my name is {customer_name}. I want to report a claim. Claim ID is {claim_id}. The incident happened on {claim_date}. The amount is about {amount}. It was related to {description}.",
-            
-            f"hi this is {customer_name}, I had an issue on {claim_date}. claim number {claim_id}. expected damage around {amount}. type: {description}",
-            
-            f"Customer {customer_name} reported an incident on {claim_date}. Claim ref: {claim_id}. Estimated amount: {amount}. Description: {description}.",
-            
-            f"hey, {customer_name} here. My claim {claim_id}. happened on {claim_date}. cost is around {amount}. problem type was {description}"
-        ]
-    else:
-        templates = [
-            f"Hello, my name is {customer_name}. I want to report a claim. The incident happened on {claim_date}. The amount is about {amount}. It was related to {description}.",
-            
-            f"hi this is {customer_name}, I had an issue on {claim_date}. expected damage around {amount}. type: {description}",
-            
-            f"Customer {customer_name} reported an incident on {claim_date}. Estimated amount: {amount}. Description: {description}.",
-            
-            f"hey, {customer_name} here. happened on {claim_date}. cost is around {amount}. problem type was {description}"
-        ]
 
-    return random.choice(templates)
+def generate_claim_id(i):
+    return f"CLM-{1000 + i}"
 
-messy_claims = []
+
+# ---------------------------
+# MESSY TEXT TEMPLATES (REALISTIC)
+# ---------------------------
+templates = [
+    "hey it's {name}, something happened around {date}, not sure claim id maybe {claim_id}, damage like {amount}, was a {claim_type}",
+    
+    "customer {name} reported issue... date?? {date}, cost approx {amount}, type {claim_type}, ref maybe {claim_id}",
+    
+    "{name} here. accident few days back ({date}), not sure claim number but maybe {claim_id}, cost ~{amount}, {claim_type}",
+    
+    "umm hi, {name}. incident happened {date}, no idea about claim id, maybe {claim_id}, damage like {amount}",
+    
+    "report: {claim_type} involving {name}, date {date}, est loss {amount}, claim ref {claim_id}",
+    
+    "{name} had some issue, think it was {claim_type}, date {date}, amount around {amount}, id lost",
+    
+    "accident?? {claim_type} maybe. person: {name}. happened {date}. cost like {amount}. claim unknown",
+    
+    "{name} reported something messy... date {date}, approx cost {amount}, type unclear maybe {claim_type}"
+]
+
+# ---------------------------
+# GENERATION
+# ---------------------------
+raw_claims = []
 ground_truth = []
 
-# 🔥 USE FULL DATASET
-for i, (_, row) in enumerate(df.iterrows(), start=1):
-    claim_id = f"CLM-{1000 + i}"
-    customer_name = random.choice(fake_names)
+for i in range(1, NUM_CLAIMS + 1):
+    name = random.choice(names)
+    claim_type = random.choice(claim_types)
+    date = random_date()
+    claim_id = generate_claim_id(i)
+    amount = random.randint(2000, 100000)
 
-    raw_text = generate_messy_text(row, claim_id, customer_name)
+    # ✅ TRUE VALUE (ground truth)
+    true_amount = str(amount)
 
-    claim_date = str(row.get("incident_date", "unknown"))
-    amount = str(row.get("total_claim_amount", "unknown"))
-    claim_type = str(row.get("incident_type", "unknown"))
+    # ❗ Introduce noise in raw text sometimes
+    noisy_amount = amount
+    if random.random() < 0.3:
+        noisy_amount = amount + random.randint(-5000, 5000)
 
-    messy_claims.append({
+    template = random.choice(templates)
+
+    raw_text = template.format(
+        name=name,
+        date=date,
+        claim_id=claim_id,
+        amount=noisy_amount,
+        claim_type=claim_type
+    )
+
+    # Raw claim (messy)
+    raw_claims.append({
         "doc_id": f"claim_{i}",
         "raw_text": raw_text
     })
 
+    # Ground truth (correct)
     ground_truth.append({
         "doc_id": f"claim_{i}",
         "claim_id": claim_id,
-        "customer_name": customer_name,
-        "claim_date": claim_date,
+        "customer_name": name,
+        "claim_date": date,
         "claim_type": claim_type,
-        "amount": amount
+        "amount": true_amount
     })
 
-# Save files
-with open("raw_claims/messy_claims.json", "w", encoding="utf-8") as f:
-    json.dump(messy_claims, f, indent=2, ensure_ascii=False)
+# ---------------------------
+# SAVE FILES
+# ---------------------------
+os.makedirs("raw_claims", exist_ok=True)
+os.makedirs("ground_truth", exist_ok=True)
+
+with open("raw_claims/raw_claims.json", "w", encoding="utf-8") as f:
+    json.dump(raw_claims, f, indent=2)
 
 with open("ground_truth/ground_truth.json", "w", encoding="utf-8") as f:
-    json.dump(ground_truth, f, indent=2, ensure_ascii=False)
+    json.dump(ground_truth, f, indent=2)
 
-print(f"✅ Generated {len(messy_claims)} messy claims!")
+print(f"✅ Generated {NUM_CLAIMS} messy realistic claims!")

@@ -1,0 +1,644 @@
+[
+  {
+    "doc_id": "claim_1",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_2",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_3",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_4",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_5",
+    "risk_score": 4,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_6",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_7",
+    "risk_score": 4,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_8",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_9",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_10",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_11",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_12",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_13",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_14",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_15",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_16",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_17",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_18",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_19",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_20",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_21",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_22",
+    "risk_score": 4,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_23",
+    "risk_score": 4,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_24",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_25",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_26",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_27",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_28",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_29",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_30",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_31",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_32",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_33",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_34",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_35",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_36",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_37",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_38",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_39",
+    "risk_score": 4,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_40",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_41",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_42",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_43",
+    "risk_score": 4,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_44",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_45",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_46",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_47",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_48",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_49",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_50",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_51",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_52",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_53",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_54",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_55",
+    "risk_score": 4,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_56",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_57",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_58",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_59",
+    "risk_score": 4,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_60",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_61",
+    "risk_score": 4,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_62",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_63",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_64",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_65",
+    "risk_score": 4,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_66",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_67",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_68",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_69",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_70",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_71",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_72",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_73",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_74",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_75",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_76",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_77",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_78",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_79",
+    "risk_score": 4,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_80",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_81",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_82",
+    "risk_score": 4,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_83",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_84",
+    "risk_score": 4,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_85",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_86",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_87",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_88",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_89",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_90",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_91",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_92",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_93",
+    "risk_score": 4,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_94",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_95",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_96",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_97",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_98",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_99",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_100",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  }
+]
