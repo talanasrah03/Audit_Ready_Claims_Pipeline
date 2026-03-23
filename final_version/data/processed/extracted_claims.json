@@ -1,0 +1,162 @@
+[
+  {
+    "claim_id": "CLM-1001",
+    "customer_name": "Emma Davis",
+    "claim_date": "2015-01-25",
+    "claim_type": "Single Vehicle Collision",
+    "amount": "71610",
+    "doc_id": "claim_1"
+  },
+  {
+    "claim_id": null,
+    "customer_name": "Alice Smith",
+    "claim_date": "2015-01-21",
+    "claim_type": "Vehicle Theft",
+    "amount": "5070",
+    "doc_id": "claim_2"
+  },
+  {
+    "claim_id": null,
+    "customer_name": "Alice Smith",
+    "claim_date": "2015-02-22",
+    "claim_type": "Multi-vehicle Collision",
+    "amount": "34650",
+    "doc_id": "claim_3"
+  },
+  {
+    "claim_id": null,
+    "customer_name": "Michael Brown",
+    "claim_date": "2015-01-10",
+    "claim_type": "Single Vehicle Collision",
+    "amount": "63400",
+    "doc_id": "claim_4"
+  },
+  {
+    "claim_id": "CLM-1005",
+    "customer_name": "John Doe",
+    "claim_date": "2015-02-17",
+    "claim_type": "Vehicle Theft",
+    "amount": "6500",
+    "doc_id": "claim_5"
+  },
+  {
+    "claim_id": null,
+    "customer_name": "John Doe",
+    "claim_date": "2015-01-02",
+    "claim_type": "Multi-vehicle Collision",
+    "amount": "64100",
+    "doc_id": "claim_6"
+  },
+  {
+    "claim_id": "CLM-1007",
+    "customer_name": "Alice Smith",
+    "claim_date": "2015-01-13",
+    "claim_type": "Multi-vehicle Collision",
+    "amount": "78650",
+    "doc_id": "claim_7"
+  },
+  {
+    "claim_id": "CLM-1008",
+    "customer_name": "Sophia Martinez",
+    "claim_date": "2015-02-27",
+    "claim_type": "Multi-vehicle Collision",
+    "amount": "51590",
+    "doc_id": "claim_8"
+  },
+  {
+    "claim_id": "CLM-1009",
+    "customer_name": "David Wilson",
+    "claim_date": "2015-01-30",
+    "claim_type": "Single Vehicle Collision",
+    "amount": "27700",
+    "doc_id": "claim_9"
+  },
+  {
+    "claim_id": "CLM-1010",
+    "customer_name": "Sophia Martinez",
+    "claim_date": "2015-01-05",
+    "claim_type": "Single Vehicle Collision",
+    "amount": "42300",
+    "doc_id": "claim_10"
+  },
+  {
+    "claim_id": "CLM-1011",
+    "customer_name": "Michael Brown",
+    "claim_date": "2015-01-06",
+    "claim_type": "Single Vehicle Collision",
+    "amount": "87010",
+    "doc_id": "claim_11"
+  },
+  {
+    "claim_id": null,
+    "customer_name": "Daniel Garcia",
+    "claim_date": "2015-02-15",
+    "claim_type": "Multi-vehicle Collision",
+    "amount": "114920",
+    "doc_id": "claim_12"
+  },
+  {
+    "claim_id": null,
+    "customer_name": "David Wilson",
+    "claim_date": "2015-01-22",
+    "claim_type": "Single Vehicle Collision",
+    "amount": "56520",
+    "doc_id": "claim_13"
+  },
+  {
+    "claim_id": null,
+    "customer_name": "John Doe",
+    "claim_date": "2015-01-08",
+    "claim_type": "Parked Car",
+    "amount": "7280",
+    "doc_id": "claim_14"
+  },
+  {
+    "claim_id": null,
+    "customer_name": "David Wilson",
+    "claim_date": "2015-01-15",
+    "claim_type": "Single Vehicle Collision",
+    "amount": "46200",
+    "doc_id": "claim_15"
+  },
+  {
+    "claim_id": null,
+    "customer_name": "Alice Smith",
+    "claim_date": "2015-01-29",
+    "claim_type": "Multi-vehicle Collision",
+    "amount": "63120",
+    "doc_id": "claim_16"
+  },
+  {
+    "claim_id": null,
+    "customer_name": "Sara Johnson",
+    "claim_date": "2015-02-22",
+    "claim_type": "Multi-vehicle Collision",
+    "amount": "52110",
+    "doc_id": "claim_17"
+  },
+  {
+    "claim_id": null,
+    "customer_name": "Michael Brown",
+    "claim_date": "2015-01-06",
+    "claim_type": "Single Vehicle Collision",
+    "amount": "77880",
+    "doc_id": "claim_18"
+  },
+  {
+    "claim_id": null,
+    "customer_name": "David Wilson",
+    "claim_date": "2015-01-19",
+    "claim_type": "Single Vehicle Collision",
+    "amount": "72930",
+    "doc_id": "claim_19"
+  },
+  {
+    "claim_id": null,
+    "customer_name": "Emma Davis",
+    "claim_date": "2015-02-22",
+    "claim_type": "Multi-vehicle Collision",
+    "amount": "60400",
+    "doc_id": "claim_20"
+  }
+]
