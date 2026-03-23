@@ -1,59 +1,28 @@
-"""
-This script builds a customer-facing portal using Streamlit.
-
-Context in the project:
-Unlike app.py (internal dashboard for insurance employees),
-this file represents the CUSTOMER interface.
-
-It simulates how a customer would:
-- Check the status of their claim
-- View extracted claim information
-- Respond to the insurance company (confirm, dispute, or provide more info)
-
-This creates a full end-to-end system:
-AI pipeline → internal review → customer interaction
-
-Main idea:
-The system sends a claim ID to the customer (e.g. via email),
-and the customer uses that ID to access their claim here.
-
-Inputs:
-- cleaned_claims.json → extracted claim data
-- human_review_queue.json → indicates if claim is under review
-"""
-
-
 import streamlit as st
 import json
-
 
 # =========================
 # PAGE CONFIGURATION
 # =========================
-"""
-Set page title and layout.
-
-layout="centered":
-→ narrower layout, better for simple user interaction (customer view)
-"""
+# This sets the page title and uses a centered layout
+# Centered layout is better for simple customer interaction
 st.set_page_config(page_title="Customer Portal", layout="centered")
 
-st.title("Insurance Customer Portal")
+# Main title
+st.title("Customer Claim Portal")
+
+# Small description under title
+st.caption("Access your claim details and respond to the insurance company")
 
 
 # =========================
 # LOAD DATA
 # =========================
-"""
-claims:
-→ contains extracted claim data (what the system knows)
-
-reviews:
-→ contains claims that are still under human review
-"""
+# Load processed claims data (what the system extracted)
 with open("data/processed/cleaned_claims.json") as f:
     claims = json.load(f)
 
+# Load human review queue (claims that still need review)
 with open("data/processed/human_review_queue.json") as f:
     reviews = json.load(f)
 
@@ -61,131 +30,95 @@ with open("data/processed/human_review_queue.json") as f:
 # =========================
 # CREATE LOOKUP TABLES
 # =========================
-"""
-Convert lists into dictionaries for fast access.
+# Convert lists to dictionaries for faster access by claim ID
 
-claim_dict:
-→ allows quick lookup of claim by ID
-
-review_dict:
-→ allows quick check if claim is under review
-"""
-review_dict = {r["doc_id"]: r for r in reviews}
+# Dictionary of claims → key = claim_id
 claim_dict = {c["doc_id"]: c for c in claims}
 
+# Dictionary of review items → key = claim_id
+review_dict = {r["doc_id"]: r for r in reviews}
+
 
 # =========================
-# INPUT CLAIM ID
+# USER INPUT
 # =========================
-"""
-Customer enters their claim ID manually.
+# Customer enters their claim ID manually
+# This simulates receiving the ID via email
+claim_id_input = st.text_input("Enter your Claim ID")
 
-This simulates:
-→ customer receiving claim ID via email
-→ customer using it to access their claim
-"""
-claim_id_input = st.text_input("Enter your Claim ID (from email)")
-
+# Example to guide the user
 st.caption("Example: claim_1")
 
 
 # =========================
 # SEARCH BUTTON
 # =========================
-"""
-The logic below only runs when the user clicks the button.
-
-This prevents automatic execution on every keystroke.
-"""
+# The logic runs only when user clicks the button
+# This avoids unnecessary re-execution on every keystroke
 if st.button("Search Claim"):
 
-    # Retrieve claim and review data
+    # Retrieve claim data
     claim = claim_dict.get(claim_id_input)
-    review = review_dict.get(claim_id_input)
 
+    # Check if claim is under review
+    review = review_dict.get(claim_id_input)
 
     # =========================
     # ERROR CASE
     # =========================
-    """
-    If claim ID does not exist:
-    → show error message
-    """
+    # If claim does not exist → show error
     if not claim:
         st.error("Claim not found. Please check your Claim ID.")
 
-
     else:
         # =========================
-        # DISPLAY CLAIM DATA
+        # DISPLAY CLAIM INFORMATION
         # =========================
-        """
-        Show the information extracted by the system.
+        st.subheader("Claim Details")
 
-        This is what the system "understood" from the original claim.
-        """
-        st.subheader("Your Claim")
-
-        st.write(f"Name: {claim.get('customer_name')}")
-        st.write(f"Date: {claim.get('claim_date')}")
-        st.write(f"Type: {claim.get('claim_type')}")
-        st.write(f"Amount: {claim.get('amount')}")
+        st.write(f"**Customer Name:** {claim.get('customer_name')}")
+        st.write(f"**Date:** {claim.get('claim_date')}")
+        st.write(f"**Type:** {claim.get('claim_type')}")
+        st.write(f"**Amount:** {claim.get('amount')}")
 
 
         # =========================
         # CLAIM STATUS
         # =========================
-        """
-        Determine whether the claim is still under review.
+        st.subheader("Status")
 
-        Logic:
-        - If claim exists in review_dict → still being reviewed
-        - Otherwise → already processed
-        """
-        st.subheader("Claim Status")
-
+        # If claim is in review queue → still under review
         if review:
-            st.warning("Your claim is under review")
+            st.warning("Your claim is currently under review.")
         else:
-            st.success("Your claim has been processed")
+            st.success("Your claim has been processed.")
 
 
         # =========================
         # CUSTOMER ACTIONS
         # =========================
-        """
-        Allows the customer to respond.
+        st.subheader("Your Response")
 
-        Possible actions:
-        - CONFIRM → customer agrees with claim
-        - DISPUTE → customer disagrees
-        - PROVIDE_INFO → customer adds more details
-        """
-        st.subheader("Your Actions")
-
+        # User selects an action
         action = st.selectbox(
-            "Choose Action",
+            "Choose an action",
             ["CONFIRM", "DISPUTE", "PROVIDE_INFO"]
         )
 
-
-        # Customer message input
-        message = st.text_area("Your Message")
+        # User can write additional message
+        message = st.text_area("Add a message (optional)")
 
 
         # =========================
-        # SUBMIT RESPONSE
+        # SUBMIT BUTTON
         # =========================
-        """
-        When user clicks submit:
-        - simulate saving response
-        - display confirmation
-        - show summary of submitted data
-        """
-        if st.button("Submit"):
-            st.success("Your response has been submitted")
+        if st.button("Submit Response"):
 
-            st.info("Summary:")
+            # Simulate saving response
+            st.success("Your response has been submitted successfully.")
+
+            # Display summary
+            st.info("Submitted Information:")
             st.write({
                 "claim_id": claim_id_input,
                 "action": action,
