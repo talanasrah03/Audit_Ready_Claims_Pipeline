@@ -1,227 +1,247 @@
-Audit-Ready AI Claims Processing Pipeline
-Overview
+# Audit-Ready AI Claims Processing Pipeline
 
-This project simulates a real-world insurance claims processing system powered by AI, with a strong focus on auditability, human-in-the-loop decision making, and structured data extraction.
+## Overview
+
+This project simulates a real-world insurance claims processing system powered by AI, with a strong focus on **auditability**, **human-in-the-loop decision making**, and **structured data extraction**.
 
 The system processes messy, unstructured insurance claim inputs and transforms them into validated, risk-scored, and reviewable outputs through a multi-stage pipeline.
 
-It is designed to reflect the core principles of modern AI-driven claims automation systems:
+It reflects key principles of modern AI-driven claims automation systems:
 
-Reliable structured extraction
-Transparent validation and scoring
-Human oversight for uncertain cases
-End-to-end traceability
+- Structured and reliable data extraction  
+- Transparent validation and scoring  
+- Human oversight for uncertain cases  
+- End-to-end traceability  
 
-This aligns closely with the approach taken by companies like Lynxia, where automation is combined with control, explainability, and flexibility.
+This approach aligns closely with companies like **Lynxia**, where automation is combined with control, explainability, and flexibility.
 
-Objectives
+---
 
-The goal of this project is to demonstrate how AI can be used to:
+## Objectives
 
-Automate the extraction of structured data from unstructured documents
-Validate outputs using domain-specific rules (audit-grade logic)
-Detect inconsistencies and assign risk levels
-Route uncertain cases to human review
-Provide interfaces for both internal teams and customers
-Why This Project
+This project demonstrates how AI can be used to:
 
-This project was designed to simulate a production-ready AI claims pipeline, with a strong focus on reliability, transparency, and human oversight.
+- Extract structured data from unstructured documents  
+- Validate outputs using domain-specific rules (audit-grade logic)  
+- Detect inconsistencies and assign risk levels  
+- Route uncertain cases to human review  
+- Provide interfaces for both internal teams and customers  
 
-Instead of relying solely on AI outputs, the system introduces:
+---
 
-validation layers
-risk scoring
-human review workflows
+## Why This Project
 
-This reflects how modern AI systems are deployed in real business environments, where accuracy, traceability, and control are critical.
+This system is designed to simulate a **production-ready AI claims pipeline**.
 
-System Architecture
+Instead of relying solely on AI outputs, it introduces:
 
-The pipeline is composed of the following stages:
+- Validation layers  
+- Risk scoring mechanisms  
+- Human review workflows  
 
-1. Data Generation
+This reflects how real AI systems are deployed in business environments, where **accuracy, traceability, and control are critical**.
 
-Synthetic but realistic insurance claims are generated:
+---
 
-Messy, human-like input text
-Clean ground truth for evaluation
-2. AI Extraction
+## System Architecture
 
-A language model extracts structured fields:
+The pipeline consists of the following stages:
 
-claim_id
-customer_name
-claim_date
-claim_type
-amount
-3. Data Cleaning
+### 1. Data Generation
+- Synthetic but realistic insurance claims  
+- Messy, human-like input text  
+- Clean ground truth for evaluation  
 
-Minimal transformation is applied to preserve original meaning while ensuring usability.
+### 2. AI Extraction
+Extracted fields:
+- `claim_id`  
+- `customer_name`  
+- `claim_date`  
+- `claim_type`  
+- `amount`  
 
-4. Evaluation
+### 3. Data Cleaning
+- Minimal transformation  
+- Preserves original meaning  
+- Ensures usability  
 
-Predictions are compared with ground truth:
+### 4. Evaluation
+- Field-level accuracy  
+- Error tracking  
 
-Field-level accuracy
-Error tracking
-5. Validation (Rule-Based)
+### 5. Validation (Rule-Based)
+Checks include:
+- Missing fields  
+- Amount ranges  
+- Logical consistency  
+- Date validation  
 
-Claims are validated using domain rules:
+Outputs:
+- Valid / invalid status  
+- List of issues  
+- Severity level  
 
-Missing fields detection
-Amount range validation
-Logical consistency checks
-Date validation
+### 6. Risk Scoring
+Based on:
+- Missing or inconsistent data  
+- Large value deviations  
+- Classification mismatches  
 
-Each claim receives:
+Outputs:
+- Risk score (numeric)  
+- Risk level (LOW / MEDIUM / HIGH)  
+- Explanation (reasons)  
 
-Valid / invalid status
-Detailed list of issues
-Severity level
-6. Risk Scoring
+### 7. Human Review Queue
+- Identified issues  
+- Recommended actions  
+- Possible decisions  
 
-Each claim is assigned a risk score based on:
+### 8. Interfaces
 
-Missing or inconsistent data
-Large deviations from expected values
-Classification mismatches
+#### Internal Dashboard (Insurance Team)
+- Claim inspection  
+- Risk analysis  
+- Decision making (approve / reject / correct / request info)  
 
-Output includes:
+#### Customer Portal
+- Claim status tracking  
+- Feedback submission  
+- Additional information input  
 
-Risk score (numeric)
-Risk level (LOW / MEDIUM / HIGH)
-Explanation (reasons)
-7. Human Review Queue
+---
 
-Invalid or uncertain claims are routed to a review queue with:
+## Project Structure
 
-Identified issues
-Recommended actions
-Possible decisions
-8. Interfaces
-Internal Dashboard (Insurance Team)
-
-Allows:
-
-Claim inspection
-Risk analysis review
-Decision making (approve / reject / correct / request info)
-Customer Portal
-
-Allows:
-
-Claim status tracking
-Feedback submission
-Additional information input
-Project Structure
 
 data/
-  raw_claims/
-  processed/
-  ground_truth/
+raw_claims/
+processed/
+ground_truth/
 
 src/
-  extract_claims_v1.py
-  extract_claims_v2.py
-  extract_claims_v3.py
-  clean_and_validate.py
-  evaluate.py
-  rag_validation.py
-  risk_scoring.py
-  human_review.py
-  generate_fake_claims.py
+extract_claims_v1.py
+extract_claims_v2.py
+extract_claims_v3.py
+clean_and_validate.py
+evaluate.py
+rag_validation.py
+risk_scoring.py
+human_review.py
+generate_fake_claims.py
 
 app.py
 customer_app.py
 requirements.txt
 README.md
 
-Running the Project
-1. Install Dependencies
 
+---
+## Running the Project
+
+### 1. Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
-2. Generate Data
-
+### 2. Generate Data
+```bash
 python src/generate_fake_claims.py
+```
 
-3. Run Extraction (Recommended: V3)
-
+### 3. Run Extraction (Recommended)
+```bash
 python src/extract_claims_v3.py
+```
 
-4. Clean Data
-
+### 4. Clean Data
+```bash
 python src/clean_and_validate.py
+```
 
-5. Evaluate Extraction Accuracy
-
+### 5. Evaluate Accuracy
+```bash
 python src/evaluate.py
+```
 
-6. Run Validation (RAG-style rules)
-
+### 6. Run Validation
+```bash
 python src/rag_validation.py
+```
 
-7. Compute Risk Scores
-
+### 7. Compute Risk Scores
+```bash
 python src/risk_scoring.py
+```
 
-8. Generate Human Review Queue
-
+### 8. Generate Review Queue
+```bash
 python src/human_review.py
+```
 
-Running the Interfaces
-Internal Dashboard
+---
 
+## Running the Interfaces
+
+### Internal Dashboard
+```bash
 streamlit run app.py
+```
 
-Customer Portal
-
+### Customer Portal
+```bash
 streamlit run customer_app.py
+```
+ 
 
-Optional: Public Access (Demo Links)
+---
 
-If deployed (e.g. Streamlit Cloud), you can access:
+## Key Design Decisions
 
-Internal Dashboard: [Add your Streamlit link here]
-Customer Portal: [Add your Streamlit link here]
-Key Design Decisions
-1. Human-in-the-Loop
+### Human-in-the-Loop
+The system does not fully trust AI outputs.  
+Uncertain cases are escalated to human reviewers.
 
-The system does not fully trust AI outputs.
-Instead, it routes uncertain cases to human reviewers.
-
-2. Auditability
-
+### Auditability
 Every decision is traceable:
+- Explicit validation issues  
+- Explainable risk scores  
+- No black-box decisions  
 
-Validation issues are explicit
-Risk scores are explainable
-No black-box decisions
-3. Controlled Data Cleaning
+### Controlled Data Cleaning
+Avoids aggressive normalization to preserve meaning.
 
-The system avoids aggressive normalization to prevent loss of information.
+### Rule-Based Validation
+Domain rules ensure consistency beyond AI predictions.
 
-4. Rule-Based Validation (RAG-inspired)
+### Risk-Based Prioritization
+Claims are ranked by risk to prioritize critical cases.
 
-Instead of relying solely on AI, domain rules ensure consistency and reliability.
+---
 
-5. Risk-Based Prioritization
+## Limitations
 
-Claims are ranked by risk, allowing teams to focus on critical cases first.
+- Simplified amount normalization  
+- Fixed risk thresholds  
+- No persistence (UI actions are simulated)  
+- No real document ingestion (text-only)  
 
-Limitations
-Amount normalization is simplified and may merge decimals
-Risk scoring uses fixed thresholds (not learned)
-UI actions are simulated (no database persistence)
-No real document ingestion (text-only simulation)
-Possible Improvements
-Integrate real document parsing (PDF, OCR)
-Persist decisions in a database
-Add authentication for user roles
-Replace rule thresholds with learned models
-Deploy as a full web service
-License
+---
 
-This project is for educational and portfolio purposes.
+## Possible Improvements
+
+- Add PDF / OCR document ingestion  
+- Persist decisions in a database  
+- Implement user authentication  
+- Replace rule thresholds with learned models  
+- Deploy as a full web service  
+
+---
+
+## License
+
+This project is for educational and portfolio purposes.  
 
 © 2026 Tala Nasarah. All rights reserved.
+
+---
