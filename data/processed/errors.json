@@ -8,7 +8,7 @@
   {
     "doc_id": "claim_5",
     "field": "claim_type",
-    "predicted": null,
+    "predicted": "single vehicle collision",
     "expected": "parked car"
   },
   {
@@ -26,7 +26,7 @@
   {
     "doc_id": "claim_7",
     "field": "claim_type",
-    "predicted": null,
+    "predicted": "single vehicle collision",
     "expected": "parked car"
   },
   {
@@ -86,13 +86,13 @@
   {
     "doc_id": "claim_22",
     "field": "claim_type",
-    "predicted": null,
+    "predicted": "single vehicle collision",
     "expected": "multi-vehicle collision"
   },
   {
     "doc_id": "claim_23",
     "field": "claim_type",
-    "predicted": null,
+    "predicted": "single vehicle collision",
     "expected": "parked car"
   },
   {
@@ -128,7 +128,7 @@
   {
     "doc_id": "claim_39",
     "field": "claim_type",
-    "predicted": null,
+    "predicted": "single vehicle collision",
     "expected": "multi-vehicle collision"
   },
   {
@@ -152,7 +152,7 @@
   {
     "doc_id": "claim_43",
     "field": "claim_type",
-    "predicted": null,
+    "predicted": "",
     "expected": "vehicle theft"
   },
   {
@@ -188,7 +188,7 @@
   {
     "doc_id": "claim_55",
     "field": "claim_type",
-    "predicted": null,
+    "predicted": "single vehicle collision",
     "expected": "multi-vehicle collision"
   },
   {
@@ -200,7 +200,7 @@
   {
     "doc_id": "claim_59",
     "field": "claim_type",
-    "predicted": null,
+    "predicted": "single vehicle collision",
     "expected": "multi-vehicle collision"
   },
   {
@@ -208,12 +208,6 @@
     "field": "amount",
     "predicted": 11016,
     "expected": 15519
-  },
-  {
-    "doc_id": "claim_61",
-    "field": "claim_type",
-    "predicted": null,
-    "expected": "single vehicle collision"
   },
   {
     "doc_id": "claim_62",
@@ -226,12 +220,6 @@
     "field": "amount",
     "predicted": 42354,
     "expected": 38478
-  },
-  {
-    "doc_id": "claim_65",
-    "field": "claim_type",
-    "predicted": null,
-    "expected": "single vehicle collision"
   },
   {
     "doc_id": "claim_67",
@@ -254,19 +242,19 @@
   {
     "doc_id": "claim_79",
     "field": "claim_type",
-    "predicted": null,
+    "predicted": "single vehicle collision",
     "expected": "multi-vehicle collision"
   },
   {
     "doc_id": "claim_82",
     "field": "claim_type",
-    "predicted": null,
+    "predicted": "single vehicle collision",
     "expected": "parked car"
   },
   {
     "doc_id": "claim_84",
     "field": "claim_type",
-    "predicted": null,
+    "predicted": "single vehicle collision",
     "expected": "vehicle theft"
   },
   {
@@ -290,7 +278,7 @@
   {
     "doc_id": "claim_93",
     "field": "claim_type",
-    "predicted": null,
+    "predicted": "single vehicle collision",
     "expected": "parked car"
   },
   {
@@ -304,5 +292,2243 @@
     "field": "amount",
     "predicted": 14739,
     "expected": 16300
+  },
+  {
+    "doc_id": "claim_111",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_115",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_115",
+    "field": "amount",
+    "predicted": 74747,
+    "expected": 78943
+  },
+  {
+    "doc_id": "claim_119",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_120",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_120",
+    "field": "amount",
+    "predicted": 94110,
+    "expected": 97972
+  },
+  {
+    "doc_id": "claim_124",
+    "field": "amount",
+    "predicted": 48329,
+    "expected": 47033
+  },
+  {
+    "doc_id": "claim_126",
+    "field": "amount",
+    "predicted": 82578,
+    "expected": 81371
+  },
+  {
+    "doc_id": "claim_128",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_129",
+    "field": "amount",
+    "predicted": 55478,
+    "expected": 56616
+  },
+  {
+    "doc_id": "claim_132",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_132",
+    "field": "amount",
+    "predicted": 99138,
+    "expected": 98198
+  },
+  {
+    "doc_id": "claim_144",
+    "field": "amount",
+    "predicted": 29524,
+    "expected": 32000
+  },
+  {
+    "doc_id": "claim_147",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_147",
+    "field": "amount",
+    "predicted": 23593,
+    "expected": 27729
+  },
+  {
+    "doc_id": "claim_148",
+    "field": "amount",
+    "predicted": 92966,
+    "expected": 97931
+  },
+  {
+    "doc_id": "claim_149",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_149",
+    "field": "amount",
+    "predicted": 41875,
+    "expected": 39387
+  },
+  {
+    "doc_id": "claim_153",
+    "field": "amount",
+    "predicted": 27085,
+    "expected": 31848
+  },
+  {
+    "doc_id": "claim_154",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_155",
+    "field": "amount",
+    "predicted": 70864,
+    "expected": 70996
+  },
+  {
+    "doc_id": "claim_158",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_163",
+    "field": "amount",
+    "predicted": 2802,
+    "expected": 3495
+  },
+  {
+    "doc_id": "claim_166",
+    "field": "amount",
+    "predicted": 76371,
+    "expected": 71459
+  },
+  {
+    "doc_id": "claim_168",
+    "field": "amount",
+    "predicted": 64768,
+    "expected": 62149
+  },
+  {
+    "doc_id": "claim_171",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_171",
+    "field": "amount",
+    "predicted": 41256,
+    "expected": 37000
+  },
+  {
+    "doc_id": "claim_173",
+    "field": "amount",
+    "predicted": 56521,
+    "expected": 57693
+  },
+  {
+    "doc_id": "claim_174",
+    "field": "amount",
+    "predicted": 47605,
+    "expected": 50499
+  },
+  {
+    "doc_id": "claim_178",
+    "field": "amount",
+    "predicted": 24345,
+    "expected": 25658
+  },
+  {
+    "doc_id": "claim_181",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_182",
+    "field": "amount",
+    "predicted": 94202,
+    "expected": 94831
+  },
+  {
+    "doc_id": "claim_183",
+    "field": "amount",
+    "predicted": 42118,
+    "expected": 41370
+  },
+  {
+    "doc_id": "claim_188",
+    "field": "amount",
+    "predicted": 32762,
+    "expected": 29511
+  },
+  {
+    "doc_id": "claim_190",
+    "field": "amount",
+    "predicted": 22628,
+    "expected": 21067
+  },
+  {
+    "doc_id": "claim_191",
+    "field": "amount",
+    "predicted": 3229,
+    "expected": 5834
+  },
+  {
+    "doc_id": "claim_193",
+    "field": "amount",
+    "predicted": 43429,
+    "expected": 45262
+  },
+  {
+    "doc_id": "claim_199",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_200",
+    "field": "amount",
+    "predicted": 60521,
+    "expected": 59408
+  },
+  {
+    "doc_id": "claim_203",
+    "field": "amount",
+    "predicted": 54072,
+    "expected": 51523
+  },
+  {
+    "doc_id": "claim_204",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_205",
+    "field": "amount",
+    "predicted": 50420,
+    "expected": 50111
+  },
+  {
+    "doc_id": "claim_208",
+    "field": "amount",
+    "predicted": 40685,
+    "expected": 37833
+  },
+  {
+    "doc_id": "claim_211",
+    "field": "amount",
+    "predicted": 99479,
+    "expected": 95664
+  },
+  {
+    "doc_id": "claim_212",
+    "field": "amount",
+    "predicted": 15973,
+    "expected": 19640
+  },
+  {
+    "doc_id": "claim_213",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_214",
+    "field": "amount",
+    "predicted": 17397,
+    "expected": 13070
+  },
+  {
+    "doc_id": "claim_218",
+    "field": "amount",
+    "predicted": 25023,
+    "expected": 24466
+  },
+  {
+    "doc_id": "claim_219",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_221",
+    "field": "amount",
+    "predicted": 54948,
+    "expected": 53468
+  },
+  {
+    "doc_id": "claim_231",
+    "field": "amount",
+    "predicted": 19280,
+    "expected": 24026
+  },
+  {
+    "doc_id": "claim_232",
+    "field": "amount",
+    "predicted": 98519,
+    "expected": 96654
+  },
+  {
+    "doc_id": "claim_237",
+    "field": "amount",
+    "predicted": 28030,
+    "expected": 31875
+  },
+  {
+    "doc_id": "claim_240",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_240",
+    "field": "amount",
+    "predicted": 39946,
+    "expected": 44514
+  },
+  {
+    "doc_id": "claim_241",
+    "field": "amount",
+    "predicted": 82430,
+    "expected": 81270
+  },
+  {
+    "doc_id": "claim_243",
+    "field": "amount",
+    "predicted": 7191,
+    "expected": 3960
+  },
+  {
+    "doc_id": "claim_248",
+    "field": "amount",
+    "predicted": 66878,
+    "expected": 68123
+  },
+  {
+    "doc_id": "claim_252",
+    "field": "amount",
+    "predicted": 17134,
+    "expected": 21217
+  },
+  {
+    "doc_id": "claim_253",
+    "field": "amount",
+    "predicted": 628,
+    "expected": 3976
+  },
+  {
+    "doc_id": "claim_256",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_258",
+    "field": "amount",
+    "predicted": 6143,
+    "expected": 7022
+  },
+  {
+    "doc_id": "claim_259",
+    "field": "amount",
+    "predicted": 31132,
+    "expected": 29037
+  },
+  {
+    "doc_id": "claim_261",
+    "field": "amount",
+    "predicted": 45111,
+    "expected": 42603
+  },
+  {
+    "doc_id": "claim_263",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_266",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_267",
+    "field": "amount",
+    "predicted": 84741,
+    "expected": 85434
+  },
+  {
+    "doc_id": "claim_270",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_270",
+    "field": "amount",
+    "predicted": 32001,
+    "expected": 27411
+  },
+  {
+    "doc_id": "claim_271",
+    "field": "amount",
+    "predicted": 7147,
+    "expected": 11982
+  },
+  {
+    "doc_id": "claim_274",
+    "field": "amount",
+    "predicted": 29260,
+    "expected": 33394
+  },
+  {
+    "doc_id": "claim_275",
+    "field": "amount",
+    "predicted": 6490,
+    "expected": 9348
+  },
+  {
+    "doc_id": "claim_276",
+    "field": "amount",
+    "predicted": 73689,
+    "expected": 70638
+  },
+  {
+    "doc_id": "claim_280",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_283",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_283",
+    "field": "amount",
+    "predicted": 60294,
+    "expected": 62943
+  },
+  {
+    "doc_id": "claim_287",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_288",
+    "field": "amount",
+    "predicted": 34597,
+    "expected": 30772
+  },
+  {
+    "doc_id": "claim_291",
+    "field": "amount",
+    "predicted": 20883,
+    "expected": 24428
+  },
+  {
+    "doc_id": "claim_292",
+    "field": "amount",
+    "predicted": 72729,
+    "expected": 75875
+  },
+  {
+    "doc_id": "claim_293",
+    "field": "amount",
+    "predicted": 21437,
+    "expected": 17371
+  },
+  {
+    "doc_id": "claim_296",
+    "field": "amount",
+    "predicted": 41641,
+    "expected": 41485
+  },
+  {
+    "doc_id": "claim_297",
+    "field": "amount",
+    "predicted": 9777,
+    "expected": 13806
+  },
+  {
+    "doc_id": "claim_298",
+    "field": "amount",
+    "predicted": 24751,
+    "expected": 22403
+  },
+  {
+    "doc_id": "claim_299",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_300",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_300",
+    "field": "amount",
+    "predicted": 91323,
+    "expected": 89741
+  },
+  {
+    "doc_id": "claim_302",
+    "field": "amount",
+    "predicted": 83227,
+    "expected": 80771
+  },
+  {
+    "doc_id": "claim_304",
+    "field": "amount",
+    "predicted": 62248,
+    "expected": 63271
+  },
+  {
+    "doc_id": "claim_305",
+    "field": "amount",
+    "predicted": 91167,
+    "expected": 91776
+  },
+  {
+    "doc_id": "claim_306",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_307",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_309",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_311",
+    "field": "amount",
+    "predicted": 8991,
+    "expected": 9460
+  },
+  {
+    "doc_id": "claim_314",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_317",
+    "field": "amount",
+    "predicted": 81928,
+    "expected": 86861
+  },
+  {
+    "doc_id": "claim_319",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_319",
+    "field": "amount",
+    "predicted": 49126,
+    "expected": 47398
+  },
+  {
+    "doc_id": "claim_321",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_322",
+    "field": "amount",
+    "predicted": 42492,
+    "expected": 38860
+  },
+  {
+    "doc_id": "claim_329",
+    "field": "amount",
+    "predicted": 54611,
+    "expected": 54918
+  },
+  {
+    "doc_id": "claim_332",
+    "field": "amount",
+    "predicted": 20675,
+    "expected": 23875
+  },
+  {
+    "doc_id": "claim_333",
+    "field": "amount",
+    "predicted": 20419,
+    "expected": 22072
+  },
+  {
+    "doc_id": "claim_340",
+    "field": "amount",
+    "predicted": 38387,
+    "expected": 41263
+  },
+  {
+    "doc_id": "claim_341",
+    "field": "amount",
+    "predicted": 75648,
+    "expected": 79593
+  },
+  {
+    "doc_id": "claim_343",
+    "field": "amount",
+    "predicted": 33436,
+    "expected": 28594
+  },
+  {
+    "doc_id": "claim_346",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_346",
+    "field": "amount",
+    "predicted": 42413,
+    "expected": 38346
+  },
+  {
+    "doc_id": "claim_348",
+    "field": "amount",
+    "predicted": 36402,
+    "expected": 39493
+  },
+  {
+    "doc_id": "claim_353",
+    "field": "amount",
+    "predicted": 83806,
+    "expected": 88768
+  },
+  {
+    "doc_id": "claim_357",
+    "field": "amount",
+    "predicted": 42935,
+    "expected": 42811
+  },
+  {
+    "doc_id": "claim_358",
+    "field": "amount",
+    "predicted": 8620,
+    "expected": 8408
+  },
+  {
+    "doc_id": "claim_360",
+    "field": "amount",
+    "predicted": 35357,
+    "expected": 35024
+  },
+  {
+    "doc_id": "claim_362",
+    "field": "amount",
+    "predicted": 82207,
+    "expected": 77604
+  },
+  {
+    "doc_id": "claim_366",
+    "field": "amount",
+    "predicted": 86698,
+    "expected": 86567
+  },
+  {
+    "doc_id": "claim_369",
+    "field": "amount",
+    "predicted": 60356,
+    "expected": 63713
+  },
+  {
+    "doc_id": "claim_370",
+    "field": "amount",
+    "predicted": 98200,
+    "expected": 98999
+  },
+  {
+    "doc_id": "claim_371",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_371",
+    "field": "amount",
+    "predicted": 75852,
+    "expected": 72832
+  },
+  {
+    "doc_id": "claim_373",
+    "field": "amount",
+    "predicted": 56737,
+    "expected": 54397
+  },
+  {
+    "doc_id": "claim_374",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_379",
+    "field": "amount",
+    "predicted": 25257,
+    "expected": 29186
+  },
+  {
+    "doc_id": "claim_384",
+    "field": "amount",
+    "predicted": 92056,
+    "expected": 90142
+  },
+  {
+    "doc_id": "claim_386",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_386",
+    "field": "amount",
+    "predicted": 70077,
+    "expected": 69771
+  },
+  {
+    "doc_id": "claim_388",
+    "field": "amount",
+    "predicted": 96648,
+    "expected": 97761
+  },
+  {
+    "doc_id": "claim_395",
+    "field": "amount",
+    "predicted": 80362,
+    "expected": 79427
+  },
+  {
+    "doc_id": "claim_396",
+    "field": "amount",
+    "predicted": 53284,
+    "expected": 51255
+  },
+  {
+    "doc_id": "claim_403",
+    "field": "amount",
+    "predicted": 28815,
+    "expected": 32191
+  },
+  {
+    "doc_id": "claim_404",
+    "field": "amount",
+    "predicted": 22482,
+    "expected": 18100
+  },
+  {
+    "doc_id": "claim_405",
+    "field": "amount",
+    "predicted": 59555,
+    "expected": 56474
+  },
+  {
+    "doc_id": "claim_406",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_406",
+    "field": "amount",
+    "predicted": 69662,
+    "expected": 73944
+  },
+  {
+    "doc_id": "claim_408",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_412",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_413",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_415",
+    "field": "amount",
+    "predicted": 61886,
+    "expected": 59540
+  },
+  {
+    "doc_id": "claim_422",
+    "field": "amount",
+    "predicted": 3602,
+    "expected": 6949
+  },
+  {
+    "doc_id": "claim_423",
+    "field": "amount",
+    "predicted": 56135,
+    "expected": 57697
+  },
+  {
+    "doc_id": "claim_424",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_424",
+    "field": "amount",
+    "predicted": 91996,
+    "expected": 92849
+  },
+  {
+    "doc_id": "claim_427",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_433",
+    "field": "amount",
+    "predicted": 43615,
+    "expected": 46364
+  },
+  {
+    "doc_id": "claim_435",
+    "field": "amount",
+    "predicted": 41440,
+    "expected": 39524
+  },
+  {
+    "doc_id": "claim_447",
+    "field": "amount",
+    "predicted": 28991,
+    "expected": 27717
+  },
+  {
+    "doc_id": "claim_449",
+    "field": "amount",
+    "predicted": 42784,
+    "expected": 42066
+  },
+  {
+    "doc_id": "claim_459",
+    "field": "amount",
+    "predicted": 53688,
+    "expected": 54132
+  },
+  {
+    "doc_id": "claim_462",
+    "field": "amount",
+    "predicted": 75783,
+    "expected": 75665
+  },
+  {
+    "doc_id": "claim_463",
+    "field": "amount",
+    "predicted": 44214,
+    "expected": 41046
+  },
+  {
+    "doc_id": "claim_464",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_464",
+    "field": "amount",
+    "predicted": 81969,
+    "expected": 79624
+  },
+  {
+    "doc_id": "claim_465",
+    "field": "amount",
+    "predicted": 93407,
+    "expected": 92245
+  },
+  {
+    "doc_id": "claim_468",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_468",
+    "field": "amount",
+    "predicted": 37252,
+    "expected": 39407
+  },
+  {
+    "doc_id": "claim_469",
+    "field": "amount",
+    "predicted": 26480,
+    "expected": 23318
+  },
+  {
+    "doc_id": "claim_474",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_482",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_482",
+    "field": "amount",
+    "predicted": 22372,
+    "expected": 21288
+  },
+  {
+    "doc_id": "claim_483",
+    "field": "amount",
+    "predicted": 18057,
+    "expected": 20829
+  },
+  {
+    "doc_id": "claim_486",
+    "field": "amount",
+    "predicted": 32661,
+    "expected": 28367
+  },
+  {
+    "doc_id": "claim_490",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_491",
+    "field": "amount",
+    "predicted": 88735,
+    "expected": 85597
+  },
+  {
+    "doc_id": "claim_494",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_499",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_509",
+    "field": "amount",
+    "predicted": 76289,
+    "expected": 79856
+  },
+  {
+    "doc_id": "claim_515",
+    "field": "amount",
+    "predicted": 49505,
+    "expected": 48383
+  },
+  {
+    "doc_id": "claim_519",
+    "field": "amount",
+    "predicted": 34825,
+    "expected": 34675
+  },
+  {
+    "doc_id": "claim_520",
+    "field": "amount",
+    "predicted": 46492,
+    "expected": 45795
+  },
+  {
+    "doc_id": "claim_525",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_526",
+    "field": "amount",
+    "predicted": 794,
+    "expected": 2600
+  },
+  {
+    "doc_id": "claim_531",
+    "field": "amount",
+    "predicted": 53687,
+    "expected": 54070
+  },
+  {
+    "doc_id": "claim_532",
+    "field": "amount",
+    "predicted": 94376,
+    "expected": 93029
+  },
+  {
+    "doc_id": "claim_533",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_538",
+    "field": "amount",
+    "predicted": 40202,
+    "expected": 37877
+  },
+  {
+    "doc_id": "claim_539",
+    "field": "amount",
+    "predicted": 76834,
+    "expected": 80498
+  },
+  {
+    "doc_id": "claim_548",
+    "field": "amount",
+    "predicted": 70676,
+    "expected": 66920
+  },
+  {
+    "doc_id": "claim_550",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_555",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_555",
+    "field": "amount",
+    "predicted": 6166,
+    "expected": 9478
+  },
+  {
+    "doc_id": "claim_557",
+    "field": "amount",
+    "predicted": 21887,
+    "expected": 25831
+  },
+  {
+    "doc_id": "claim_558",
+    "field": "amount",
+    "predicted": 55515,
+    "expected": 59661
+  },
+  {
+    "doc_id": "claim_560",
+    "field": "amount",
+    "predicted": 86402,
+    "expected": 81947
+  },
+  {
+    "doc_id": "claim_563",
+    "field": "amount",
+    "predicted": 98670,
+    "expected": 95833
+  },
+  {
+    "doc_id": "claim_565",
+    "field": "amount",
+    "predicted": 24930,
+    "expected": 24230
+  },
+  {
+    "doc_id": "claim_566",
+    "field": "amount",
+    "predicted": 102817,
+    "expected": 98567
+  },
+  {
+    "doc_id": "claim_568",
+    "field": "amount",
+    "predicted": 41282,
+    "expected": 37412
+  },
+  {
+    "doc_id": "claim_571",
+    "field": "amount",
+    "predicted": 90724,
+    "expected": 91344
+  },
+  {
+    "doc_id": "claim_572",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_574",
+    "field": "amount",
+    "predicted": 60774,
+    "expected": 58286
+  },
+  {
+    "doc_id": "claim_579",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_579",
+    "field": "amount",
+    "predicted": 81868,
+    "expected": 82088
+  },
+  {
+    "doc_id": "claim_580",
+    "field": "amount",
+    "predicted": 46893,
+    "expected": 50253
+  },
+  {
+    "doc_id": "claim_582",
+    "field": "amount",
+    "predicted": 47812,
+    "expected": 51150
+  },
+  {
+    "doc_id": "claim_584",
+    "field": "amount",
+    "predicted": 54090,
+    "expected": 49094
+  },
+  {
+    "doc_id": "claim_586",
+    "field": "amount",
+    "predicted": 23526,
+    "expected": 23517
+  },
+  {
+    "doc_id": "claim_588",
+    "field": "amount",
+    "predicted": 35095,
+    "expected": 38818
+  },
+  {
+    "doc_id": "claim_589",
+    "field": "amount",
+    "predicted": 77132,
+    "expected": 73388
+  },
+  {
+    "doc_id": "claim_591",
+    "field": "amount",
+    "predicted": 22635,
+    "expected": 27032
+  },
+  {
+    "doc_id": "claim_594",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_594",
+    "field": "amount",
+    "predicted": 1609,
+    "expected": 3313
+  },
+  {
+    "doc_id": "claim_595",
+    "field": "amount",
+    "predicted": 59021,
+    "expected": 54361
+  },
+  {
+    "doc_id": "claim_599",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_600",
+    "field": "amount",
+    "predicted": 89905,
+    "expected": 94836
+  },
+  {
+    "doc_id": "claim_601",
+    "field": "amount",
+    "predicted": 81890,
+    "expected": 85829
+  },
+  {
+    "doc_id": "claim_602",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_602",
+    "field": "amount",
+    "predicted": 81123,
+    "expected": 83811
+  },
+  {
+    "doc_id": "claim_605",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_605",
+    "field": "amount",
+    "predicted": 20383,
+    "expected": 20294
+  },
+  {
+    "doc_id": "claim_608",
+    "field": "amount",
+    "predicted": 41027,
+    "expected": 45845
+  },
+  {
+    "doc_id": "claim_609",
+    "field": "amount",
+    "predicted": 24923,
+    "expected": 29607
+  },
+  {
+    "doc_id": "claim_614",
+    "field": "amount",
+    "predicted": 39369,
+    "expected": 35338
+  },
+  {
+    "doc_id": "claim_616",
+    "field": "amount",
+    "predicted": 85566,
+    "expected": 87899
+  },
+  {
+    "doc_id": "claim_618",
+    "field": "amount",
+    "predicted": 94316,
+    "expected": 94955
+  },
+  {
+    "doc_id": "claim_620",
+    "field": "amount",
+    "predicted": 33400,
+    "expected": 31938
+  },
+  {
+    "doc_id": "claim_624",
+    "field": "amount",
+    "predicted": 10335,
+    "expected": 14626
+  },
+  {
+    "doc_id": "claim_626",
+    "field": "amount",
+    "predicted": 21094,
+    "expected": 20042
+  },
+  {
+    "doc_id": "claim_627",
+    "field": "amount",
+    "predicted": 60989,
+    "expected": 61503
+  },
+  {
+    "doc_id": "claim_630",
+    "field": "amount",
+    "predicted": 28781,
+    "expected": 32810
+  },
+  {
+    "doc_id": "claim_631",
+    "field": "amount",
+    "predicted": 101,
+    "expected": 3052
+  },
+  {
+    "doc_id": "claim_632",
+    "field": "amount",
+    "predicted": 78112,
+    "expected": 75293
+  },
+  {
+    "doc_id": "claim_633",
+    "field": "amount",
+    "predicted": 67464,
+    "expected": 66177
+  },
+  {
+    "doc_id": "claim_634",
+    "field": "amount",
+    "predicted": 3952,
+    "expected": 3700
+  },
+  {
+    "doc_id": "claim_643",
+    "field": "amount",
+    "predicted": 52533,
+    "expected": 56720
+  },
+  {
+    "doc_id": "claim_645",
+    "field": "amount",
+    "predicted": 40720,
+    "expected": 41353
+  },
+  {
+    "doc_id": "claim_646",
+    "field": "amount",
+    "predicted": 29274,
+    "expected": 27520
+  },
+  {
+    "doc_id": "claim_647",
+    "field": "amount",
+    "predicted": 52618,
+    "expected": 56100
+  },
+  {
+    "doc_id": "claim_648",
+    "field": "amount",
+    "predicted": 12623,
+    "expected": 8440
+  },
+  {
+    "doc_id": "claim_655",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_657",
+    "field": "amount",
+    "predicted": 13091,
+    "expected": 12906
+  },
+  {
+    "doc_id": "claim_659",
+    "field": "amount",
+    "predicted": 86014,
+    "expected": 87746
+  },
+  {
+    "doc_id": "claim_660",
+    "field": "amount",
+    "predicted": 13483,
+    "expected": 14993
+  },
+  {
+    "doc_id": "claim_663",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_665",
+    "field": "amount",
+    "predicted": 19565,
+    "expected": 22777
+  },
+  {
+    "doc_id": "claim_666",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_667",
+    "field": "amount",
+    "predicted": 74130,
+    "expected": 76444
+  },
+  {
+    "doc_id": "claim_668",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_668",
+    "field": "amount",
+    "predicted": 25599,
+    "expected": 27325
+  },
+  {
+    "doc_id": "claim_672",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_673",
+    "field": "amount",
+    "predicted": 46717,
+    "expected": 49096
+  },
+  {
+    "doc_id": "claim_675",
+    "field": "amount",
+    "predicted": 19101,
+    "expected": 15217
+  },
+  {
+    "doc_id": "claim_682",
+    "field": "amount",
+    "predicted": 56753,
+    "expected": 58713
+  },
+  {
+    "doc_id": "claim_683",
+    "field": "amount",
+    "predicted": 32072,
+    "expected": 35701
+  },
+  {
+    "doc_id": "claim_685",
+    "field": "amount",
+    "predicted": 30336,
+    "expected": 27020
+  },
+  {
+    "doc_id": "claim_697",
+    "field": "amount",
+    "predicted": 52591,
+    "expected": 50915
+  },
+  {
+    "doc_id": "claim_700",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_702",
+    "field": "amount",
+    "predicted": 50989,
+    "expected": 49032
+  },
+  {
+    "doc_id": "claim_707",
+    "field": "amount",
+    "predicted": 52885,
+    "expected": 55080
+  },
+  {
+    "doc_id": "claim_708",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_710",
+    "field": "amount",
+    "predicted": 64510,
+    "expected": 62855
+  },
+  {
+    "doc_id": "claim_712",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_716",
+    "field": "amount",
+    "predicted": 92321,
+    "expected": 88481
+  },
+  {
+    "doc_id": "claim_721",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_721",
+    "field": "amount",
+    "predicted": 8981,
+    "expected": 8220
+  },
+  {
+    "doc_id": "claim_724",
+    "field": "amount",
+    "predicted": 13340,
+    "expected": 11769
+  },
+  {
+    "doc_id": "claim_731",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_733",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_734",
+    "field": "amount",
+    "predicted": 85625,
+    "expected": 84297
+  },
+  {
+    "doc_id": "claim_735",
+    "field": "amount",
+    "predicted": 2399,
+    "expected": 7215
+  },
+  {
+    "doc_id": "claim_737",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_738",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_740",
+    "field": "amount",
+    "predicted": 16754,
+    "expected": 21445
+  },
+  {
+    "doc_id": "claim_743",
+    "field": "amount",
+    "predicted": 84849,
+    "expected": 85037
+  },
+  {
+    "doc_id": "claim_745",
+    "field": "amount",
+    "predicted": 44050,
+    "expected": 46636
+  },
+  {
+    "doc_id": "claim_747",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_747",
+    "field": "amount",
+    "predicted": 44396,
+    "expected": 39595
+  },
+  {
+    "doc_id": "claim_750",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_754",
+    "field": "amount",
+    "predicted": 90998,
+    "expected": 93390
+  },
+  {
+    "doc_id": "claim_756",
+    "field": "amount",
+    "predicted": 83331,
+    "expected": 83159
+  },
+  {
+    "doc_id": "claim_759",
+    "field": "amount",
+    "predicted": 53849,
+    "expected": 56905
+  },
+  {
+    "doc_id": "claim_762",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_765",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_769",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_769",
+    "field": "amount",
+    "predicted": 81025,
+    "expected": 84276
+  },
+  {
+    "doc_id": "claim_770",
+    "field": "amount",
+    "predicted": 44850,
+    "expected": 40356
+  },
+  {
+    "doc_id": "claim_772",
+    "field": "amount",
+    "predicted": 48758,
+    "expected": 51200
+  },
+  {
+    "doc_id": "claim_774",
+    "field": "amount",
+    "predicted": 8213,
+    "expected": 10084
+  },
+  {
+    "doc_id": "claim_775",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_775",
+    "field": "amount",
+    "predicted": 78913,
+    "expected": 76360
+  },
+  {
+    "doc_id": "claim_776",
+    "field": "amount",
+    "predicted": 53918,
+    "expected": 58849
+  },
+  {
+    "doc_id": "claim_778",
+    "field": "amount",
+    "predicted": 93551,
+    "expected": 92349
+  },
+  {
+    "doc_id": "claim_781",
+    "field": "amount",
+    "predicted": 22583,
+    "expected": 20416
+  },
+  {
+    "doc_id": "claim_784",
+    "field": "amount",
+    "predicted": 94114,
+    "expected": 93077
+  },
+  {
+    "doc_id": "claim_785",
+    "field": "amount",
+    "predicted": 73297,
+    "expected": 73352
+  },
+  {
+    "doc_id": "claim_789",
+    "field": "amount",
+    "predicted": 60461,
+    "expected": 59462
+  },
+  {
+    "doc_id": "claim_794",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_795",
+    "field": "amount",
+    "predicted": 98895,
+    "expected": 99881
+  },
+  {
+    "doc_id": "claim_798",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_800",
+    "field": "amount",
+    "predicted": 39586,
+    "expected": 38312
+  },
+  {
+    "doc_id": "claim_802",
+    "field": "amount",
+    "predicted": 78620,
+    "expected": 82209
+  },
+  {
+    "doc_id": "claim_805",
+    "field": "amount",
+    "predicted": 25402,
+    "expected": 24011
+  },
+  {
+    "doc_id": "claim_807",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_812",
+    "field": "amount",
+    "predicted": 37233,
+    "expected": 39536
+  },
+  {
+    "doc_id": "claim_816",
+    "field": "amount",
+    "predicted": 82388,
+    "expected": 82742
+  },
+  {
+    "doc_id": "claim_817",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_821",
+    "field": "amount",
+    "predicted": 39804,
+    "expected": 37184
+  },
+  {
+    "doc_id": "claim_824",
+    "field": "amount",
+    "predicted": 84097,
+    "expected": 83577
+  },
+  {
+    "doc_id": "claim_827",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_830",
+    "field": "amount",
+    "predicted": 20957,
+    "expected": 20203
+  },
+  {
+    "doc_id": "claim_831",
+    "field": "amount",
+    "predicted": 56890,
+    "expected": 56282
+  },
+  {
+    "doc_id": "claim_838",
+    "field": "amount",
+    "predicted": 55048,
+    "expected": 56163
+  },
+  {
+    "doc_id": "claim_839",
+    "field": "amount",
+    "predicted": 77151,
+    "expected": 76623
+  },
+  {
+    "doc_id": "claim_841",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_843",
+    "field": "amount",
+    "predicted": 22483,
+    "expected": 20828
+  },
+  {
+    "doc_id": "claim_848",
+    "field": "amount",
+    "predicted": 27063,
+    "expected": 23504
+  },
+  {
+    "doc_id": "claim_849",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_852",
+    "field": "amount",
+    "predicted": 45439,
+    "expected": 49094
+  },
+  {
+    "doc_id": "claim_853",
+    "field": "amount",
+    "predicted": 64927,
+    "expected": 63377
+  },
+  {
+    "doc_id": "claim_862",
+    "field": "amount",
+    "predicted": 20181,
+    "expected": 16851
+  },
+  {
+    "doc_id": "claim_863",
+    "field": "amount",
+    "predicted": 21130,
+    "expected": 17762
+  },
+  {
+    "doc_id": "claim_867",
+    "field": "amount",
+    "predicted": 53696,
+    "expected": 51796
+  },
+  {
+    "doc_id": "claim_870",
+    "field": "amount",
+    "predicted": 81511,
+    "expected": 84727
+  },
+  {
+    "doc_id": "claim_873",
+    "field": "amount",
+    "predicted": 8837,
+    "expected": 3974
+  },
+  {
+    "doc_id": "claim_875",
+    "field": "amount",
+    "predicted": 65365,
+    "expected": 67481
+  },
+  {
+    "doc_id": "claim_878",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_878",
+    "field": "amount",
+    "predicted": 55263,
+    "expected": 54705
+  },
+  {
+    "doc_id": "claim_880",
+    "field": "amount",
+    "predicted": 37700,
+    "expected": 42332
+  },
+  {
+    "doc_id": "claim_881",
+    "field": "amount",
+    "predicted": 55588,
+    "expected": 54163
+  },
+  {
+    "doc_id": "claim_884",
+    "field": "amount",
+    "predicted": 91619,
+    "expected": 90057
+  },
+  {
+    "doc_id": "claim_885",
+    "field": "amount",
+    "predicted": 83371,
+    "expected": 80866
+  },
+  {
+    "doc_id": "claim_886",
+    "field": "amount",
+    "predicted": 84625,
+    "expected": 80269
+  },
+  {
+    "doc_id": "claim_890",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_890",
+    "field": "amount",
+    "predicted": 28735,
+    "expected": 26632
+  },
+  {
+    "doc_id": "claim_892",
+    "field": "amount",
+    "predicted": 64476,
+    "expected": 59484
+  },
+  {
+    "doc_id": "claim_893",
+    "field": "amount",
+    "predicted": 55450,
+    "expected": 57533
+  },
+  {
+    "doc_id": "claim_894",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_894",
+    "field": "amount",
+    "predicted": 46174,
+    "expected": 42283
+  },
+  {
+    "doc_id": "claim_900",
+    "field": "amount",
+    "predicted": 50252,
+    "expected": 47885
+  },
+  {
+    "doc_id": "claim_901",
+    "field": "amount",
+    "predicted": 80882,
+    "expected": 81299
+  },
+  {
+    "doc_id": "claim_905",
+    "field": "amount",
+    "predicted": 374,
+    "expected": 3475
+  },
+  {
+    "doc_id": "claim_908",
+    "field": "amount",
+    "predicted": 41919,
+    "expected": 42587
+  },
+  {
+    "doc_id": "claim_910",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_911",
+    "field": "amount",
+    "predicted": 90423,
+    "expected": 91474
+  },
+  {
+    "doc_id": "claim_912",
+    "field": "amount",
+    "predicted": 42881,
+    "expected": 46454
+  },
+  {
+    "doc_id": "claim_913",
+    "field": "amount",
+    "predicted": 27189,
+    "expected": 30667
+  },
+  {
+    "doc_id": "claim_914",
+    "field": "amount",
+    "predicted": 4605,
+    "expected": 8911
+  },
+  {
+    "doc_id": "claim_917",
+    "field": "amount",
+    "predicted": 61836,
+    "expected": 60614
+  },
+  {
+    "doc_id": "claim_918",
+    "field": "amount",
+    "predicted": 40749,
+    "expected": 42467
+  },
+  {
+    "doc_id": "claim_920",
+    "field": "amount",
+    "predicted": 80638,
+    "expected": 77775
+  },
+  {
+    "doc_id": "claim_921",
+    "field": "amount",
+    "predicted": 38220,
+    "expected": 42276
+  },
+  {
+    "doc_id": "claim_926",
+    "field": "amount",
+    "predicted": 97362,
+    "expected": 93771
+  },
+  {
+    "doc_id": "claim_931",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_932",
+    "field": "amount",
+    "predicted": 32259,
+    "expected": 31348
+  },
+  {
+    "doc_id": "claim_933",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_934",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "vehicle theft"
+  },
+  {
+    "doc_id": "claim_935",
+    "field": "amount",
+    "predicted": 62065,
+    "expected": 57816
+  },
+  {
+    "doc_id": "claim_937",
+    "field": "amount",
+    "predicted": 39697,
+    "expected": 38475
+  },
+  {
+    "doc_id": "claim_938",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "parked car"
+  },
+  {
+    "doc_id": "claim_939",
+    "field": "amount",
+    "predicted": 41721,
+    "expected": 39844
+  },
+  {
+    "doc_id": "claim_940",
+    "field": "amount",
+    "predicted": 2620,
+    "expected": 2301
+  },
+  {
+    "doc_id": "claim_942",
+    "field": "amount",
+    "predicted": 27607,
+    "expected": 24582
+  },
+  {
+    "doc_id": "claim_944",
+    "field": "amount",
+    "predicted": 92207,
+    "expected": 94003
+  },
+  {
+    "doc_id": "claim_945",
+    "field": "amount",
+    "predicted": 29080,
+    "expected": 24213
+  },
+  {
+    "doc_id": "claim_946",
+    "field": "amount",
+    "predicted": 11271,
+    "expected": 9857
+  },
+  {
+    "doc_id": "claim_950",
+    "field": "amount",
+    "predicted": 43870,
+    "expected": 45641
+  },
+  {
+    "doc_id": "claim_959",
+    "field": "amount",
+    "predicted": 94623,
+    "expected": 99138
+  },
+  {
+    "doc_id": "claim_960",
+    "field": "amount",
+    "predicted": 90659,
+    "expected": 94576
+  },
+  {
+    "doc_id": "claim_965",
+    "field": "amount",
+    "predicted": 59871,
+    "expected": 59499
+  },
+  {
+    "doc_id": "claim_966",
+    "field": "amount",
+    "predicted": 50058,
+    "expected": 48196
+  },
+  {
+    "doc_id": "claim_967",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_968",
+    "field": "amount",
+    "predicted": 22179,
+    "expected": 27149
+  },
+  {
+    "doc_id": "claim_969",
+    "field": "amount",
+    "predicted": 29831,
+    "expected": 28218
+  },
+  {
+    "doc_id": "claim_971",
+    "field": "amount",
+    "predicted": 86599,
+    "expected": 82833
+  },
+  {
+    "doc_id": "claim_972",
+    "field": "amount",
+    "predicted": 22794,
+    "expected": 18435
+  },
+  {
+    "doc_id": "claim_975",
+    "field": "amount",
+    "predicted": 27638,
+    "expected": 27450
+  },
+  {
+    "doc_id": "claim_977",
+    "field": "amount",
+    "predicted": 43857,
+    "expected": 40627
+  },
+  {
+    "doc_id": "claim_981",
+    "field": "amount",
+    "predicted": 45225,
+    "expected": 42102
+  },
+  {
+    "doc_id": "claim_983",
+    "field": "amount",
+    "predicted": 68463,
+    "expected": 65902
+  },
+  {
+    "doc_id": "claim_985",
+    "field": "amount",
+    "predicted": 11394,
+    "expected": 9594
+  },
+  {
+    "doc_id": "claim_992",
+    "field": "amount",
+    "predicted": 36525,
+    "expected": 34327
+  },
+  {
+    "doc_id": "claim_996",
+    "field": "amount",
+    "predicted": 25190,
+    "expected": 23776
+  },
+  {
+    "doc_id": "claim_997",
+    "field": "claim_type",
+    "predicted": "single vehicle collision",
+    "expected": "multi-vehicle collision"
+  },
+  {
+    "doc_id": "claim_997",
+    "field": "amount",
+    "predicted": 68406,
+    "expected": 66417
+  },
+  {
+    "doc_id": "claim_999",
+    "field": "amount",
+    "predicted": 90176,
+    "expected": 86621
   }
 ]

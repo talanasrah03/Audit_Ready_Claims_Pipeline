@@ -1,21 +1,27 @@
 [
   {
     "doc_id": "claim_1",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_2",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_3",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_4",
@@ -25,57 +31,71 @@
   },
   {
     "doc_id": "claim_5",
-    "risk_score": 4,
+    "risk_score": 6,
     "risk_level": "HIGH",
     "reasons": [
       "Missing claim_type",
+      "Missing amount",
       "Claim type mismatch"
     ]
   },
   {
     "doc_id": "claim_6",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_7",
-    "risk_score": 4,
+    "risk_score": 6,
     "risk_level": "HIGH",
     "reasons": [
       "Missing claim_type",
+      "Missing amount",
       "Claim type mismatch"
     ]
   },
   {
     "doc_id": "claim_8",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_9",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_10",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_11",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_12",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_13",
@@ -85,87 +105,111 @@
   },
   {
     "doc_id": "claim_14",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_15",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_16",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_17",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_18",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_19",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_20",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_21",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_22",
-    "risk_score": 4,
+    "risk_score": 6,
     "risk_level": "HIGH",
     "reasons": [
       "Missing claim_type",
+      "Missing amount",
       "Claim type mismatch"
     ]
   },
   {
     "doc_id": "claim_23",
-    "risk_score": 4,
+    "risk_score": 6,
     "risk_level": "HIGH",
     "reasons": [
       "Missing claim_type",
+      "Missing amount",
       "Claim type mismatch"
     ]
   },
   {
     "doc_id": "claim_24",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_25",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_26",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_27",
@@ -187,64 +231,83 @@
   },
   {
     "doc_id": "claim_30",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_31",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_32",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_33",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_34",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_35",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_36",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_37",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_38",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_39",
-    "risk_score": 4,
+    "risk_score": 6,
     "risk_level": "HIGH",
     "reasons": [
       "Missing claim_type",
+      "Missing amount",
       "Claim type mismatch"
     ]
   },
@@ -256,9 +319,11 @@
   },
   {
     "doc_id": "claim_41",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_42",
@@ -268,72 +333,93 @@
   },
   {
     "doc_id": "claim_43",
-    "risk_score": 4,
+    "risk_score": 6,
     "risk_level": "HIGH",
     "reasons": [
       "Missing claim_type",
+      "Missing amount",
       "Claim type mismatch"
     ]
   },
   {
     "doc_id": "claim_44",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_45",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_46",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_47",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_48",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_49",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_50",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_51",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_52",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_53",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_54",
@@ -343,187 +429,237 @@
   },
   {
     "doc_id": "claim_55",
-    "risk_score": 4,
+    "risk_score": 6,
     "risk_level": "HIGH",
     "reasons": [
       "Missing claim_type",
+      "Missing amount",
       "Claim type mismatch"
     ]
   },
   {
     "doc_id": "claim_56",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_57",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_58",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_59",
-    "risk_score": 4,
+    "risk_score": 6,
     "risk_level": "HIGH",
     "reasons": [
       "Missing claim_type",
+      "Missing amount",
       "Claim type mismatch"
     ]
   },
   {
     "doc_id": "claim_60",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_61",
-    "risk_score": 4,
+    "risk_score": 6,
     "risk_level": "HIGH",
     "reasons": [
       "Missing claim_type",
+      "Missing amount",
       "Claim type mismatch"
     ]
   },
   {
     "doc_id": "claim_62",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_63",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_64",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_65",
-    "risk_score": 4,
+    "risk_score": 6,
     "risk_level": "HIGH",
     "reasons": [
       "Missing claim_type",
+      "Missing amount",
       "Claim type mismatch"
     ]
   },
   {
     "doc_id": "claim_66",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_67",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_68",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_69",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_70",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_71",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_72",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_73",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_74",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_75",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_76",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_77",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_78",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_79",
-    "risk_score": 4,
+    "risk_score": 6,
     "risk_level": "HIGH",
     "reasons": [
       "Missing claim_type",
+      "Missing amount",
       "Claim type mismatch"
     ]
   },
   {
     "doc_id": "claim_80",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_81",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_82",
-    "risk_score": 4,
+    "risk_score": 6,
     "risk_level": "HIGH",
     "reasons": [
       "Missing claim_type",
+      "Missing amount",
       "Claim type mismatch"
     ]
   },
@@ -535,24 +671,29 @@
   },
   {
     "doc_id": "claim_84",
-    "risk_score": 4,
+    "risk_score": 6,
     "risk_level": "HIGH",
     "reasons": [
       "Missing claim_type",
+      "Missing amount",
       "Claim type mismatch"
     ]
   },
   {
     "doc_id": "claim_85",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_86",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_87",
@@ -562,83 +703,7354 @@
   },
   {
     "doc_id": "claim_88",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_89",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_90",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_91",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_92",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_93",
-    "risk_score": 4,
+    "risk_score": 6,
     "risk_level": "HIGH",
     "reasons": [
       "Missing claim_type",
+      "Missing amount",
       "Claim type mismatch"
     ]
   },
   {
     "doc_id": "claim_94",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_95",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_96",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_97",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_98",
-    "risk_score": 0,
-    "risk_level": "LOW",
-    "reasons": []
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   },
   {
     "doc_id": "claim_99",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_100",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_101",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_102",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_103",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_104",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_105",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_106",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_107",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_108",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_109",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_110",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_111",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_112",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_113",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_114",
     "risk_score": 0,
     "risk_level": "LOW",
     "reasons": []
   },
   {
-    "doc_id": "claim_100",
+    "doc_id": "claim_115",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_116",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_117",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_118",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_119",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_120",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_121",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_122",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_123",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_124",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_125",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_126",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_127",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_128",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_129",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_130",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_131",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_132",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_133",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_134",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_135",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_136",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_137",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_138",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_139",
     "risk_score": 0,
     "risk_level": "LOW",
     "reasons": []
+  },
+  {
+    "doc_id": "claim_140",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_141",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_142",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_143",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_144",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_145",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_146",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_147",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_148",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_149",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_150",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_151",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_152",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_153",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_154",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_155",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_156",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_157",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_158",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_159",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_160",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_161",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_162",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_163",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_164",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_165",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_166",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_167",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_168",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_169",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_170",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_171",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_172",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_173",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_174",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_175",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_176",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_177",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_178",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_179",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_180",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_181",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_182",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_183",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_184",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_185",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_186",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_187",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_188",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_189",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_190",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_191",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_192",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_193",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_194",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_195",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_196",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_197",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_198",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_199",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_200",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_201",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_202",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_203",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_204",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_205",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_206",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_207",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_208",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_209",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_210",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_211",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_212",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_213",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_214",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_215",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_216",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_217",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_218",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_219",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_220",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_221",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_222",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_223",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_224",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_225",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_226",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_227",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_228",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_229",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_230",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_231",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_232",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_233",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_234",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_235",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_236",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_237",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_238",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_239",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_240",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_241",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_242",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_243",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_244",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_245",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_246",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_247",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_248",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_249",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_250",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_251",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_252",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_253",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_254",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_255",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_256",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_257",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_258",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_259",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_260",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_261",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_262",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_263",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_264",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_265",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_266",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_267",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_268",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_269",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_270",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_271",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_272",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_273",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_274",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_275",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_276",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_277",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_278",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_279",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_280",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_281",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_282",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_283",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_284",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_285",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_286",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_287",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_288",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_289",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_290",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_291",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_292",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_293",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_294",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_295",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_296",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_297",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_298",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_299",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_300",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_301",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_302",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_303",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_304",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_305",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_306",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_307",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_308",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_309",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_310",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_311",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_312",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_313",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_314",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_315",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_316",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_317",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_318",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_319",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_320",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_321",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_322",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_323",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_324",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_325",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_326",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_327",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_328",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_329",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_330",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_331",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_332",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_333",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_334",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_335",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_336",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_337",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_338",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_339",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_340",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_341",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_342",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_343",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_344",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_345",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_346",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_347",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_348",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_349",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_350",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_351",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_352",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_353",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_354",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_355",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_356",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_357",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_358",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_359",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_360",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_361",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_362",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_363",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_364",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_365",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_366",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_367",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_368",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_369",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_370",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_371",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_372",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_373",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_374",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_375",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_376",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_377",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_378",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_379",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_380",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_381",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_382",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_383",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_384",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_385",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_386",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_387",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_388",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_389",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_390",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_391",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_392",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_393",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_394",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_395",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_396",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_397",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_398",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_399",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_400",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_401",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_402",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_403",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_404",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_405",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_406",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_407",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_408",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_409",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_410",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_411",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_412",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_413",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_414",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_415",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_416",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_417",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_418",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_419",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_420",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_421",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_422",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_423",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_424",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_425",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_426",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_427",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_428",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_429",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_430",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_431",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_432",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_433",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_434",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_435",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_436",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_437",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_438",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_439",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_440",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_441",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_442",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_443",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_444",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_445",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_446",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_447",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_448",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_449",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_450",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_451",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_452",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_453",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_454",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_455",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_456",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_457",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_458",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_459",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_460",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_461",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_462",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_463",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_464",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_465",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_466",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_467",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_468",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_469",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_470",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_471",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_472",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_473",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_474",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_475",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_476",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_477",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_478",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_479",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_480",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_481",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_482",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_483",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_484",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_485",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_486",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_487",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_488",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_489",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_490",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_491",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_492",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_493",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_494",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_495",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_496",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_497",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_498",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_499",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_500",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_501",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_502",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_503",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_504",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_505",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_506",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_507",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_508",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_509",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_510",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_511",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_512",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_513",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_514",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_515",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_516",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_517",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_518",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_519",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_520",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_521",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_522",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_523",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_524",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_525",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_526",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_527",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_528",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_529",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_530",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_531",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_532",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_533",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_534",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_535",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_536",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_537",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_538",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_539",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_540",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_541",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_542",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_543",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_544",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_545",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_546",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_547",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_548",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_549",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_550",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_551",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_552",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_553",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_554",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_555",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_556",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_557",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_558",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_559",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_560",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_561",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_562",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_563",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_564",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_565",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_566",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_567",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_568",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_569",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_570",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_571",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_572",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_573",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_574",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_575",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_576",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_577",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_578",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_579",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_580",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_581",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_582",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_583",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_584",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_585",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_586",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_587",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_588",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_589",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_590",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_591",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_592",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_593",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_594",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_595",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_596",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_597",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_598",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_599",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_600",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_601",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_602",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_603",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_604",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_605",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_606",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_607",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_608",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_609",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_610",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_611",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_612",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_613",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_614",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_615",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_616",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_617",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_618",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_619",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_620",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_621",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_622",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_623",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_624",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_625",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_626",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_627",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_628",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_629",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_630",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_631",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_632",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_633",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_634",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_635",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_636",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_637",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_638",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_639",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_640",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_641",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_642",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_643",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_644",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_645",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_646",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_647",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_648",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_649",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_650",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_651",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_652",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_653",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_654",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_655",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_656",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_657",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_658",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_659",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_660",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_661",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_662",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_663",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_664",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_665",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_666",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_667",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_668",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_669",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_670",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_671",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_672",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_673",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_674",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_675",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_676",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_677",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_678",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_679",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_680",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_681",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_682",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_683",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_684",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_685",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_686",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_687",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_688",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_689",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_690",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_691",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_692",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_693",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_694",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_695",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_696",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_697",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_698",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_699",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_700",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_701",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_702",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_703",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_704",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_705",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_706",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_707",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_708",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_709",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_710",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_711",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_712",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_713",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_714",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_715",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_716",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_717",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_718",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_719",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_720",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_721",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_722",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_723",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_724",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_725",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_726",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_727",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_728",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_729",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_730",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_731",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_732",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_733",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_734",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_735",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_736",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_737",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_738",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_739",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_740",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_741",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_742",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_743",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_744",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_745",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_746",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_747",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_748",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_749",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_750",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_751",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_752",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_753",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_754",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_755",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_756",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_757",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_758",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_759",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_760",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_761",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_762",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_763",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_764",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_765",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_766",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_767",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_768",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_769",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_770",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_771",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_772",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_773",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_774",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_775",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_776",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_777",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_778",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_779",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_780",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_781",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_782",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_783",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_784",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_785",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_786",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_787",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_788",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_789",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_790",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_791",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_792",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_793",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_794",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_795",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_796",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_797",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_798",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_799",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_800",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_801",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_802",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_803",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_804",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_805",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_806",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_807",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_808",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_809",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_810",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_811",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_812",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_813",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_814",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_815",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_816",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_817",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_818",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_819",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_820",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_821",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_822",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_823",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_824",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_825",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_826",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_827",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_828",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_829",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_830",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_831",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_832",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_833",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_834",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_835",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_836",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_837",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_838",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_839",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_840",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_841",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_842",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_843",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_844",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_845",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_846",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_847",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_848",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_849",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_850",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_851",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_852",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_853",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_854",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_855",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_856",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_857",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_858",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_859",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_860",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_861",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_862",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_863",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_864",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_865",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_866",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_867",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_868",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_869",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_870",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_871",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_872",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_873",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_874",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_875",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_876",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_877",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_878",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_879",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_880",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_881",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_882",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_883",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_884",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_885",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_886",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_887",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_888",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_889",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_890",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_891",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_892",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_893",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_894",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_895",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_896",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_897",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_898",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_899",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_900",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_901",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_902",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_903",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_904",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_905",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_906",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_907",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_908",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_909",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_910",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_911",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_912",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_913",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_914",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_915",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_916",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_917",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_918",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_919",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_920",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_921",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_922",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_923",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_924",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_925",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_926",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_927",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_928",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_929",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_930",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_931",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_932",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_933",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_934",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_935",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_936",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_937",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_938",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_939",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_940",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_941",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_942",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_943",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_944",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_945",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_946",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_947",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_948",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_949",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_950",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_951",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_952",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_953",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_954",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_955",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_956",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_957",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_958",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_959",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_960",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_961",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_962",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_963",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_964",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_965",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_966",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_967",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_968",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_969",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_970",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_971",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_972",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_973",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_974",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_975",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_976",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_977",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_978",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_979",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_980",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_981",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_982",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_983",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_984",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_985",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_986",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_987",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_988",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_989",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_990",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_991",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_992",
+    "risk_score": 0,
+    "risk_level": "LOW",
+    "reasons": []
+  },
+  {
+    "doc_id": "claim_993",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_994",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_995",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_996",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_997",
+    "risk_score": 6,
+    "risk_level": "HIGH",
+    "reasons": [
+      "Missing claim_type",
+      "Missing amount",
+      "Claim type mismatch"
+    ]
+  },
+  {
+    "doc_id": "claim_998",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_999",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
+  },
+  {
+    "doc_id": "claim_1000",
+    "risk_score": 2,
+    "risk_level": "MEDIUM",
+    "reasons": [
+      "Missing amount"
+    ]
   }
 ]
