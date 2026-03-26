@@ -154,3 +154,101 @@ def save_customer_feedback(claim_id, message, additional_info=None):
 
     conn.commit()
     conn.close()
+
+
+
+def get_claim(claim_id):
+
+    conn = sqlite3.connect("claims.db")
+    cursor = conn.cursor()
+
+    cursor.execute(
+        "SELECT claim_id, status, risk_level FROM claims WHERE claim_id = ?",
+        (claim_id,)
+    )
+
+    result = cursor.fetchone()
+    conn.close()
+
+    if result:
+        return {
+            "claim_id": result[0],
+            "status": result[1],
+            "risk_level": result[2]
+        }
+
+    return None 
+
+# =========================
+# AUDIT TABLE
+# =========================
+def create_audit_table():
+    
+
+    conn = sqlite3.connect("claims.db")
+    cursor = conn.cursor()
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS audit_logs (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        claim_id TEXT,
+        action TEXT,
+        timestamp TEXT,
+        details TEXT
+    )
+    """)
+
+    conn.commit()
+    conn.close()
+
+
+# =========================
+# LOG ACTION
+# =========================
+def log_action(claim_id, action, details):
+    import sqlite3
+    from datetime import datetime
+
+    conn = sqlite3.connect("claims.db")
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        INSERT INTO audit_logs (claim_id, action, timestamp, details)
+        VALUES (?, ?, ?, ?)
+    """, (
+        claim_id,
+        action,
+        datetime.now().isoformat(),
+        str(details)
+    ))
+
+    conn.commit()
+    conn.close()
+
+
+# =========================
+# GET AUDIT LOGS
+# =========================
+def get_audit_logs(claim_id):
+    import sqlite3
+
+    conn = sqlite3.connect("claims.db")
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT action, timestamp, details
+        FROM audit_logs
+        WHERE claim_id = ?
+    """, (claim_id,))
+
+    rows = cursor.fetchall()
+    conn.close()
+
+    return [
+        {
+            "action": r[0],
+            "timestamp": r[1],
+            "details": r[2]
+        }
+        for r in rows
+    ]
