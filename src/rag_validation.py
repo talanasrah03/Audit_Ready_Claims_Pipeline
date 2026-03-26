@@ -25,7 +25,7 @@ Output:
 - data/processed/validated_claims.json
 """
 
-
+from src.database.db import insert_claim, save_ai_result
 import json
 from datetime import datetime
 
@@ -296,6 +296,25 @@ for claim in claims:
         "validation": validation
     })
 
+# =========================
+# SAVE TO DATABASE
+# =========================
+
+claim_id = claim.get("claim_id") or claim.get("doc_id")
+
+insert_claim(
+    claim_id=claim_id,
+    status="validated",
+    risk_level=validation["severity"]
+)
+
+save_ai_result(
+    claim_id=claim_id,
+    extracted_data=claim,
+    consistency_score=1.0,
+    issues=validation["issues"],
+    explanation=f"Validation completed with {len(validation['issues'])} issues"
+)
 
 # =========================
 # SAVE OUTPUT

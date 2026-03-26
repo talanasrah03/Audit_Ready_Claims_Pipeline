@@ -44,6 +44,7 @@ review_dict = {r["doc_id"]: r for r in reviews}
 # =========================
 # Customer enters their claim ID manually
 # This simulates receiving the ID via email
+from src.database.db import save_customer_feedback
 claim_id_input = st.text_input("Enter your Claim ID")
 
 # Example to guide the user
@@ -112,6 +113,7 @@ if st.button("Search Claim"):
         # =========================
         # SUBMIT BUTTON
         # =========================
+        from src.database.db import save_customer_feedback
         if st.button("Submit Response"):
 
             # Simulate saving response
