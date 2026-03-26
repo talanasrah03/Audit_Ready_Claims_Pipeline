@@ -43,9 +43,18 @@ for claim in claims:
     amount = claim.get("amount")
     claim_date = claim.get("claim_date")
     customer_name = claim.get("customer_name")
-    domain = claim.get("domain", "car")
+    domain = claim.get("domain", "vehicle")
 
-    domain_config = CONFIGS.get(domain, CONFIGS["car"])
+    # =========================
+    # DOMAIN HANDLING
+    # =========================
+    if domain not in CONFIGS:
+        domain_config = CONFIGS["vehicle"]  # fallback
+        domain_warning = "Domain undefined in the system"
+    else:
+        domain_config = CONFIGS[domain]
+        domain_warning = None
+
     rules = domain_config["rules"]
 
     validation = {
@@ -53,6 +62,11 @@ for claim in claims:
         "valid": True,
         "issues": []
     }
+
+    # Add domain warning if needed
+    if domain_warning:
+        validation["issues"].append(domain_warning)
+        validation["valid"] = False
 
     # -------------------------
     # BASIC RULES
@@ -103,11 +117,11 @@ for claim in claims:
     # =========================
     # 💣 LEARNING FROM PAST CORRECTIONS
     # =========================
-    if patterns["amount_corrections"] > 5:
+    if patterns.get("amount_corrections", 0) > 5:
         validation["issues"].append("Amount field unstable (learned)")
         validation["valid"] = False
 
-    if patterns["type_corrections"] > 5:
+    if patterns.get("type_corrections", 0) > 5:
         validation["issues"].append("Claim type unstable (learned)")
         validation["valid"] = False
 

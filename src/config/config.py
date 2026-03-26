@@ -12,9 +12,9 @@ where each client/domain has different rules and logic.
 CONFIGS = {
 
     # =========================
-    # vehicles INSURANCE (CURRENT)
+    # vehicles  (CURRENT)
     # =========================
-    "Vehicle": {
+    "vehicle": {
         "claim_types": [
             "Single Vehicle Collision",
             "Multi-vehicle Collision",
