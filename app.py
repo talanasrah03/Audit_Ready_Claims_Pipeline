@@ -1,24 +1,11 @@
 """
-This script builds an interactive dashboard using Streamlit.
+Streamlit Dashboard for AI Claims Processing Pipeline
 
-Context in the project:
-This is the front-end (user interface) of the AI claims processing pipeline.
-
-The backend pipeline has already:
-- Extracted claims (AI)
-- Cleaned data
-- Evaluated accuracy
-- Assigned risk scores
-- Identified claims needing human action
-
-This dashboard allows a human user (e.g., insurance employee) to:
-- Browse claims
-- View AI results
-- Understand risk levels
-- Review issues
-- Take actions (approve, reject, correct, request info)
-
-This simulates a real internal tool used in insurance companies.
+This interface allows:
+- Viewing claims
+- Inspecting risk scores
+- Reviewing issues
+- Performing human actions (approve / reject / correct / request info)
 """
 
 import json
@@ -65,9 +52,21 @@ risk = risk_dict.get(selected_id, {})
 review = review_dict.get(selected_id)
 
 claim_id = claim.get("claim_id") or claim.get("doc_id")
-domain = claim.get("domain", "car")
-domain_config = CONFIGS.get(domain, CONFIGS["car"])
-claim_type_options = domain_config["claim_types"]
+
+
+# =========================
+# DOMAIN HANDLING (FIXED 💣)
+# =========================
+domain = claim.get("domain", "vehicle")
+
+domain_config = CONFIGS.get(domain)
+
+if not domain_config:
+    domain_config = CONFIGS["vehicle"]
+    st.warning("⚠️ Domain undefined in the system — fallback to 'vehicle'")
+
+
+claim_type_options = domain_config.get("claim_types", [])
 
 
 # =========================
@@ -77,19 +76,93 @@ st.subheader("Extracted Claim Data")
 st.json(claim)
 
 
+
 # =========================
-# DISPLAY RISK ANALYSIS
+# AI RISK ANALYSIS 🧠
 # =========================
-st.subheader("Risk Analysis")
-st.write(f"Domain: {domain}")
+# =========================
+# AI RISK ANALYSIS 🧠
+# =========================
+st.subheader("🧠 AI Risk Analysis")
+
 st.write(f"Risk Level: {risk.get('risk_level')}")
 st.write(f"Risk Score: {risk.get('risk_score')}")
 
-st.write("Reasons:")
-for reason in risk.get("reasons", []):
-    st.write(f"- {reason}")
+st.write("AI Reasons:")
 
+reasons = risk.get("reasons", [])
 
+if reasons:
+    for reason in reasons:
+        st.info(reason)   # 👈 أزرق (AI)
+else:
+    st.success("No AI issues detected")
+# =========================
+# AI EXPLANATION 💣
+# =========================
+st.subheader("🧠 AI Explanation")
+
+if reasons:
+    if "Claim type mismatch" in reasons:
+        st.info(
+            "The AI model detected a mismatch in the claim type compared to expected patterns. "
+            "This may indicate a classification error and requires review."
+        )
+
+    elif "Large amount mismatch" in reasons:
+        st.info(
+            "The predicted claim amount significantly differs from expected values. "
+            "This could indicate extraction inaccuracies."
+        )
+
+    else:
+        st.info(
+            "The AI system detected minor inconsistencies in the claim data that may require attention."
+        )
+
+else:
+    st.success(
+        "The AI model processed this claim successfully without detecting inconsistencies."
+    )
+
+# =========================
+# BUSINESS VALIDATION ⚖️
+# =========================
+st.subheader("⚖️ Business Validation")
+
+issues = review.get("issues") if review else []
+
+if issues:
+    for issue in issues:
+        st.warning(issue)   # 👈 أصفر (business rules)
+else:
+    st.success("No validation issues")
+# =========================
+# BUSINESS EXPLANATION 💣
+# =========================
+st.subheader("⚖️ Business Explanation")
+
+if issues:
+    if "Amount too high" in issues:
+        st.warning(
+            "The claim amount exceeds the expected range based on business rules. "
+            "This may require additional verification."
+        )
+
+    elif "Amount too low" in issues:
+        st.warning(
+            "The claim amount is lower than expected and may be incomplete or incorrect."
+        )
+
+    else:
+        st.warning(
+            "The claim violates one or more business validation rules and should be reviewed."
+        )
+
+else:
+    st.success(
+        "The claim complies with all business rules and does not require further validation."
+    )
 # =========================
 # HUMAN REVIEW SECTION
 # =========================
@@ -134,10 +207,17 @@ if review:
         new_date = st.text_input("Claim Date", claim.get("claim_date"))
 
         current_type = claim.get("claim_type")
-        index = claim_type_options.index(current_type) if current_type in claim_type_options else 0
+        index = (
+            claim_type_options.index(current_type)
+            if current_type in claim_type_options else 0
+        )
 
         new_type = st.selectbox("Claim Type", claim_type_options, index=index)
-        new_amount = st.number_input("Amount", value=int(claim.get("amount") or 0))
+
+        new_amount = st.number_input(
+            "Amount",
+            value=int(claim.get("amount") or 0)
+        )
 
         if st.button("Save Correction"):
             corrected_data = {
@@ -165,6 +245,7 @@ if review:
         st.warning("Request additional information")
 
         email = st.text_input("Customer Email", "customer@example.com")
+
         message = st.text_area(
             "Message",
             f"""Dear Customer,

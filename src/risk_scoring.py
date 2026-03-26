@@ -10,6 +10,26 @@ from src.learning.correction_memory import get_pattern_summary
 
 
 # =========================
+# HELPER FUNCTIONS 💣
+# =========================
+def is_missing(value):
+    """Check if a value is missing or invalid"""
+    if value is None:
+        return True
+    if str(value).strip().lower() in ["", "none", "null"]:
+        return True
+    return False
+
+
+def safe_int(value):
+    """Safely convert to int"""
+    try:
+        return int(value)
+    except:
+        return None
+
+
+# =========================
 # LOAD DATA
 # =========================
 with open("data/processed/cleaned_claims.json", "r") as f:
@@ -20,7 +40,6 @@ with open("data/ground_truth/ground_truth.json", "r") as f:
 
 gt_dict = {item["doc_id"]: item for item in ground_truth}
 
-# Load learning patterns
 patterns = get_pattern_summary()
 
 risk_results = []
@@ -40,52 +59,50 @@ for pred in predictions:
     risk_score = 0
     reasons = []
 
-    # -------------------------
-    # MISSING FIELDS
-    # -------------------------
-    if pred.get("claim_type") is None:
+    # =========================
+    # MISSING FIELDS (FIXED 💣)
+    # =========================
+    if is_missing(pred.get("claim_type")):
         risk_score += 2
         reasons.append("Missing claim_type")
 
-    if pred.get("amount") is None:
+    if is_missing(pred.get("amount")):
         risk_score += 2
         reasons.append("Missing amount")
 
-    # -------------------------
+    # =========================
     # AMOUNT MISMATCH
-    # -------------------------
-    try:
-        pred_amount = int(pred.get("amount"))
-        gt_amount = int(gt.get("amount"))
+    # =========================
+    pred_amount = safe_int(pred.get("amount"))
+    gt_amount = safe_int(gt.get("amount"))
 
+    if pred_amount is not None and gt_amount is not None:
         if abs(pred_amount - gt_amount) > 5000:
             risk_score += 3
             reasons.append("Large amount mismatch")
 
-    except:
-        pass
-
-    # -------------------------
+    # =========================
     # TYPE MISMATCH
-    # -------------------------
-    if str(pred.get("claim_type")).lower() != str(gt.get("claim_type")).lower():
-        risk_score += 2
-        reasons.append("Claim type mismatch")
+    # =========================
+    if not is_missing(pred.get("claim_type")):
+        if str(pred.get("claim_type")).lower() != str(gt.get("claim_type")).lower():
+            risk_score += 2
+            reasons.append("Claim type mismatch")
 
     # =========================
     # 💣 LEARNING EFFECT
     # =========================
-    if patterns["amount_corrections"] > 5:
+    if patterns.get("amount_corrections", 0) > 5:
         risk_score += 2
         reasons.append("System learned amount is unreliable")
 
-    if patterns["type_corrections"] > 5:
+    if patterns.get("type_corrections", 0) > 5:
         risk_score += 2
         reasons.append("System learned claim type is unreliable")
 
-    # -------------------------
+    # =========================
     # FINAL LEVEL
-    # -------------------------
+    # =========================
     if risk_score >= 4:
         risk_level = "HIGH"
     elif risk_score >= 2:
