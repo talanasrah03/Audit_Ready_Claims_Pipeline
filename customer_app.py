@@ -3,12 +3,12 @@ import json
 from src.database.db import save_customer_feedback
 
 # =========================
-# PAGE CONFIGURATION
+# PAGE CONFIG
 # =========================
 st.set_page_config(page_title="Customer Portal", layout="centered")
 
-st.title("Customer Claim Portal")
-st.caption("Access your claim details and respond to the insurance company")
+st.title("📄 Customer Claim Portal")
+st.caption("Access your claim and communicate with the insurance company")
 
 
 # =========================
@@ -22,85 +22,131 @@ with open("data/processed/human_review_queue.json") as f:
 
 
 # =========================
-# LOOKUP TABLES
+# LOOKUPS
 # =========================
 claim_dict = {c["doc_id"]: c for c in claims}
 review_dict = {r["doc_id"]: r for r in reviews}
 
 
 # =========================
-# USER INPUT
+# INPUT
 # =========================
-claim_id_input = st.text_input("Enter your Claim ID")
+claim_id_input = st.text_input("🔎 Enter your Claim ID", key="claim_input")
 st.caption("Example: claim_1")
 
 
 # =========================
-# SEARCH BUTTON
+# SEARCH (STATE FIX)
 # =========================
 if st.button("Search Claim"):
+    st.session_state["searched_claim"] = claim_id_input
 
-    claim = claim_dict.get(claim_id_input)
-    review = review_dict.get(claim_id_input)
 
-    # =========================
-    # ERROR CASE
-    # =========================
+# =========================
+# DISPLAY CLAIM
+# =========================
+if "searched_claim" in st.session_state:
+
+    claim_id = st.session_state["searched_claim"]
+
+    claim = claim_dict.get(claim_id)
+    review = review_dict.get(claim_id)
+
     if not claim:
         st.error("❌ Claim not found. Please check your Claim ID.")
 
     else:
         # =========================
-        # DISPLAY CLAIM
+        # CLAIM DETAILS
         # =========================
-        st.subheader("Claim Details")
+        st.markdown("---")
+        st.subheader("📄 Claim Details")
 
-        st.write(f"**Customer Name:** {claim.get('customer_name')}")
-        st.write(f"**Date:** {claim.get('claim_date')}")
-        st.write(f"**Type:** {claim.get('claim_type')}")
-        st.write(f"**Amount:** {claim.get('amount')}")
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.write(f"**Customer Name:** {claim.get('customer_name')}")
+            st.write(f"**Date:** {claim.get('claim_date')}")
+
+        with col2:
+            st.write(f"**Type:** {claim.get('claim_type')}")
+            st.write(f"**Amount:** {claim.get('amount')}")
 
         # =========================
         # STATUS
         # =========================
-        st.subheader("Status")
+        st.subheader("📊 Claim Status")
 
         if review:
-            st.warning("⏳ Your claim is currently under review.")
+            status = review.get("status", "UNDER_REVIEW")
+
+            if status == "APPROVED":
+                st.success("✅ Your claim has been approved.")
+
+            elif status == "REJECTED":
+                st.error("❌ Your claim has been rejected.")
+
+            elif status == "NEED_INFO":
+                st.warning("📩 Additional information is required.")
+
+            else:
+                st.warning("⏳ Your claim is under review.")
+
         else:
-            st.success("✅ Your claim has been processed.")
+            st.info("Processing information not available yet.")
 
         # =========================
-        # CUSTOMER ACTION
+        # CUSTOMER ACTIONS
         # =========================
-        st.subheader("Your Response")
+        st.subheader("💬 Your Response")
 
-        action = st.selectbox(
-            "Choose an action",
-            ["CONFIRM", "DISPUTE", "PROVIDE_INFO"]
-        )
+        colA, colB, colC = st.columns(3)
 
-        message = st.text_area("Add a message (optional)")
-
-        # =========================
-        # SUBMIT
-        # =========================
-        if st.button("Submit Response"):
-
-            # 💣 SAVE TO DATABASE (REAL ACTION)
+        # -------------------------
+        # ✅ CONFIRM
+        # -------------------------
+        if colA.button("✅ Confirm"):
             save_customer_feedback(
-                claim_id=claim_id_input,
-                message={
-                    "action": action,
-                    "message": message
-                }
+                claim_id=claim_id,
+                message="CONFIRM",
+                additional_info=""
             )
 
-            st.success("✅ Your response has been submitted successfully.")
+            st.success("✅ Your confirmation has been sent to the insurance team.")
 
-            st.info("📩 Submitted Information:")
-            st.json({
-                "claim_id": claim_id_input,
-                "action": action,
-                "message": message
-            })
+        # -------------------------
+        # ⚠️ DISPUTE
+        # -------------------------
+        if colB.button("⚠️ Dispute"):
+            save_customer_feedback(
+                claim_id=claim_id,
+                message="DISPUTE",
+                additional_info=""
+            )
+
+            st.warning("⚠️ Your dispute has been sent to the insurance team.")
+
+        # -------------------------
+        # 📩 REQUEST INFO (WITH INPUT)
+        # -------------------------
+        if colC.button("📩 Provide Info"):
+            st.session_state["show_message"] = True
+
+        # -------------------------
+        # MESSAGE FORM (ONLY HERE)
+        # -------------------------
+        if st.session_state.get("show_message"):
+            st.markdown("### 📩 Send Additional Information")
+
+            user_message = st.text_area(
+                "Write your message to the insurance team"
+            )
+
+            if st.button("📤 Send Message"):
+                save_customer_feedback(
+                    claim_id=claim_id,
+                    message="PROVIDE_INFO",
+                    additional_info=user_message
+                )
+
+                st.success("📨 Your message has been sent to the insurance team.")
