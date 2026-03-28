@@ -8,7 +8,7 @@ import streamlit as st
 import sqlite3
 import pandas as pd
 
-from src.database.db import save_human_review
+from src.database.db import save_human_review, log_audit_event
 from src.config.config import CONFIGS
 from src.learning.consistency import compute_consistency
 
@@ -93,10 +93,14 @@ st.caption("Audit-ready AI system with human-in-the-loop validation")
 # =========================
 # SELECT CLAIM
 # =========================
-claim = next(c for c in claims if c["doc_id"] == selected_id)
+try:
+    claim = next(c for c in claims if c["doc_id"] == selected_id)
+except StopIteration:
+    st.error("Claim not found")
+    st.stop()
+
 risk = risk_dict.get(selected_id, {})
 review = review_dict.get(selected_id, {})
-
 claim_id = claim.get("claim_id") or claim.get("doc_id")
 
 
@@ -116,7 +120,7 @@ claim_type_options = domain_config.get("claim_types", [])
 
 
 # =========================
-# 📊 SYSTEM OVERVIEW
+# SYSTEM OVERVIEW
 # =========================
 st.subheader("📊 System Overview")
 
@@ -131,7 +135,7 @@ col3.metric("Low Risk", low)
 
 
 # =========================
-# 📄 CLAIM + 🤖 ACTION
+# CLAIM + ACTION
 # =========================
 col1, col2 = st.columns([2, 1])
 
@@ -153,7 +157,7 @@ with col2:
 
 
 # =========================
-# 🖥️ SYSTEM TABS
+# SYSTEM TABS
 # =========================
 st.markdown("---")
 st.header("🖥️ System Components")
@@ -168,42 +172,161 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
 
 
 # =========================
-# 🧾 AUDIT TRAIL TAB (NEW 🔥)
+# AI RISK
 # =========================
-with tab5:
-    colA, colB = st.columns([1, 2])
+with tab1:
+    st.subheader("AI Risk")
+
+    st.write(f"Risk Level: {risk.get('risk_level')}")
+    st.write(f"Risk Score: {risk.get('risk_score')}")
+
+    reasons = risk.get("reasons", [])
+    if reasons:
+        for r in reasons:
+            st.warning(r)
+    else:
+        st.success("No issues detected")
+
+
+# =========================
+# AI STABILITY
+# =========================
+with tab2:
+    st.subheader("AI Stability")
+
+    percent = int(consistency_score * 100)
+    st.metric("Consistency Score", f"{percent}%")
+
+    if percent >= 80:
+        st.success("Stable: AI outputs are consistent")
+    elif percent >= 50:
+        st.warning("Moderate: Some variation detected")
+    else:
+        st.error("Unstable: AI outputs are inconsistent")
+
+    colA, colB = st.columns(2)
 
     with colA:
-        st.subheader("Description")
-        st.info("""
-Tracks all actions and decisions in the system.
-
-👉 Ensures full transparency and traceability for audits.
-""")
+        st.write("Original")
+        st.json(claim)
 
     with colB:
-        st.subheader("Result")
+        st.write("Stable Output")
+        st.json(stable_output)
 
-        conn = sqlite3.connect("claims.db")
 
-        try:
-            df = pd.read_sql_query(
-                f"""
-                SELECT claim_id, actor, action, details, timestamp
-                FROM audit_logs
-                WHERE claim_id = '{claim_id}'
-                ORDER BY timestamp DESC
-                """,
-                conn
+# =========================
+# VALIDATION
+# =========================
+with tab3:
+    st.subheader("Business Validation")
+
+    issues = review.get("issues", [])
+
+    if issues:
+        for issue in issues:
+            st.warning(issue)
+    else:
+        st.success("All rules satisfied")
+
+
+# =========================
+# HUMAN REVIEW (🔥 FIXED WITH AUDIT)
+# =========================
+with tab4:
+    st.subheader("Human Review")
+
+    colA, colB, colC, colD = st.columns(4)
+
+    # APPROVE
+    if colA.button("✅ Approve", key="approve_btn"):
+        save_human_review(claim_id, "approve")
+        log_audit_event(claim_id, "reviewer", "approve", "Claim approved")
+        st.success("Approved")
+
+    # REJECT
+    if colB.button("❌ Reject", key="reject_btn"):
+        save_human_review(claim_id, "reject")
+        log_audit_event(claim_id, "reviewer", "reject", "Claim rejected")
+        st.error("Rejected")
+
+    # CORRECT
+    if colC.button("✏️ Correct", key="correct_btn"):
+        st.session_state["show_correct"] = True
+
+    if st.session_state.get("show_correct"):
+        new_amount = st.number_input("New Amount", value=safe_int(claim.get("amount")))
+
+        if st.button("💾 Save Correction"):
+            save_human_review(
+                claim_id,
+                "correct",
+                corrected_fields={"amount": new_amount},
+                reviewer_note="Manual correction"
             )
 
-            if not df.empty:
-                st.dataframe(df)
-            else:
-                st.info("No audit history yet")
+            log_audit_event(
+                claim_id,
+                "reviewer",
+                "correct",
+                f"Amount changed to {new_amount}"
+            )
 
-        except Exception as e:
-            st.error("Audit table not found. Make sure it is created.")
+            st.success("Correction saved")
 
-        finally:
-            conn.close()
+    # REQUEST INFO
+    if colD.button("📩 Request Info", key="request_btn"):
+        st.session_state["show_request"] = True
+
+    if st.session_state.get("show_request"):
+        msg = st.text_area("Message")
+
+        if st.button("📤 Send Request"):
+            save_human_review(claim_id, "request_info")
+
+            log_audit_event(
+                claim_id,
+                "reviewer",
+                "request_info",
+                msg
+            )
+
+            st.success("Request sent")
+
+
+# =========================
+# AUDIT TRAIL
+# =========================
+with tab5:
+    st.subheader("Audit Trail")
+
+    conn = sqlite3.connect("claims.db")
+
+    # ensure table exists
+    conn.execute("""
+    CREATE TABLE IF NOT EXISTS audit_logs (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        claim_id TEXT,
+        actor TEXT,
+        action TEXT,
+        details TEXT,
+        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
+    """)
+
+    df = pd.read_sql_query(
+        f"""
+        SELECT claim_id, actor, action, details, timestamp
+        FROM audit_logs
+        WHERE claim_id = '{claim_id}'
+        ORDER BY timestamp DESC
+        """,
+        conn
+    )
+
+    conn.close()
+
+    if not df.empty:
+        st.dataframe(df)
+    else:
+        st.info("No audit history yet — perform an action first")
