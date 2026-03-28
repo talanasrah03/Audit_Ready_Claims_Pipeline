@@ -1,24 +1,49 @@
 """
 Streamlit Dashboard for AI Claims Processing Pipeline
-
-This interface allows:
-- Viewing claims
-- Inspecting risk scores
-- Reviewing issues
-- Performing human actions (approve / reject / correct / request info)
 """
 
 import json
+import random
 import streamlit as st
+import sqlite3
+import pandas as pd
+
 from src.database.db import save_human_review
 from src.config.config import CONFIGS
+from src.learning.consistency import compute_consistency
 
 
 # =========================
-# PAGE CONFIGURATION
+# PAGE CONFIG
 # =========================
 st.set_page_config(page_title="AI Claims Pipeline", layout="wide")
-st.title("AI Claims Processing Dashboard")
+
+
+# =========================
+# HELPERS
+# =========================
+def safe_int(value, default=0):
+    try:
+        return int(float(value))
+    except:
+        return default
+
+
+def simulate_ai_outputs(base_claim):
+    outputs = []
+    base_amount = safe_int(base_claim.get("amount"), 0)
+
+    for _ in range(3):
+        noisy = base_claim.copy()
+
+        if random.random() < 0.3:
+            noisy["amount"] = base_amount + random.randint(-50, 50)
+        else:
+            noisy["amount"] = base_amount
+
+        outputs.append(noisy)
+
+    return outputs
 
 
 # =========================
@@ -35,249 +60,150 @@ with open("data/processed/human_review_queue.json") as f:
 
 
 # =========================
-# PREPARE LOOKUPS
+# PREPARE DATA
 # =========================
+claim_ids = [c["doc_id"] for c in claims]
 risk_dict = {r["doc_id"]: r for r in risks}
 review_dict = {r["doc_id"]: r for r in review_data}
 
 
 # =========================
+# SIDEBAR
+# =========================
+st.sidebar.title("📊 Navigation")
+selected_id = st.sidebar.selectbox("Select Claim", claim_ids)
+
+
+# =========================
+# RESET STATE
+# =========================
+if st.session_state.get("last") != selected_id:
+    st.session_state["show_correct"] = False
+    st.session_state["show_request"] = False
+    st.session_state["last"] = selected_id
+
+
+# =========================
+# TITLE
+# =========================
+st.title("🚨 AI Claims Processing Dashboard")
+st.caption("Audit-ready AI system with human-in-the-loop validation")
+
+
+# =========================
 # SELECT CLAIM
 # =========================
-claim_ids = [c["doc_id"] for c in claims]
-selected_id = st.selectbox("Select a claim", claim_ids)
-
 claim = next(c for c in claims if c["doc_id"] == selected_id)
 risk = risk_dict.get(selected_id, {})
-review = review_dict.get(selected_id)
+review = review_dict.get(selected_id, {})
 
 claim_id = claim.get("claim_id") or claim.get("doc_id")
 
 
 # =========================
-# DOMAIN HANDLING (FIXED 💣)
+# CONSISTENCY
+# =========================
+ai_outputs = simulate_ai_outputs(claim)
+consistency_score, stable_output = compute_consistency(ai_outputs)
+
+
+# =========================
+# DOMAIN
 # =========================
 domain = claim.get("domain", "vehicle")
-
-domain_config = CONFIGS.get(domain)
-
-if not domain_config:
-    domain_config = CONFIGS["vehicle"]
-    st.warning("⚠️ Domain undefined in the system — fallback to 'vehicle'")
-
-
+domain_config = CONFIGS.get(domain, CONFIGS["vehicle"])
 claim_type_options = domain_config.get("claim_types", [])
 
 
 # =========================
-# DISPLAY CLAIM DATA
+# 📊 SYSTEM OVERVIEW
 # =========================
-st.subheader("Extracted Claim Data")
-st.json(claim)
+st.subheader("📊 System Overview")
 
+high = sum(1 for r in risks if r.get("risk_level") == "HIGH")
+low = sum(1 for r in risks if r.get("risk_level") == "LOW")
+total = len(claims)
+
+col1, col2, col3 = st.columns(3)
+col1.metric("Total Claims", total)
+col2.metric("High Risk", high)
+col3.metric("Low Risk", low)
 
 
 # =========================
-# AI RISK ANALYSIS 🧠
+# 📄 CLAIM + 🤖 ACTION
 # =========================
-# =========================
-# AI RISK ANALYSIS 🧠
-# =========================
-st.subheader("🧠 AI Risk Analysis")
+col1, col2 = st.columns([2, 1])
 
-st.write(f"Risk Level: {risk.get('risk_level')}")
-st.write(f"Risk Score: {risk.get('risk_score')}")
+with col1:
+    st.subheader("📄 Claim Data")
+    st.json(claim)
 
-st.write("AI Reasons:")
+with col2:
+    st.subheader("🤖 Recommended Action")
 
-reasons = risk.get("reasons", [])
+    recommended = review.get("recommended_action", "MANUAL_REVIEW")
 
-if reasons:
-    for reason in reasons:
-        st.info(reason)   # 👈 أزرق (AI)
-else:
-    st.success("No AI issues detected")
-# =========================
-# AI EXPLANATION 💣
-# =========================
-st.subheader("🧠 AI Explanation")
-
-if reasons:
-    if "Claim type mismatch" in reasons:
-        st.info(
-            "The AI model detected a mismatch in the claim type compared to expected patterns. "
-            "This may indicate a classification error and requires review."
-        )
-
-    elif "Large amount mismatch" in reasons:
-        st.info(
-            "The predicted claim amount significantly differs from expected values. "
-            "This could indicate extraction inaccuracies."
-        )
-
+    if recommended == "APPROVE":
+        st.success("✅ APPROVE")
+    elif recommended == "REJECT":
+        st.error("❌ REJECT")
     else:
-        st.info(
-            "The AI system detected minor inconsistencies in the claim data that may require attention."
-        )
+        st.warning("⚠️ MANUAL REVIEW")
 
-else:
-    st.success(
-        "The AI model processed this claim successfully without detecting inconsistencies."
-    )
 
 # =========================
-# BUSINESS VALIDATION ⚖️
+# 🖥️ SYSTEM TABS
 # =========================
-st.subheader("⚖️ Business Validation")
+st.markdown("---")
+st.header("🖥️ System Components")
 
-issues = review.get("issues") if review else []
+tab1, tab2, tab3, tab4, tab5 = st.tabs([
+    "🧠 AI Risk",
+    "🔁 AI Stability",
+    "⚖️ Rules & Validation",
+    "👤 Human Review",
+    "🧾 Audit Trail"
+])
 
-if issues:
-    for issue in issues:
-        st.warning(issue)   # 👈 أصفر (business rules)
-else:
-    st.success("No validation issues")
+
 # =========================
-# BUSINESS EXPLANATION 💣
+# 🧾 AUDIT TRAIL TAB (NEW 🔥)
 # =========================
-st.subheader("⚖️ Business Explanation")
+with tab5:
+    colA, colB = st.columns([1, 2])
 
-if issues:
-    if "Amount too high" in issues:
-        st.warning(
-            "The claim amount exceeds the expected range based on business rules. "
-            "This may require additional verification."
-        )
+    with colA:
+        st.subheader("Description")
+        st.info("""
+Tracks all actions and decisions in the system.
 
-    elif "Amount too low" in issues:
-        st.warning(
-            "The claim amount is lower than expected and may be incomplete or incorrect."
-        )
+👉 Ensures full transparency and traceability for audits.
+""")
 
-    else:
-        st.warning(
-            "The claim violates one or more business validation rules and should be reviewed."
-        )
+    with colB:
+        st.subheader("Result")
 
-else:
-    st.success(
-        "The claim complies with all business rules and does not require further validation."
-    )
-# =========================
-# HUMAN REVIEW SECTION
-# =========================
-st.subheader("Human Review")
+        conn = sqlite3.connect("claims.db")
 
-if review:
-    st.write(f"Status: {review.get('status')}")
-    st.write(f"Recommended Action: {review.get('recommended_action')}")
-
-    st.write("Issues:")
-    for issue in review.get("issues", []):
-        st.write(f"- {issue}")
-
-    action = st.selectbox(
-        "Choose Action",
-        ["APPROVE", "REJECT", "CORRECT", "REQUEST_INFO"]
-    )
-
-    # =========================
-    # APPROVE
-    # =========================
-    if action == "APPROVE":
-        if st.button("Confirm Decision"):
-            save_human_review(claim_id, "approve")
-            st.success(f"Claim {selected_id} has been APPROVED")
-
-    # =========================
-    # REJECT
-    # =========================
-    elif action == "REJECT":
-        if st.button("Confirm Decision"):
-            save_human_review(claim_id, "reject")
-            st.error(f"Claim {selected_id} has been REJECTED due to risk")
-
-    # =========================
-    # CORRECT
-    # =========================
-    elif action == "CORRECT":
-        st.warning("Edit claim fields below:")
-
-        new_name = st.text_input("Customer Name", claim.get("customer_name"))
-        new_date = st.text_input("Claim Date", claim.get("claim_date"))
-
-        current_type = claim.get("claim_type")
-        index = (
-            claim_type_options.index(current_type)
-            if current_type in claim_type_options else 0
-        )
-
-        new_type = st.selectbox("Claim Type", claim_type_options, index=index)
-
-        new_amount = st.number_input(
-            "Amount",
-            value=int(claim.get("amount") or 0)
-        )
-
-        if st.button("Save Correction"):
-            corrected_data = {
-                "customer_name": new_name,
-                "claim_date": new_date,
-                "claim_type": new_type,
-                "amount": new_amount,
-                "domain": domain
-            }
-
-            save_human_review(
-                claim_id=claim_id,
-                action="correct",
-                corrected_fields=corrected_data,
-                reviewer_note="Manual correction applied by reviewer"
+        try:
+            df = pd.read_sql_query(
+                f"""
+                SELECT claim_id, actor, action, details, timestamp
+                FROM audit_logs
+                WHERE claim_id = '{claim_id}'
+                ORDER BY timestamp DESC
+                """,
+                conn
             )
 
-            st.success("Claim updated successfully")
-            st.json(corrected_data)
+            if not df.empty:
+                st.dataframe(df)
+            else:
+                st.info("No audit history yet")
 
-    # =========================
-    # REQUEST INFO
-    # =========================
-    elif action == "REQUEST_INFO":
-        st.warning("Request additional information")
+        except Exception as e:
+            st.error("Audit table not found. Make sure it is created.")
 
-        email = st.text_input("Customer Email", "customer@example.com")
-
-        message = st.text_area(
-            "Message",
-            f"""Dear Customer,
-
-We need additional information regarding your claim ({selected_id}).
-
-Please provide supporting documents and clarify the reported issue.
-
-Best regards,
-Insurance Team
-"""
-        )
-
-        if st.button("Send Email"):
-            save_human_review(
-                claim_id=claim_id,
-                action="request_info",
-                reviewer_note=f"Request sent to {email}"
-            )
-
-            st.success(f"Email sent to {email} (simulated)")
-            st.info("Message preview:")
-            st.write(message)
-
-
-# =========================
-# SUMMARY SECTION
-# =========================
-st.subheader("Summary")
-
-high = sum(1 for r in risks if r["risk_level"] == "HIGH")
-low = sum(1 for r in risks if r["risk_level"] == "LOW")
-
-st.write(f"High Risk Claims: {high}")
-st.write(f"Low Risk Claims: {low}")
+        finally:
+            conn.close()
