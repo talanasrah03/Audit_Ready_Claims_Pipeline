@@ -1,22 +1,29 @@
 """
-This script creates a human review queue based on validation results.
+Human review queue module.
+
+Goal:
+Create a list of claims that need manual review after validation.
 
 Context in the project:
-After extracting and validating claims, not all claims can be trusted automatically.
-Some claims contain issues (missing data, invalid values, suspicious amounts).
+After extraction and validation, not all claims can be trusted automatically.
+Some claims contain issues such as:
+- missing fields
+- invalid values
+- suspicious amounts
 
 This file identifies those problematic claims and prepares them for human review.
 
 Main idea:
 - If a claim is valid → it is NOT included here
-- If a claim is invalid → it is added to a review queue
-- Each claim gets:
+- If a claim is invalid → it is added to the review queue
+- Each review item contains:
   - a list of issues
   - a suggested action
-  - a list of possible actions for the reviewer
+  - a list of actions the reviewer can choose from
 
 This simulates a real-world workflow:
-AI does initial processing → humans handle uncertain cases.
+AI does the first screening
+→ humans handle uncertain or problematic cases
 
 Input:
 - data/processed/validated_claims.json
@@ -25,23 +32,27 @@ Output:
 - data/processed/human_review_queue.json
 """
 
-
-import json
+import json   # Used to load validated claims and save the final review queue
 
 
 # =========================
 # LOAD VALIDATED CLAIMS
 # =========================
 """
-Each claim already contains a "validation" field like:
+Goal:
+Load claims that have already been validated by the system.
+
+Each claim contains a structure like:
 
 "validation": {
     "valid": False,
     "issues": ["Missing customer_name", "Amount too high"]
 }
 
-We use this information to decide which claims need human review.
+We use this validation data to decide:
+→ which claims need human intervention
 """
+
 with open("data/processed/validated_claims.json", "r") as f:
     claims = json.load(f)
 
@@ -50,10 +61,17 @@ with open("data/processed/validated_claims.json", "r") as f:
 # HUMAN REVIEW QUEUE
 # =========================
 """
-This list will store only the claims that need human intervention.
+Goal:
+Store only claims that require human review.
 
-Each item in this list represents a "task" for a human reviewer.
+Logic:
+- Each item added to this list becomes one review task
+- Later, this list can be shown in the internal dashboard
+
+Example:
+One entry in review_queue = one claim waiting for human decision
 """
+
 review_queue = []
 
 
@@ -62,72 +80,123 @@ review_queue = []
 # =========================
 def suggest_action(issues):
     """
-    This function determines what action should be suggested to the human reviewer,
-    based on the type of issues detected during validation.
+    Goal:
+    Recommend an action for the human reviewer based on detected issues.
 
-    Input:
-    issues = list of strings describing problems
+    Logic:
+    - Look at the type of issues found during validation
+    - Return the most suitable suggested action
 
     Example:
     ["Missing customer_name", "Amount too high"]
+    → REQUEST_INFO
 
-    Output:
-    A recommended action string
+    Why?
+    Because missing required information usually means
+    the reviewer or customer must provide more data first.
 
-    Possible actions:
-    - APPROVE        → data looks fine
-    - REJECT         → claim is invalid
-    - CORRECT        → fix incorrect values
-    - REQUEST_INFO   → ask user for missing info
-    - REVIEW         → unclear case, manual decision needed
+    Possible outputs:
+    - APPROVE
+    - REJECT
+    - CORRECT
+    - REQUEST_INFO
+    - REVIEW
+    - REVIEW_AMOUNT
+
+    Important:
+    Some outputs are internal recommendations only.
+    For example:
+    REVIEW_AMOUNT means "this looks suspicious and needs financial review",
+    but the final UI may still present only standard actions such as:
+    APPROVE / REJECT / CORRECT / REQUEST_INFO
     """
 
-    # If there are no issues → everything is valid
+    # =========================
+    # NO ISSUES
+    # =========================
+    """
+    If there are no issues:
+    → the claim looks valid
+    → recommended action = APPROVE
+    """
+
     if not issues:
         return "APPROVE"
 
 
-    # Check if ANY issue contains the word "Missing"
+    # =========================
+    # MISSING DATA
+    # =========================
     """
-    any(...) returns True if at least one element satisfies the condition.
+    Goal:
+    Detect missing required information.
+
+    any(...) explanation:
+    any(condition for element in list)
+    → returns True if at least one element matches the condition
 
     Example:
     issues = ["Missing customer_name", "Amount too high"]
 
     any("Missing" in issue for issue in issues)
-    → True (because at least one issue contains "Missing")
+    → True
     """
+
     if any("Missing" in issue for issue in issues):
         return "REQUEST_INFO"
 
 
-    # Check for abnormal amounts
+    # =========================
+    # AMOUNT ANOMALIES
+    # =========================
     """
-    This detects financial anomalies.
+    Goal:
+    Detect suspicious amount-related issues.
 
-    Example issues:
+    Example:
     "Amount too low"
     "Amount too high"
+
+    Why a separate action?
+    Because financial anomalies often deserve special attention.
+
+    Important:
+    REVIEW_AMOUNT is an internal recommendation.
+    It signals that the issue is specifically financial,
+    even if the final UI actions remain more general.
     """
+
     if any("too low" in issue or "too high" in issue for issue in issues):
         return "REVIEW_AMOUNT"
 
 
-    # Check for invalid fields
+    # =========================
+    # INVALID FIELDS
+    # =========================
     """
+    Goal:
+    Detect fields that exist but contain invalid values.
+
     Example:
     "Invalid claim_type"
     "Invalid date format"
+
+    In such cases, the most reasonable next step is often:
+    → CORRECT
     """
+
     if any("Invalid" in issue for issue in issues):
         return "CORRECT"
 
 
-    # Default fallback
+    # =========================
+    # DEFAULT CASE
+    # =========================
     """
-    If none of the above rules match,
-    we send the claim for general review.
+    If no specific rule matches:
+    → use a general manual review recommendation
     """
+
     return "REVIEW"
 
 
@@ -135,49 +204,109 @@ def suggest_action(issues):
 # BUILD REVIEW QUEUE
 # =========================
 """
-We iterate through all claims and select only those that failed validation.
+Goal:
+Select only invalid claims and prepare them for human review.
 
 Process:
-1. Get validation info
-2. Check if claim is valid
-3. If NOT valid → add to review queue
+1. Access validation data
+2. Check whether claim is valid
+3. If invalid → create review task
 """
+
 for claim in claims:
 
-    # Get validation object safely (default empty dict if missing)
+    # =========================
+    # SAFE ACCESS TO VALIDATION
+    # =========================
+    """
+    claim.get("validation", {})
+
+    Logic:
+    - If "validation" exists → return it
+    - If not → return empty dictionary {}
+
+    Why important:
+    This prevents the script from crashing if a claim has no validation field.
+
+    Example:
+    claim = {}
+    → validation = {}
+    """
+
     validation = claim.get("validation", {})
 
-    # Only process claims that are NOT valid
+
+    # =========================
+    # FILTER INVALID CLAIMS
+    # =========================
+    """
+    validation.get("valid")
+
+    Logic:
+    - True  → claim is valid
+    - False → claim is invalid
+    - None  → treated as invalid in this condition
+
+    Important:
+    Missing "valid" field is treated as unsafe,
+    so the claim is sent to review.
+    """
+
     if not validation.get("valid"):
 
-        # Extract issues list
+
+        # =========================
+        # EXTRACT ISSUES
+        # =========================
+        """
+        validation.get("issues", [])
+
+        Logic:
+        - If issues exist → use them
+        - If not → use an empty list
+
+        Why important:
+        This avoids errors if the issues field is missing.
+        """
+
         issues = validation.get("issues", [])
 
-        # Create a review task
+
+        # =========================
+        # CREATE REVIEW TASK
+        # =========================
+        """
+        Goal:
+        Build one review item for the current invalid claim.
+
+        Fields:
+        - doc_id → identifies which claim to review
+        - issues → explains what went wrong
+        - status → initial workflow state
+        - recommended_action → system suggestion
+        - possible_actions → choices available to human reviewer
+
+        Important:
+        recommended_action is guidance from the system.
+        possible_actions are the final actions the reviewer can choose from.
+        These two are related, but not always identical.
+        """
+
         review_queue.append({
 
             # Unique identifier of the claim
             "doc_id": claim["doc_id"],
 
-            # List of issues found during validation
+            # Issues detected during validation
             "issues": issues,
 
-            # Initial status of the review task
+            # Initial review state
             "status": "PENDING_REVIEW",
 
-            # Automatically suggested action based on rules
+            # Suggested action based on validation issues
             "recommended_action": suggest_action(issues),
 
-            # List of all possible actions the human can take
-            """
-            These options will later be used in the UI (app.py).
-
-            Meaning:
-            APPROVE        → accept claim as is
-            REJECT         → discard claim
-            CORRECT        → manually edit fields
-            REQUEST_INFO   → ask customer for more data
-            """
+            # Actions available to the human reviewer
             "possible_actions": [
                 "APPROVE",
                 "REJECT",
@@ -191,10 +320,23 @@ for claim in claims:
 # SAVE REVIEW QUEUE
 # =========================
 """
-We store the review queue as a JSON file.
+Goal:
+Save the review queue to a JSON file.
 
-Each entry represents one claim requiring human decision.
+Why important:
+This file becomes the bridge between:
+- automated validation
+- human decision-making
+
+indent=2:
+→ makes the JSON easier for humans to read
+
+Example:
+{
+  "doc_id": "claim_1"
+}
 """
+
 with open("data/processed/human_review_queue.json", "w") as f:
     json.dump(review_queue, f, indent=2)
 
@@ -203,11 +345,13 @@ with open("data/processed/human_review_queue.json", "w") as f:
 # FINAL OUTPUT
 # =========================
 """
-len(review_queue):
-= number of claims requiring human intervention
+Goal:
+Show how many claims require human review.
 
 Example:
-If 1000 claims total and 150 invalid
-→ review_queue size = 150
+1000 total claims
+150 invalid
+→ 150 review tasks created
 """
+
 print(f"Human review queue created: {len(review_queue)} claims need review")

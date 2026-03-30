@@ -1,9 +1,45 @@
+# =========================
+# DOCKER COMPOSE CONFIG
+# =========================
+# Goal:
+# Define and run services using Docker.
+# This allows running the API in a controlled environment.
+
 services:
+
+  # =========================
+  # API SERVICE
+  # =========================
+  # This service runs the FastAPI backend
+
   api:
+
+    # Build the Docker image from current folder
+    # "." means current directory (must contain Dockerfile)
     build: .
+
+    # Name of the container (for easier debugging)
     container_name: claims_api
+
+    # =========================
+    # PORT MAPPING
+    # =========================
+    # Format: "host_port:container_port"
+    # Access API at http://localhost:8000
     ports:
       - "8000:8000"
+
+    # =========================
+    # VOLUME (IMPORTANT)
+    # =========================
+    # Sync local files with container
+    # "." → your project
+    # "/app" → inside container
     volumes:
       - .:/app
+
+    # =========================
+    # RESTART POLICY
+    # =========================
+    # Always restart container if it stops
     restart: always

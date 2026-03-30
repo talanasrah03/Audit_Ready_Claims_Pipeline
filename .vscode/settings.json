@@ -1,4 +1,76 @@
 {
   "python-envs.defaultEnvManager": "ms-python.python:system",
+  /*
+  Goal:
+  Define which Python environment VS Code should use to run the project.
+
+  Logic:
+  - Use the system Python (installed on your computer)
+  - Do not create or use a virtual environment
+
+  Why this matters:
+  Python projects can run in different environments.
+  If not configured correctly:
+  → dependencies may not work
+  → code may fail to run
+
+  Example:
+  If your system Python is:
+  /usr/bin/python3
+
+  Then VS Code will use this interpreter automatically
+  for running and analyzing your code.
+  */
+
+
   "python.analysis.extraPaths": ["./src"]
+  /*
+  Goal:
+  Help VS Code correctly find and understand your project modules.
+
+  Logic:
+  - Add "./src" as an additional search path
+  - This allows imports like:
+        from src.learning.module import function
+    to work correctly inside the editor
+
+  Problem this solves:
+  Without this setting:
+  → VS Code does not know where "src" is
+  → it shows errors like:
+        "Module not found"
+
+  Example:
+
+  Project structure:
+  project/
+    ├── src/
+    │     ├── learning/
+    │     ├── database/
+    │     └── config/
+    ├── app.py
+
+  Code:
+      from src.learning.correction_memory import get_pattern_summary
+
+  Without this setting:
+      ❌ Import error
+
+  With this setting:
+      ✅ Import works correctly (VS Code understands it)
+
+  Important note:
+  This setting ONLY affects VS Code (editor behavior):
+  - autocomplete
+  - linting
+  - error highlighting
+
+  It does NOT affect actual execution.
+
+  For runtime execution:
+  You must still define:
+      export PYTHONPATH=$(pwd)
+
+  This ensures Python itself can locate the "src" folder.
+  */
 }
