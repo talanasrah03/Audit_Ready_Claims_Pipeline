@@ -16,8 +16,7 @@ COPY . .
 # =========================
 # INSTALL DEPENDENCIES
 # =========================
-RUN pip install --no-cache-dir fastapi uvicorn
-
+RUN pip install --no-cache-dir fastapi uvicorn openai
 # =========================
 # EXPOSE PORT
 # =========================

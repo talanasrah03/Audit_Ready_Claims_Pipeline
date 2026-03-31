@@ -2,17 +2,17 @@
 
 ## Overview
 
-This project simulates a real-world, production-oriented insurance claims processing system powered by AI, with a strong focus on auditability, human-in-the-loop decision making, and structured data extraction.
+This project simulates a real-world, production-oriented insurance claims processing system powered by AI, with a strong focus on **auditability**, **human-in-the-loop decision making**, and **structured data extraction**.
 
 The system takes messy, unstructured insurance claim inputs and transforms them into validated, risk-scored, and reviewable outputs through a multi-stage pipeline. It is designed to reflect how modern AI systems should be built in business environments: not as black boxes, but as controlled systems with validation, explainability, traceability, and escalation paths for uncertain cases.
 
 The project reflects key principles of AI-driven claims automation systems:
 
-- Structured and reliable data extraction
-- Transparent validation and scoring
-- Human oversight for uncertain cases
-- End-to-end traceability
-- Continuous improvement through human feedback
+- Structured and reliable data extraction  
+- Transparent validation and scoring  
+- Human oversight for uncertain cases  
+- End-to-end traceability  
+- Continuous improvement through human feedback  
 
 This approach aligns closely with the type of system design used by companies such as Lynxia, where automation is combined with control, explainability, and flexibility.
 
@@ -20,13 +20,13 @@ This approach aligns closely with the type of system design used by companies su
 
 This project demonstrates how AI can be used to:
 
-- Extract structured data from unstructured claim text
-- Validate outputs using domain-specific rules
-- Detect inconsistencies and assign risk levels
-- Learn from past human corrections through a rule-based memory layer
-- Route uncertain cases to human review
-- Provide interfaces for both internal teams and customers
-- Ensure auditability of important actions and outcomes
+- Extract structured data from unstructured claim text  
+- Validate outputs using domain-specific rules  
+- Detect inconsistencies and assign risk levels  
+- Learn from past human corrections through a rule-based memory layer  
+- Route uncertain cases to human review  
+- Provide interfaces for both internal teams and customers  
+- Ensure full auditability of every important action  
 
 ## Why This Project
 
@@ -34,29 +34,29 @@ This system simulates a production-oriented AI claims pipeline.
 
 Instead of trusting AI outputs blindly, it introduces multiple control layers:
 
-- Multi-layer validation
-- Explainable risk scoring
-- Human-in-the-loop workflows
-- Audit logging and traceability
-- Learning from human corrections
+- Multi-layer validation  
+- Explainable risk scoring  
+- Human-in-the-loop workflows  
+- Audit logging and traceability  
+- Learning from human corrections  
 
-This reflects how real AI systems are deployed in operational environments, where accuracy, explainability, control, and accountability matter as much as automation.
+This reflects how real AI systems are deployed in operational environments, where **accuracy, explainability, control, and accountability** matter as much as automation.
 
 ## Core Features
 
-- Synthetic data generation to create realistic messy claim inputs and exact ground truth labels
-- Three extraction versions (V1, V2, V3) showing the evolution of prompt design and pipeline maturity
-- Safe-mode cleaning to standardize critical fields without corrupting the original meaning
-- Evaluation module to compare predictions against ground truth and compute accuracy
-- RAG-style validation using business rules and learned correction patterns
-- Consistency analysis to measure AI output stability across repeated runs
-- Explainable risk scoring with numeric scores, levels, and reasons
-- Human review queue with recommended reviewer actions
-- Internal dashboard for inspection, correction, and audit tracking
-- Customer portal for claim lookup, status checking, and feedback
-- SQLite persistence layer for claims, AI results, reviews, customer feedback, and audit logs
-- FastAPI service for claim processing and structured responses
-- Dockerized backend for reproducible setup
+- **Synthetic data generation** to create realistic messy claim inputs and exact ground-truth labels  
+- **Three extraction versions (V1, V2, V3)** showing the evolution of prompt design and pipeline maturity  
+- **Safe-mode cleaning** to standardize critical fields without corrupting the original meaning  
+- **Evaluation module** to compare predictions against ground truth and compute accuracy  
+- **RAG-style validation** using business rules and learned correction patterns  
+- **Consistency analysis** to measure AI output stability across repeated runs  
+- **Explainable risk scoring** with numeric scores, levels, and reasons  
+- **Human review queue** with recommended reviewer actions  
+- **Internal dashboard** for inspection, correction, and audit tracking  
+- **Customer portal** for claim lookup, status checking, and feedback  
+- **SQLite persistence layer** for claims, AI results, reviews, customer feedback, and audit logs  
+- **FastAPI service** for claim processing and structured responses  
+- **Dockerized backend** for reproducible setup  
 
 ## System Architecture
 
@@ -67,17 +67,15 @@ The pipeline consists of the following stages:
 This stage creates synthetic but realistic claim data for the rest of the pipeline.
 
 Outputs:
-- Messy, human-like raw claim text
-- Clean ground truth values for evaluation
-
-### 2. AI Extraction (V1 -> V3)
+- Messy, human-like raw claim text  
+- Clean ground-truth values for evaluation  
 
 The extraction layer uses an LLM to convert raw claim text into structured JSON.
 
 Versions:
-- V1: basic extraction with simple prompting
-- V2: stricter prompt, recovery logic, and controlled noise simulation
-- V3: balanced extraction for full-dataset processing, progress tracking, and rate-limit safety
+- **V1**: basic extraction with simple prompting  
+- **V2**: stricter prompt, recovery logic, and controlled noise simulation  
+- **V3**: balanced extraction for full-dataset processing, progress tracking, and rate-limit safety  
 
 Extracted fields:
 - `claim_id`
@@ -87,114 +85,113 @@ Extracted fields:
 - `amount`
 
 ### 3. Data Cleaning (SAFE MODE)
-
 This stage lightly standardizes extracted data, mainly the `amount` field, while preserving the rest of the information as-is.
 
 Goals:
-- Minimize transformation
-- Preserve original meaning
-- Avoid aggressive normalization
+- Minimize transformation  
+- Preserve original meaning  
+- Avoid aggressive normalization  
 
 ### 4. Evaluation
 
 This stage compares cleaned predictions against ground truth.
 
 It provides:
-- Field-level accuracy
-- Overall accuracy
-- Detailed mismatch logs for debugging
+- Field-level accuracy  
+- Overall accuracy  
+- Detailed mismatch logs for debugging  
 
 ### 5. Validation (RAG-Style + Learning)
 
 This layer validates claims using a combination of:
-- Domain-based rules
-- Logical checks
-- Learned correction patterns from past human feedback
+- Domain-based rules  
+- Logical checks  
+- Learned correction patterns from past human feedback  
 
 Checks include:
-- Missing fields
-- Amount ranges
-- Date format and future dates
-- Domain consistency
-- Learned instability signals
+- Missing fields  
+- Amount ranges  
+- Date format and future dates  
+- Domain consistency  
+- Learned instability signals  
 
 Outputs:
-- Valid / invalid status
-- Issues list
-- Severity level
+- Valid / invalid status  
+- Issues list  
+- Severity level  
 
 ### 6. Consistency Analysis (AI Stability)
 
 This module measures how stable AI outputs are across repeated runs on the same claim.
 
 Outputs:
-- Consistency score
-- Most stable output
+- Consistency score  
+- Most stable output  
 
 ### 7. Risk Scoring
 
 This stage assigns a numeric risk score and a categorical risk level.
 
 Risk is based on:
-- Missing data
-- Value mismatches
-- Type mismatches
-- Learned instability patterns
+- Missing data  
+- Value mismatches  
+- Type mismatches  
+- Learned instability patterns  
 
 Outputs:
-- Risk score
-- Risk level (`LOW`, `MEDIUM`, `HIGH`)
-- Explainable reasons
+- Risk score  
+- Risk level (`LOW`, `MEDIUM`, `HIGH`)  
+- Explainable reasons  
 
 ### 8. Human Review Queue
 
 Invalid or uncertain claims are routed into a review queue for manual handling.
 
 Each review item contains:
-- Validation issues
-- Recommended action
-- Available reviewer actions
+- Validation issues  
+- Recommended action  
+- Available reviewer actions  
 
 ### 9. Database and Audit System
 
 The SQLite database stores:
-- Claims
-- AI results
-- Human reviews
-- Customer feedback
-- Audit logs
+- Claims  
+- AI results  
+- Human reviews  
+- Customer feedback  
+- Audit logs  
 
-This ensures that important decisions and actions are traceable.
+This ensures that all important decisions and actions are traceable.
 
 ### 10. Interfaces
 
 **Internal Dashboard**
-- Claim inspection
-- Risk analysis
-- Stability analysis
-- Human review actions
-- Audit trail display
+- Claim inspection  
+- Risk analysis  
+- Stability analysis  
+- Human review actions  
+- Audit trail display  
 
 **Customer Portal**
-- Claim lookup
-- Status tracking
-- Confirmation / dispute / additional info submission
+- Claim lookup  
+- Status tracking  
+- Confirmation / dispute / additional info submission  
 
 ### 11. API Layer (FastAPI)
 
 The API exposes claim-processing functionality and returns:
-- Validation results
-- Severity
-- Confidence
-- Instability flags
-- Explanations
+- Validation results  
+- Severity  
+- Confidence  
+- Instability flags  
+- Explanations  
 
 ### 12. Containerization (Docker)
 
 The backend API is dockerized for:
-- Reproducible setup
-- Easier deployment
-- Environment consistency
+- Reproducible setup  
+- Easier deployment  
+- Environment consistency  
 
 ## Project Structure
 
@@ -296,25 +293,22 @@ Exposes the claim-processing API and combines validation, confidence, instabilit
 Internal Streamlit dashboard for reviewers, risk inspection, stability inspection, human actions, and audit trail display.
 
 ### `customer_app.py`
-Customer-facing portal to search a claim, view status, and send feedback.
+Customer-facing portal to search a claim, view live status, see corrected live claim values, and send feedback.
 
 ## Running the Project
 
 ### Recommended execution flow
-
 The project is best understood and tested in this order:
 
-1. Start the backend service
-2. Open a shell inside the running container
-3. Set environment variables
-4. Generate synthetic claims
-5. Run extraction
-6. Clean outputs
-7. Evaluate accuracy
-8. Validate claims
-9. Score risks
-10. Build the human review queue
-11. Open the interfaces
+1. Start the backend service  
+2. Generate synthetic claims  
+3. Run extraction  
+4. Clean outputs  
+5. Evaluate accuracy  
+6. Validate claims  
+7. Score risks  
+8. Build the human review queue  
+9. Open the interfaces  
 
 ## Running the Project (Dockerized Backend)
 
@@ -324,16 +318,14 @@ The project is best understood and tested in this order:
 docker-compose up --build
 ```
 
-What it does:
-Builds the Docker image and starts the FastAPI backend service.
+What it does: builds the Docker image and starts the FastAPI backend container.
 
 ### 2. Access the API
 
 - API root: `http://localhost:8000`
 - Swagger docs: `http://localhost:8000/docs`
 
-What it does:
-Lets you verify that the backend is running and test endpoints directly in the browser.
+What it does: verifies that the backend is running and lets you test endpoints.
 
 ### 3. Open a shell inside the running container
 
@@ -347,156 +339,154 @@ If that does not work, use:
 docker exec -it claims_api bash
 ```
 
-What it does:
-Opens an interactive shell inside the backend container so pipeline commands run in the same Docker environment as the API.
+What it does: opens an interactive shell inside the backend container so pipeline commands run in the Dockerized environment.
+
+### 4. Set Python path inside the container
+
+```bash
+export PYTHONPATH=/app
+```
+
+What it does: allows Python to resolve imports from the `src` package correctly.
 
 ## Run the Full Pipeline (inside the container)
 
-### 4. Set the Python path
-
-```bash
-export PYTHONPATH=/app
-```
-
-What it does:
-Ensures Python can correctly resolve imports from the `src` package.
-
-### 5. Set the OpenAI API key
-
-```bash
-export OPENAI_API_KEY="your_actual_openai_key_here"
-```
-
-What it does:
-Allows the extraction scripts to call the OpenAI API.
-
-### 6. Generate synthetic claims
+### 5. Generate synthetic claims
 
 ```bash
 python src/generate_fake_claims.py
 ```
 
-What it does:
-Creates raw messy claims and matching ground truth labels.
+What it does: creates raw messy claims and matching ground-truth labels.
 
-### 7. Run extraction (recommended version)
+### 6. Run extraction
 
 ```bash
 python src/extract_claims_v3.py
 ```
 
-What it does:
-Processes the raw claims using the V3 extraction prompt and writes structured outputs.
+What it does: extracts structured claim data using the V3 extraction prompt.
 
-### 8. Clean extracted data
+### 7. Clean extracted data
 
 ```bash
 python src/clean_and_validate.py
 ```
 
-What it does:
-Standardizes the `amount` field in safe mode and produces cleaned claims for downstream steps.
+What it does: normalizes extracted values safely and writes cleaned claims.
 
-### 9. Evaluate extraction accuracy
+### 8. Evaluate extraction quality
 
 ```bash
 python src/evaluate.py
 ```
 
-What it does:
-Compares cleaned claims to ground truth and saves detailed mismatch information.
+What it does: compares extracted claims against ground truth and saves mismatch results.
 
-### 10. Run validation
+### 9. Run validation
 
 ```bash
 python src/rag_validation.py
 ```
 
-What it does:
-Applies rule-based and learning-based validation checks and stores the validation results.
+What it does: applies rule-based and learning-based validation checks.
 
-### 11. Compute risk scores
+### 10. Compute risk scores
 
 ```bash
 python src/risk_scoring.py
 ```
 
-What it does:
-Assigns risk scores, risk levels, and explanations for each claim.
+What it does: assigns risk scores, risk levels, and reasons.
 
-### 12. Generate human review queue
+### 11. Generate human review queue
 
 ```bash
 python src/human_review.py
 ```
 
-What it does:
-Creates a review queue for invalid, risky, or uncertain claims and recommends reviewer actions.
-
-## Full Docker Pipeline Commands
-
-```bash
-docker-compose up --build
-```
-
-In a second terminal:
-
-```bash
-docker-compose exec api bash
-export PYTHONPATH=/app
-export OPENAI_API_KEY="your_actual_openai_key_here"
-
-python src/generate_fake_claims.py
-python src/extract_claims_v3.py
-python src/clean_and_validate.py
-python src/evaluate.py
-python src/rag_validation.py
-python src/risk_scoring.py
-python src/human_review.py
-```
-
-Then open:
-
-- `http://localhost:8000/docs`
+What it does: creates the reviewer queue and recommended actions.
 
 ## Running the Interfaces
 
-These Streamlit apps are usually run outside Docker unless they are explicitly containerized too.
+Run these from the **project root on your host machine**, not inside the container, unless you explicitly containerized Streamlit too.
 
-### Internal Dashboard
+### 12. Set Python path on the host
+
+```bash
+export PYTHONPATH=$(pwd)
+```
+
+What it does: allows `app.py` and `customer_app.py` to import from `src`.
+
+### 13. Run the internal dashboard
 
 ```bash
 streamlit run app.py
 ```
 
-What it does:
-Opens the internal dashboard for reviewers to inspect claims, risk, validation, review actions, and audit-related information.
+What it does: opens the internal reviewer dashboard for claim review, risk, stability, corrections, customer feedback, and audit history.
 
-### Customer Portal
+### 14. Run the customer portal in a second terminal
 
 ```bash
 streamlit run customer_app.py
 ```
 
-What it does:
-Opens the customer-facing portal for claim lookup, status tracking, and feedback submission.
+What it does: opens the customer-facing portal for live claim lookup, status tracking, corrected-claim display, and customer feedback.
+
+## How to Test the Reviewer/Customer Sync
+
+### Test 1 — Customer to reviewer
+
+1. Open `customer_app.py`
+2. Search a claim
+3. Click **Provide Info**
+4. Send a message
+5. Open `app.py`
+6. Refresh live data
+7. Go to **Human Review**
+8. Confirm the customer feedback appears
+
+### Test 2 — Reviewer to customer
+
+1. Open `app.py`
+2. Select the same claim
+3. Click **Approve**, **Reject**, **Request Info**, or **Correct**
+4. Open `customer_app.py`
+5. Refresh live data
+6. Confirm the live status and latest reviewer update appear
+
+### Test 3 — Correction logic
+
+1. In `app.py`, click **Correct**
+2. Change only one field, for example `amount`
+3. Save correction
+4. Confirm in `app.py` that **Latest Change** shows only that field
+5. Confirm in `customer_app.py` that the customer sees the corrected live claim and the update notification mentions only that changed field
+
+## Important Note
+
+If you tested older correction logic before these changes, old rows in `claims.db` may still affect the results.
+
+In that case, clean the old `human_reviews` test rows before retesting.
 
 ## How to Test the System
 
 After running the pipeline, verify the following:
 
-1. `raw_claims/raw_claims.json` exists and contains messy claim text
-2. `ground_truth/ground_truth.json` exists and contains clean reference labels
-3. `data/processed/extracted_claims_v3.json` is created after extraction
-4. `data/processed/cleaned_claims.json` is created after cleaning
-5. `data/processed/errors.json` is created after evaluation
-6. `data/processed/validated_claims.json` is created after validation
-7. `data/processed/risk_scores.json` is created after risk scoring
-8. `data/processed/human_review_queue.json` is created after review queue generation
-9. `claims.db` contains records for claims, AI results, reviews, customer feedback, and audit logs
-10. `http://localhost:8000/docs` opens successfully
-11. The internal dashboard loads claims and system components
-12. The customer portal allows claim lookup and feedback submission
+1. `data/raw_claims/raw_claims.json` exists and contains messy claim text  
+2. `data/ground_truth/ground_truth.json` exists and contains clean reference labels  
+3. `data/processed/extracted_claims_v3.json` is created after extraction  
+4. `data/processed/cleaned_claims.json` is created after cleaning  
+5. `data/processed/errors.json` is created after evaluation  
+6. `data/processed/validated_claims.json` is created after validation  
+7. `data/processed/risk_scores.json` is created after risk scoring  
+8. `data/processed/human_review_queue.json` is created after review queue generation  
+9. `claims.db` contains records for claims, AI results, reviews, customer feedback, and audit logs  
+10. `http://localhost:8000/docs` opens successfully  
+11. The internal dashboard loads claims and system components  
+12. The customer portal allows claim lookup and feedback submission  
 
 ## Example Test Scenarios
 
@@ -507,19 +497,20 @@ Open `http://localhost:8000/docs` and test the available endpoints with sample p
 ### Dashboard test
 
 Open the internal dashboard and verify that:
-- claim selection works
-- risk information appears
-- validation information appears
-- human review actions are available
-- audit-related information is visible where implemented
+- claim selection works  
+- risk information appears  
+- stability information appears  
+- human actions can be triggered  
+- audit history is visible after actions  
 
 ### Customer portal test
 
 Open the customer portal and verify that:
-- a valid claim ID can be searched
-- claim details appear
-- status is shown
-- feedback actions store customer responses
+- a valid claim ID can be searched  
+- claim details appear  
+- live status is shown  
+- corrected claim data appears after reviewer updates  
+- feedback actions store customer responses  
 
 ## Expected Output Files
 
@@ -563,36 +554,34 @@ Claims are prioritized using explainable risk scoring so critical cases can be r
 
 ### Dockerized Backend
 
-The backend is containerized for reproducibility and easier setup across environments.
-
 ## Technologies Used
 
-- Python
-- FastAPI
-- Streamlit
-- SQLite
-- Docker / Docker Compose
-- OpenAI API
+- Python  
+- FastAPI  
+- Streamlit  
+- SQLite  
+- Docker / Docker Compose  
+- OpenAI API  
 
 ## Limitations
 
-- Simplified amount normalization
-- Fixed thresholds for some validation and risk rules
-- Rule-based learning instead of machine learning
-- No authentication or role-based access control
-- Synthetic data instead of real claim documents
-- No OCR or PDF ingestion in the current version
-- Streamlit apps are not containerized in the current setup
+- Simplified amount normalization  
+- Fixed thresholds for some validation and risk rules  
+- Rule-based learning instead of machine learning  
+- No authentication or role-based access control  
+- Synthetic data instead of real claim documents  
+- No OCR or PDF ingestion in the current version  
+- Streamlit apps are not containerized in the current setup  
 
 ## Possible Improvements
 
-- Add OCR and PDF ingestion
-- Improve numeric parsing for currencies and decimals
-- Add authentication and role management
-- Containerize the Streamlit interfaces as well
-- Replace some rule-based logic with learned models
-- Add automated tests
-- Deploy the system to a cloud environment
+- Add OCR and PDF ingestion  
+- Improve numeric parsing for currencies and decimals  
+- Add authentication and role management  
+- Containerize the Streamlit interfaces as well  
+- Replace some rule-based logic with learned models  
+- Add automated tests  
+- Deploy the system to a cloud environment  
 
 ## License
 

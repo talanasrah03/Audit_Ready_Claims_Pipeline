@@ -12,42 +12,50 @@ What this script does:
 - Applies validation rules
 - Detects issues (missing data, invalid values, anomalies)
 - Uses past human feedback to adjust validation
-- Assigns severity level
-- Saves results (file + database)
+- Assigns a severity level
+- Saves results both to a file and to the database
 
 Important concept:
-This is NOT real RAG (Retrieval-Augmented Generation),
-but a "RAG-style" system:
-→ rules + memory + structured validation
+This is NOT real RAG (Retrieval-Augmented Generation).
 
-Example:
-If amount is outside expected range:
-→ "Amount too high" issue is added
+Why it is called "RAG-style":
+- the system uses external structured knowledge
+- that knowledge comes from domain rules and stored correction patterns
+- validation decisions are guided by those external sources
+
+So the idea is similar to RAG in spirit:
+→ the model output is checked using additional retrieved knowledge
+But here the retrieved knowledge is:
+- configuration rules
+- correction memory
+rather than documents or vector search.
 """
 
 import json   # Used to read and write structured data in JSON format
-from datetime import datetime   # Used to parse and validate date values
+from datetime import datetime   # Used to parse and validate claim dates
 from src.database.db import insert_claim, save_ai_result   # Used to store validated claims and AI results in the database
 from src.config.config import CONFIGS   # Contains domain-specific validation rules and configurations
 from src.learning.correction_memory import get_pattern_summary   # Retrieves learned patterns from past human corrections
+
 
 # =========================
 # LOAD DATA
 # =========================
 """
 Goal:
-Load cleaned claims (output from previous step).
+Load cleaned claims produced by the previous pipeline step.
 
 Logic:
-- Read JSON file
-- Convert into Python list
+- Open the cleaned JSON file
+- Convert it into a Python list of claim dictionaries
 
 Example:
 claims = [
-    {"amount": 5000, "claim_type": "..."},
+    {"amount": 5000, "claim_type": "Vehicle Theft"},
     ...
 ]
 """
+
 with open("data/processed/cleaned_claims.json", "r") as f:
     claims = json.load(f)
 
@@ -60,16 +68,20 @@ Goal:
 Retrieve learned patterns from past human corrections.
 
 Logic:
-get_pattern_summary() returns something like:
+get_pattern_summary() returns a dictionary such as:
 {
     "amount_corrections": 8,
     "type_corrections": 3
 }
 
 Meaning:
-- amount corrected often → unstable field
-- type corrected often → unreliable field
+- amount has often been corrected by humans
+- claim_type has also been corrected, but less often
+
+Why important:
+These values help the system detect instability in certain fields.
 """
+
 patterns = get_pattern_summary()
 
 
@@ -79,17 +91,17 @@ patterns = get_pattern_summary()
 def get_rule(claim_type, rules):
     """
     Goal:
-    Find the rule corresponding to a claim type.
+    Find the validation rule corresponding to the current claim type.
 
     Logic:
-    - Loop through all rules
-    - Return the matching one
+    - Loop through all rules for the domain
+    - Return the rule whose claim_type matches
 
     Example:
     claim_type = "Vehicle Theft"
-    → returns rule with min/max amounts
+    → returns the rule containing its min_amount and max_amount
 
-    If not found:
+    If no rule matches:
     → return None
     """
 
@@ -105,12 +117,14 @@ def get_rule(claim_type, rules):
 # =========================
 """
 Goal:
-Validate each claim.
+Validate each cleaned claim.
 
 Logic:
 - Loop through all claims
-- Apply validation rules
-- Store results
+- Apply rule-based checks
+- Apply learning-based checks
+- Build final validation result
+- Save result for later steps
 """
 
 validated_claims = []
@@ -121,15 +135,21 @@ for claim in claims:
     # EXTRACT FIELDS SAFELY
     # =========================
     """
-    .get() is used instead of direct access.
+    Goal:
+    Read relevant claim fields safely.
 
-    Why?
-    → prevents crashes if field is missing
+    Logic:
+    .get("field") means:
+    - return the field value if it exists
+    - return None if it does not exist
+
+    Why important:
+    This avoids crashes when a field is missing.
 
     Example:
     claim = {}
     claim.get("amount") → None
-    claim["amount"] → ❌ error
+    claim["amount"] → would raise an error
     """
 
     claim_type = claim.get("claim_type")
@@ -144,14 +164,15 @@ for claim in claims:
     # =========================
     """
     Goal:
-    Select correct validation rules based on domain.
+    Select the correct validation rules based on domain.
 
     Logic:
-    - If domain exists → use it
+    - If domain exists in CONFIGS → use that domain configuration
     - If not → fallback to "vehicle"
+    - Add a warning because the domain was unknown
 
     Why important:
-    Prevents system crash when unknown domain appears
+    This prevents the system from crashing when an unexpected domain appears.
     """
 
     if domain not in CONFIGS:
@@ -167,6 +188,15 @@ for claim in claims:
     # =========================
     # INITIAL VALIDATION OBJECT
     # =========================
+    """
+    Goal:
+    Start a validation record for the current claim.
+
+    Logic:
+    - Assume the claim is valid at the beginning
+    - Add issues later if problems are found
+    """
+
     validation = {
         "doc_id": claim["doc_id"],
         "valid": True,
@@ -185,10 +215,22 @@ for claim in claims:
     # -------------------------
     """
     Goal:
-    Ensure required fields exist.
+    Ensure required fields are present.
 
     Logic:
-    If field is missing → mark invalid
+    - If a field is missing or empty-like → mark the claim invalid
+    - Add an issue explaining what is missing
+
+    Important:
+    `if not amount:` treats values like:
+    - None
+    - ""
+    - 0
+
+    as missing.
+
+    In this project, amount = 0 is unlikely to be realistic,
+    so this behavior is acceptable.
     """
 
     if not claim_type:
@@ -213,17 +255,25 @@ for claim in claims:
     # -------------------------
     """
     Goal:
-    Validate amount against business rules.
+    Validate the amount against domain-specific business rules.
 
     Logic:
-    - Get rule for claim_type
-    - Compare amount with min/max
+    - Find the rule matching the claim_type
+    - Compare amount with min_amount and max_amount
 
     Example:
     min = 500, max = 50000
 
-    amount = 100 → "too low"
-    amount = 100000 → "too high"
+    amount = 100 → "Amount too low"
+    amount = 100000 → "Amount too high"
+
+    Important:
+    This check runs only if:
+    - a matching rule exists
+    - amount is truthy
+
+    So if amount is None, empty, or 0,
+    this block is skipped.
     """
 
     rule = get_rule(claim_type, rules)
@@ -243,14 +293,16 @@ for claim in claims:
     # -------------------------
     """
     Goal:
-    Ensure date is valid and realistic.
+    Ensure the claim date is valid and realistic.
 
     Logic:
-    - Parse date string
-    - Check if future date
+    - Parse the date using YYYY-MM-DD format
+    - Check whether the date is in the future
+    - If parsing fails → mark format as invalid
 
     Example:
-    "2030-01-01" → invalid (future)
+    "2030-01-01" → invalid (future date)
+    "01/01/2030" → invalid format
     """
 
     if claim_date:
@@ -267,19 +319,24 @@ for claim in claims:
 
 
     # =========================
-    # 💣 LEARNING LAYER
+    # LEARNING LAYER
     # =========================
     """
     Goal:
-    Adjust validation based on past human corrections.
+    Adjust validation using past human correction patterns.
 
     Logic:
-    If field is frequently corrected:
-    → treat it as unstable
+    - If a field has been corrected many times in the past
+    - treat it as unstable
+    - add this as a new validation issue
 
     Example:
-    amount corrected > 5 times
-    → flag as unstable
+    amount corrected more than 5 times
+    → add "Amount field unstable (learned)"
+
+    Why important:
+    This makes the system adaptive,
+    even though it is still rule-based.
     """
 
     if patterns.get("amount_corrections", 0) > 5:
@@ -296,11 +353,11 @@ for claim in claims:
     # -------------------------
     """
     Goal:
-    Assign risk level based on number of issues.
+    Assign a severity level based on the number of issues.
 
     Logic:
-    ≥ 2 issues → HIGH risk
-    < 2 issues → LOW risk
+    - 2 or more issues → HIGH
+    - 0 or 1 issue → LOW
 
     Example:
     ["Missing amount", "Future date"]
@@ -318,13 +375,19 @@ for claim in claims:
     # =========================
     """
     Goal:
-    Combine original claim + validation results.
+    Combine the original claim data with the validation result.
 
-    **claim:
-    → copies all original fields
+    Logic:
+    **claim means:
+    - copy all existing key-value pairs from the original claim
+    - then add a new field called "validation"
 
     Example:
-    {"amount": 5000} + {"validation": {...}}
+    original claim:
+    {"amount": 5000}
+
+    result:
+    {"amount": 5000, "validation": {...}}
     """
 
     validated_claim = {
@@ -340,11 +403,15 @@ for claim in claims:
     # -------------------------
     """
     Goal:
-    Persist results for tracking and audit.
+    Persist validation results for auditability and later use.
 
     claim_id logic:
     - use claim_id if available
     - otherwise fallback to doc_id
+
+    Why important:
+    This ensures each validated record still has an identifier,
+    even if claim_id is missing.
     """
 
     claim_id = claim.get("claim_id") or claim.get("doc_id")
@@ -369,10 +436,13 @@ for claim in claims:
 # =========================
 """
 Goal:
-Store validated claims for next pipeline step.
+Store validated claims for the next pipeline step.
+
+Logic:
+- Save all validated claims into JSON format
 
 indent=2:
-→ improves readability
+→ improves readability for humans
 """
 
 with open("data/processed/validated_claims.json", "w") as f:

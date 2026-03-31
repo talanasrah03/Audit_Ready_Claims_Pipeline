@@ -49,7 +49,7 @@ ground truth → {"amount": 1000}
 with open("data/processed/cleaned_claims.json", "r", encoding="utf-8") as f:
     predictions = json.load(f)
 
-with open("data/ground_truth/ground_truth.json", "r", encoding="utf-8") as f:
+with open("ground_truth/ground_truth.json", "r", encoding="utf-8") as f:
     ground_truth = json.load(f)
 
 

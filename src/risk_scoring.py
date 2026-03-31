@@ -109,7 +109,7 @@ gt_dict:
 with open("data/processed/cleaned_claims.json", "r") as f:
     predictions = json.load(f)
 
-with open("data/ground_truth/ground_truth.json", "r") as f:
+with open("ground_truth/ground_truth.json", "r") as f:
     ground_truth = json.load(f)
 
 

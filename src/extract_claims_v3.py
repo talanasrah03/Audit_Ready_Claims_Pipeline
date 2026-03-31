@@ -91,7 +91,7 @@ claims = [
 ]
 """
 
-with open("data/raw_claims/raw_claims.json", "r", encoding="utf-8") as f:
+with open("raw_claims/raw_claims.json", "r", encoding="utf-8") as f:
     claims = json.load(f)
 
 

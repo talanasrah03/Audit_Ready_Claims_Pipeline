@@ -2,190 +2,266 @@
 Customer Portal (Streamlit UI)
 
 Goal:
-Provide a simple interface for customers to:
-- view their claim details
-- check claim status
-- send responses to the insurance company
+Provide a live customer-facing portal for:
+- viewing claim details
+- checking current claim status
+- seeing reviewer-side updates
+- sending responses to the insurance company
+- tracking previously sent customer messages
 
-This simulates the customer-side experience in a real system.
+This version is live-connected with the internal reviewer dashboard through SQLite.
 
-What this script does:
-- loads processed claim data
-- lets the customer search by claim ID
-- shows claim details and current status
-- allows the customer to confirm, dispute, or send more information
-- stores customer feedback in the database
+Customer view rule:
+- show the current live effective claim
+- do not show before/after change panels
+- do not list changed field names
 """
 
-import streamlit as st   # Used to build the interactive customer-facing web interface
-import json   # Used to load claim and review data stored in JSON files
+import json
+import sqlite3
 
-from src.database.db import save_customer_feedback   # Used to save customer responses in the database
+import pandas as pd
+import streamlit as st
+
+from src.database.db import save_customer_feedback
 
 
 # =========================
 # PAGE CONFIG
 # =========================
-"""
-Goal:
-Configure the web page layout and browser title.
-
-layout="centered":
-→ content is displayed in a narrower centered area
-→ good for simple forms and customer-facing pages
-
-page_title:
-→ text shown in the browser tab
-"""
-
 st.set_page_config(page_title="Customer Portal", layout="centered")
 
 st.title("📄 Customer Claim Portal")
-st.caption("Access your claim and communicate with the insurance company")
+st.caption("Access your claim, view live status, and communicate with the insurance company")
+
+
+# =========================
+# HELPERS
+# =========================
+def load_json_file(path):
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        st.error(f"Missing file: {path}")
+        st.stop()
+    except json.JSONDecodeError:
+        st.error(f"Invalid JSON format in file: {path}")
+        st.stop()
+
+
+def get_connection():
+    conn = sqlite3.connect("claims.db")
+    conn.row_factory = sqlite3.Row
+    return conn
+
+
+def ensure_tables_exist(conn):
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS human_reviews (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            claim_id TEXT,
+            action TEXT,
+            corrected_fields TEXT,
+            reviewer_note TEXT,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS customer_feedback (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            claim_id TEXT,
+            message TEXT,
+            additional_info TEXT,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS audit_logs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            claim_id TEXT,
+            actor TEXT,
+            action TEXT,
+            details TEXT,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+    conn.commit()
+
+
+def resolve_claim(user_input, claims):
+    """
+    Let the customer search by either doc_id or claim_id.
+    """
+    cleaned = (user_input or "").strip()
+
+    for claim in claims:
+        doc_id = str(claim.get("doc_id", "")).strip()
+        claim_id = str(claim.get("claim_id", "")).strip()
+
+        if cleaned == doc_id or cleaned == claim_id:
+            return claim
+
+    return None
+
+
+def get_latest_human_review(conn, claim_id):
+    row = conn.execute("""
+        SELECT id, action, corrected_fields, reviewer_note, timestamp
+        FROM human_reviews
+        WHERE claim_id = ?
+        ORDER BY id DESC
+        LIMIT 1
+    """, (claim_id,)).fetchone()
+
+    return dict(row) if row else None
+
+
+def get_human_review_history(conn, claim_id):
+    rows = conn.execute("""
+        SELECT id, action, corrected_fields, reviewer_note, timestamp
+        FROM human_reviews
+        WHERE claim_id = ?
+        ORDER BY id DESC
+    """, (claim_id,)).fetchall()
+
+    return [dict(r) for r in rows]
+
+
+def get_customer_feedback_history(conn, claim_id):
+    rows = conn.execute("""
+        SELECT message, additional_info, timestamp
+        FROM customer_feedback
+        WHERE claim_id = ?
+        ORDER BY id DESC
+    """, (claim_id,)).fetchall()
+
+    return [dict(r) for r in rows]
+
+
+def map_customer_status(latest_review):
+    if not latest_review:
+        return "UNDER_REVIEW"
+
+    action = latest_review.get("action")
+
+    if action == "approve":
+        return "APPROVED"
+    if action == "reject":
+        return "REJECTED"
+    if action == "request_info":
+        return "NEED_INFO"
+    if action == "correct":
+        return "UPDATED_AFTER_REVIEW"
+
+    return "UNDER_REVIEW"
+
+
+def display_customer_status(status):
+    if status == "APPROVED":
+        st.success("✅ Your claim has been approved.")
+    elif status == "REJECTED":
+        st.error("❌ Your claim has been rejected.")
+    elif status == "NEED_INFO":
+        st.warning("📩 Additional information is required from you.")
+    elif status == "UPDATED_AFTER_REVIEW":
+        st.info("✏️ Your claim was updated during review and is still being processed.")
+    else:
+        st.warning("⏳ Your claim is under review.")
+
+
+def parse_corrected_fields(value):
+    if not value:
+        return {}
+
+    if isinstance(value, dict):
+        return value
+
+    if isinstance(value, str):
+        try:
+            parsed = json.loads(value)
+            return parsed if isinstance(parsed, dict) else {}
+        except Exception:
+            return {}
+
+    return {}
+
+
+def apply_single_review(claim_state, review):
+    """
+    Apply one correction on top of the current claim state.
+    """
+    updated = claim_state.copy()
+
+    if review and review.get("action") == "correct":
+        corrected_fields = parse_corrected_fields(review.get("corrected_fields"))
+        if corrected_fields:
+            updated.update(corrected_fields)
+
+    return updated
+
+
+def build_effective_claim(original_claim, review_history):
+    """
+    Build the live customer-visible claim by replaying all corrections
+    from oldest to newest.
+    """
+    effective_claim = original_claim.copy()
+
+    chronological_reviews = list(reversed(review_history))
+    for review in chronological_reviews:
+        effective_claim = apply_single_review(effective_claim, review)
+
+    return effective_claim
 
 
 # =========================
 # LOAD DATA
 # =========================
-"""
-Goal:
-Load the data needed by the customer portal.
-
-claims:
-→ cleaned claim data
-→ contains customer-facing information such as:
-   name, date, type, amount
-
-reviews:
-→ review queue or review status information
-→ used to determine whether a claim is under review,
-   approved, rejected, or needs more information
-"""
-
-with open("data/processed/cleaned_claims.json") as f:
-    claims = json.load(f)
-
-with open("data/processed/human_review_queue.json") as f:
-    reviews = json.load(f)
+claims = load_json_file("data/processed/cleaned_claims.json")
 
 
 # =========================
-# LOOKUPS (IMPORTANT)
+# INPUT
 # =========================
-"""
-Goal:
-Convert lists into dictionaries for faster access.
-
-Why important:
-Without this:
-→ the app would need to loop through all claims every time a user searches
-
-With this:
-→ claim data can be retrieved instantly using the claim ID
-
-Example:
-claim_dict["claim_1"]
-→ returns the claim directly
-"""
-
-claim_dict = {c["doc_id"]: c for c in claims}
-review_dict = {r["doc_id"]: r for r in reviews}
-
-
-# =========================
-# INPUT FIELD
-# =========================
-"""
-Goal:
-Allow the customer to type a claim ID.
-
-text_input:
-→ creates a text box in the interface
-
-key:
-→ gives this input field a unique name in Streamlit state handling
-
-Why key matters:
-It helps Streamlit keep track of this specific input widget.
-"""
-
 claim_id_input = st.text_input("🔎 Enter your Claim ID", key="claim_input")
+st.caption("You can use either doc_id or claim_id")
 
-st.caption("Example: claim_1")
+col_search, col_refresh = st.columns(2)
+with col_search:
+    if st.button("Search Claim"):
+        st.session_state["searched_claim"] = claim_id_input.strip()
 
-
-# =========================
-# SEARCH BUTTON (STATE FIX)
-# =========================
-"""
-Goal:
-Trigger claim search only when the user clicks the button.
-
-Logic:
-- Read whatever the user typed
-- Store it in st.session_state["searched_claim"]
-
-What is st.session_state?
-→ a small memory area used by Streamlit
-→ it keeps values even when the page updates after a button click
-
-Why important:
-Without session_state:
-→ the page can reset after interaction
-→ the searched claim may disappear
-"""
-
-if st.button("Search Claim"):
-    st.session_state["searched_claim"] = claim_id_input
+with col_refresh:
+    if st.button("🔄 Refresh Live Data"):
+        st.rerun()
 
 
 # =========================
 # DISPLAY CLAIM
 # =========================
-"""
-Goal:
-Display claim information only after the user has searched.
-
-Logic:
-- Check whether a searched claim is stored in session_state
-- If yes, load and display the matching claim
-"""
-
 if "searched_claim" in st.session_state:
+    searched_claim = st.session_state["searched_claim"]
 
-    claim_id = st.session_state["searched_claim"]
-
-    claim = claim_dict.get(claim_id)
-    review = review_dict.get(claim_id)
-
-    # =========================
-    # ERROR CASE
-    # =========================
-    """
-    Goal:
-    Handle invalid claim IDs safely.
-
-    Logic:
-    - If no matching claim exists
-    - show an error message instead of crashing
-    """
+    claim = resolve_claim(searched_claim, claims)
 
     if not claim:
         st.error("❌ Claim not found. Please check your Claim ID.")
 
     else:
+        claim_id = claim.get("claim_id") or claim.get("doc_id")
 
-        # =========================
-        # CLAIM DETAILS
-        # =========================
-        """
-        Goal:
-        Show the main details of the claim.
+        conn = get_connection()
+        ensure_tables_exist(conn)
 
-        st.columns(2):
-        → split the page into 2 vertical sections
-        → makes the layout easier to read
-        """
+        latest_review = get_latest_human_review(conn, claim_id)
+        review_history = get_human_review_history(conn, claim_id)
+        customer_history = get_customer_feedback_history(conn, claim_id)
+
+        status = map_customer_status(latest_review)
+        effective_claim = build_effective_claim(claim, review_history)
 
         st.markdown("---")
         st.subheader("📄 Claim Details")
@@ -193,82 +269,37 @@ if "searched_claim" in st.session_state:
         col1, col2 = st.columns(2)
 
         with col1:
-            st.write(f"**Customer Name:** {claim.get('customer_name')}")
-            st.write(f"**Date:** {claim.get('claim_date')}")
+            st.write(f"**Claim ID:** {effective_claim.get('claim_id') or claim_id}")
+            st.write(f"**Customer Name:** {effective_claim.get('customer_name', 'Unknown')}")
+            st.write(f"**Date:** {effective_claim.get('claim_date', 'Unknown')}")
 
         with col2:
-            st.write(f"**Type:** {claim.get('claim_type')}")
-            st.write(f"**Amount:** {claim.get('amount')}")
+            st.write(f"**Type:** {effective_claim.get('claim_type', 'Unknown')}")
+            st.write(f"**Amount:** {effective_claim.get('amount', 'Unknown')}")
+            st.write(f"**Domain:** {effective_claim.get('domain', 'vehicle')}")
 
+        st.subheader("📊 Live Claim Status")
+        display_customer_status(status)
 
-        # =========================
-        # STATUS
-        # =========================
-        """
-        Goal:
-        Show the current state of the claim.
+        if latest_review:
+            st.markdown("### 🧑‍💼 Latest Reviewer Update")
+            st.write(f"**Latest Action:** {latest_review.get('action')}")
+            st.write(f"**Updated At:** {latest_review.get('timestamp')}")
 
-        Logic:
-        - If review data exists, use its status
-        - Otherwise show a generic processing message
+            reviewer_note = latest_review.get("reviewer_note")
+            if reviewer_note:
+                st.write(f"**Reviewer Note:** {reviewer_note}")
 
-        Status meanings:
-        - APPROVED  → claim accepted
-        - REJECTED  → claim refused
-        - NEED_INFO → more information required
-        - anything else → still under review
-        """
-
-        st.subheader("📊 Claim Status")
-
-        if review:
-            status = review.get("status", "UNDER_REVIEW")
-
-            if status == "APPROVED":
-                st.success("✅ Your claim has been approved.")
-
-            elif status == "REJECTED":
-                st.error("❌ Your claim has been rejected.")
-
-            elif status == "NEED_INFO":
-                st.warning("📩 Additional information is required.")
-
-            else:
-                st.warning("⏳ Your claim is under review.")
-
+        st.markdown("### 🕘 Reviewer History")
+        if review_history:
+            review_df = pd.DataFrame(review_history)
+            st.dataframe(review_df, use_container_width=True)
         else:
-            st.info("Processing information not available yet.")
-
-
-        # =========================
-        # CUSTOMER ACTIONS
-        # =========================
-        """
-        Goal:
-        Let the customer respond to the claim.
-
-        Available actions:
-        - Confirm     → customer agrees with the claim details
-        - Dispute     → customer disagrees with the claim
-        - Provide Info → customer wants to send additional information
-        """
+            st.info("No reviewer updates available yet.")
 
         st.subheader("💬 Your Response")
 
         colA, colB, colC = st.columns(3)
-
-
-        # -------------------------
-        # CONFIRM
-        # -------------------------
-        """
-        Goal:
-        Let the customer confirm that the displayed claim is correct.
-
-        Logic:
-        - Save a feedback record in the database
-        - Store message type = CONFIRM
-        """
 
         if colA.button("✅ Confirm"):
             save_customer_feedback(
@@ -276,21 +307,8 @@ if "searched_claim" in st.session_state:
                 message="CONFIRM",
                 additional_info=""
             )
-
             st.success("✅ Your confirmation has been sent to the insurance team.")
-
-
-        # -------------------------
-        # DISPUTE
-        # -------------------------
-        """
-        Goal:
-        Let the customer indicate disagreement with the claim.
-
-        Logic:
-        - Save a feedback record in the database
-        - Store message type = DISPUTE
-        """
+            st.rerun()
 
         if colB.button("⚠️ Dispute"):
             save_customer_feedback(
@@ -298,59 +316,21 @@ if "searched_claim" in st.session_state:
                 message="DISPUTE",
                 additional_info=""
             )
-
             st.warning("⚠️ Your dispute has been sent to the insurance team.")
-
-
-        # -------------------------
-        # PROVIDE INFO
-        # -------------------------
-        """
-        Goal:
-        Open a text form so the customer can send more details.
-
-        Logic:
-        - Clicking the button does not send data yet
-        - It only tells the interface to show the message form
-        """
+            st.rerun()
 
         if colC.button("📩 Provide Info"):
             st.session_state["show_message"] = True
 
-
-        # -------------------------
-        # MESSAGE FORM
-        # -------------------------
-        """
-        Goal:
-        Display a text box for additional information.
-
-        Why use session_state here?
-        → keeps the message form visible after button clicks
-
-        Important note:
-        Once opened, this form stays visible
-        until the page state changes or is reset.
-        """
-
         if st.session_state.get("show_message"):
-
             st.markdown("### 📩 Send Additional Information")
 
             user_message = st.text_area(
-                "Write your message to the insurance team"
+                "Write your message to the insurance team",
+                key="customer_message_box"
             )
 
             if st.button("📤 Send Message"):
-                """
-                Goal:
-                Save the additional message in the database.
-
-                Logic:
-                - message type = PROVIDE_INFO
-                - additional_info = actual customer text
-                """
-
                 save_customer_feedback(
                     claim_id=claim_id,
                     message="PROVIDE_INFO",
@@ -358,3 +338,13 @@ if "searched_claim" in st.session_state:
                 )
 
                 st.success("📨 Your message has been sent to the insurance team.")
+                st.rerun()
+
+        st.markdown("### 🗂️ Your Feedback History")
+        if customer_history:
+            customer_df = pd.DataFrame(customer_history)
+            st.dataframe(customer_df, use_container_width=True)
+        else:
+            st.info("You have not sent any responses yet.")
+
+        conn.close()

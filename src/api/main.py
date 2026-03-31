@@ -23,16 +23,17 @@ Instead, it:
 
 from fastapi import FastAPI   # Used to create the web API and define endpoints
 from datetime import datetime   # Used to validate and compare claim dates
+import json   # Used to convert dictionaries into JSON strings before audit logging
 
 from src.config.config import CONFIGS   # Contains domain-specific rules and validation settings
 from src.learning.correction_memory import get_pattern_summary   # Loads learned instability patterns from past human corrections
 from src.database.db import (
-    insert_claim,        # Saves the main claim record in the database
-    save_ai_result,      # Saves AI validation results and explanations
-    get_claim,           # Retrieves a stored claim by its ID
-    log_action,          # Stores audit log events for traceability
-    get_audit_logs,      # Retrieves audit history for a claim
-    create_audit_table   # Ensures the audit log table exists before logging
+    insert_claim,         # Saves the main claim record in the database
+    save_ai_result,       # Saves AI validation results and explanations
+    get_claim,            # Retrieves a stored claim by its ID
+    log_audit_event,      # Stores audit log events for traceability
+    get_audit_logs,       # Retrieves audit history for a claim
+    init_db               # Ensures required database tables exist before logging
 )
 
 
@@ -69,7 +70,7 @@ Possible limitation:
    this variable will not refresh automatically unless the app restarts
 """
 
-create_audit_table()
+init_db()
 
 app = FastAPI()
 
@@ -506,7 +507,12 @@ def process_claim(claim: dict):
         risk_level=severity
     )
 
-    log_action(claim_id, "CLAIM_CREATED", claim)
+    log_audit_event(
+        claim_id=claim_id,
+        actor="system",
+        action="CLAIM_CREATED",
+        details=json.dumps(claim)
+    )
 
     save_ai_result(
         claim_id=claim_id,
@@ -516,7 +522,12 @@ def process_claim(claim: dict):
         explanation=explanation
     )
 
-    log_action(claim_id, "AI_VALIDATION", validation)
+    log_audit_event(
+        claim_id=claim_id,
+        actor="AI",
+        action="AI_VALIDATION",
+        details=json.dumps(validation)
+    )
 
     # =========================
     # RESPONSE

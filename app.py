@@ -1,394 +1,332 @@
 """
-Risk scoring module.
-
-Goal:
-Assign a risk score to each claim based on:
-- comparison with ground truth
-- data quality issues (missing fields, mismatches)
-- learned instability from past corrections
-
-What this script does:
-- Compares predicted values with correct reference values
-- Adds risk points for each detected issue
-- Generates an explainable list of reasons
-- Assigns a final risk level (LOW, MEDIUM, HIGH)
-
-Important concept:
-Risk is cumulative.
-
-This means:
-→ each problem adds points
-→ more points = more risk
-
-Example:
-Missing amount (+2)
-Wrong claim_type (+2)
-→ total score = 4
-→ final level = HIGH
+Streamlit Dashboard for AI Claims Processing Pipeline
 """
 
-import json   # Used to read input files and save risk results as JSON
-from src.learning.correction_memory import get_pattern_summary   # Retrieves learned correction patterns to estimate field reliability
+import json
+import random
+import streamlit as st
+import sqlite3
+import pandas as pd
+
+from src.database.db import save_human_review, log_audit_event
+from src.config.config import CONFIGS
+from src.learning.consistency import compute_consistency
 
 
 # =========================
-# HELPER FUNCTIONS
+# PAGE CONFIG
 # =========================
-def is_missing(value):
-    """
-    Goal:
-    Check whether a value should be treated as missing.
-
-    Logic:
-    A value is treated as missing if it is:
-    - None
-    - an empty string
-    - the text "none"
-    - the text "null"
-
-    Why important:
-    AI outputs may represent missing data in different ways,
-    not only as Python None.
-
-    Example:
-    value = None   → True
-    value = ""     → True
-    value = "null" → True
-    value = "5000" → False
-    """
-
-    if value is None:
-        return True
-
-    if str(value).strip().lower() in ["", "none", "null"]:
-        return True
-
-    return False
+st.set_page_config(page_title="AI Claims Pipeline", layout="wide")
 
 
-def safe_int(value):
-    """
-    Goal:
-    Convert a value to an integer safely.
-
-    Logic:
-    - Try to convert the value into an integer
-    - If conversion fails, return None instead of crashing
-
-    Why important:
-    Predicted values may come in different formats,
-    and some may not be valid numbers.
-
-    Example:
-    "1200"     → 1200
-    1200       → 1200
-    "1200 USD" → None
-    "abc"      → None
-    """
-
+# =========================
+# HELPERS
+# =========================
+def safe_int(value, default=0):
     try:
-        return int(value)
+        return int(float(value))
     except:
-        return None
+        return default
+
+
+def simulate_ai_outputs(base_claim):
+    outputs = []
+    base_amount = safe_int(base_claim.get("amount"), 0)
+
+    for _ in range(3):
+        noisy = base_claim.copy()
+
+        if random.random() < 0.3:
+            noisy["amount"] = base_amount + random.randint(-50, 50)
+        else:
+            noisy["amount"] = base_amount
+
+        outputs.append(noisy)
+
+    return outputs
 
 
 # =========================
 # LOAD DATA
 # =========================
-"""
-Goal:
-Load predictions and ground truth.
+with open("data/processed/cleaned_claims.json") as f:
+    claims = json.load(f)
 
-predictions:
-→ cleaned AI outputs produced by the pipeline
+with open("data/processed/risk_scores.json") as f:
+    risks = json.load(f)
 
-ground_truth:
-→ correct reference values used for evaluation and scoring
-
-Why both are needed:
-Risk scoring here is based on comparing:
-- what the system predicted
-- what the correct answer should be
-"""
-
-with open("data/processed/cleaned_claims.json", "r") as f:
-    predictions = json.load(f)
-
-with open("data/ground_truth/ground_truth.json", "r") as f:
-    ground_truth = json.load(f)
-
-
-# Convert ground truth list → dictionary for fast access
-"""
-Goal:
-Create a lookup table for fast access to ground truth records.
-
-Logic:
-- Use doc_id as the key
-- This avoids looping through the full ground_truth list every time
-
-Example:
-gt_dict["claim_1"]
-→ instantly returns the matching ground truth record
-"""
-
-gt_dict = {item["doc_id"]: item for item in ground_truth}
+with open("data/processed/human_review_queue.json") as f:
+    review_data = json.load(f)
 
 
 # =========================
-# LOAD LEARNING PATTERNS
+# PREPARE DATA
 # =========================
-"""
-Goal:
-Load correction-based instability patterns from past human feedback.
-
-Example:
-{
-    "amount_corrections": 8,
-    "type_corrections": 3
-}
-
-Meaning:
-- amount has often been corrected by humans
-- claim_type has also been corrected, but less often
-
-Why important:
-If a field has been corrected many times in the past,
-the system treats that field as less reliable.
-"""
-
-patterns = get_pattern_summary()
-
-
-# Store final risk results
-risk_results = []
+claim_ids = [c["doc_id"] for c in claims]
+risk_dict = {r["doc_id"]: r for r in risks}
+review_dict = {r["doc_id"]: r for r in review_data}
 
 
 # =========================
-# MAIN LOOP
+# SIDEBAR
 # =========================
-"""
-Goal:
-Compute a risk score for each claim.
-
-Logic:
-1. Find the matching ground truth record
-2. Add risk points for each issue
-3. Convert numeric score into LOW / MEDIUM / HIGH
-4. Save the result
-"""
-
-for pred in predictions:
-
-    doc_id = pred["doc_id"]
-
-    # Get corresponding ground truth
-    gt = gt_dict.get(doc_id)
-
-    """
-    If no matching ground truth exists:
-    → skip this claim
-
-    Why:
-    This version of risk scoring depends on comparison with the correct answer.
-    Without ground truth, mismatch-based scoring cannot be computed safely.
-    """
-    if not gt:
-        continue
+st.sidebar.title("📊 Navigation")
+selected_id = st.sidebar.selectbox("Select Claim", claim_ids)
 
 
-    # =========================
-    # INITIALIZE RISK
-    # =========================
-    """
-    Goal:
-    Start a fresh score for the current claim.
-
-    risk_score:
-    → numeric total that starts at 0
-
-    reasons:
-    → list of human-readable explanations
-    """
-
-    risk_score = 0
-    reasons = []
+# =========================
+# RESET STATE
+# =========================
+if st.session_state.get("last") != selected_id:
+    st.session_state["show_correct"] = False
+    st.session_state["show_request"] = False
+    st.session_state["last"] = selected_id
 
 
-    # =========================
-    # MISSING FIELDS
-    # =========================
-    """
-    Goal:
-    Penalize important missing fields.
-
-    Logic:
-    Each missing field adds +2 points.
-
-    Why important:
-    Missing core information makes a claim less reliable.
-
-    Example:
-    missing claim_type → +2
-    missing amount     → +2
-    """
-
-    if is_missing(pred.get("claim_type")):
-        risk_score += 2
-        reasons.append("Missing claim_type")
-
-    if is_missing(pred.get("amount")):
-        risk_score += 2
-        reasons.append("Missing amount")
+# =========================
+# TITLE
+# =========================
+st.title("🚨 AI Claims Processing Dashboard")
+st.caption("Audit-ready AI system with human-in-the-loop validation")
 
 
-    # =========================
-    # AMOUNT MISMATCH
-    # =========================
-    """
-    Goal:
-    Detect large numeric difference between prediction and ground truth.
+# =========================
+# SELECT CLAIM
+# =========================
+try:
+    claim = next(c for c in claims if c["doc_id"] == selected_id)
+except StopIteration:
+    st.error("Claim not found")
+    st.stop()
 
-    Logic:
-    - Convert both values to integers
-    - Compare the absolute difference
-    - If the difference is greater than 5000 → add risk
-
-    Why absolute difference?
-    Because only the size of the mismatch matters here,
-    not whether the prediction is higher or lower.
-
-    Example:
-    predicted = 10000
-    ground truth = 3000
-    difference = 7000
-    → add +3 risk points
-    """
-
-    pred_amount = safe_int(pred.get("amount"))
-    gt_amount = safe_int(gt.get("amount"))
-
-    if pred_amount is not None and gt_amount is not None:
-
-        if abs(pred_amount - gt_amount) > 5000:
-            risk_score += 3
-            reasons.append("Large amount mismatch")
+risk = risk_dict.get(selected_id, {})
+review = review_dict.get(selected_id, {})
+claim_id = claim.get("claim_id") or claim.get("doc_id")
 
 
-    # =========================
-    # TYPE MISMATCH
-    # =========================
-    """
-    Goal:
-    Detect mismatched claim types.
-
-    Logic:
-    - Compare predicted claim_type with ground truth claim_type
-    - Convert both to lowercase first
-      so simple capitalization differences do not count as errors
-
-    Example:
-    "Vehicle Theft" vs "vehicle theft"
-    → treated as the same
-
-    "Vehicle Theft" vs "Parked Car"
-    → mismatch
-    """
-
-    if not is_missing(pred.get("claim_type")):
-
-        if str(pred.get("claim_type")).lower() != str(gt.get("claim_type")).lower():
-            risk_score += 2
-            reasons.append("Claim type mismatch")
+# =========================
+# CONSISTENCY
+# =========================
+ai_outputs = simulate_ai_outputs(claim)
+consistency_score, stable_output = compute_consistency(ai_outputs)
 
 
-    # =========================
-    # LEARNING EFFECT
-    # =========================
-    """
-    Goal:
-    Increase risk if past corrections show that a field is unstable.
-
-    Logic:
-    - If a field has been corrected many times before,
-      the system assumes future values in that field are less reliable
-    - Add additional risk points even if this specific claim looks okay
-
-    Example:
-    amount corrected > 5 times in the past
-    → add +2 risk points
-    """
-
-    if patterns.get("amount_corrections", 0) > 5:
-        risk_score += 2
-        reasons.append("System learned amount is unreliable")
-
-    if patterns.get("type_corrections", 0) > 5:
-        risk_score += 2
-        reasons.append("System learned claim type is unreliable")
+# =========================
+# DOMAIN
+# =========================
+domain = claim.get("domain", "vehicle")
+domain_config = CONFIGS.get(domain, CONFIGS["vehicle"])
+claim_type_options = domain_config.get("claim_types", [])
 
 
-    # =========================
-    # FINAL RISK LEVEL
-    # =========================
-    """
-    Goal:
-    Convert the numeric score into a category.
+# =========================
+# SYSTEM OVERVIEW
+# =========================
+st.subheader("📊 System Overview")
 
-    Rules:
-    - score ≥ 4 → HIGH
-    - score ≥ 2 → MEDIUM
-    - otherwise → LOW
+high = sum(1 for r in risks if r.get("risk_level") == "HIGH")
+low = sum(1 for r in risks if r.get("risk_level") == "LOW")
+total = len(claims)
 
-    Example:
-    score = 5 → HIGH
-    score = 3 → MEDIUM
-    score = 1 → LOW
-    """
+col1, col2, col3 = st.columns(3)
+col1.metric("Total Claims", total)
+col2.metric("High Risk", high)
+col3.metric("Low Risk", low)
 
-    if risk_score >= 4:
-        risk_level = "HIGH"
-    elif risk_score >= 2:
-        risk_level = "MEDIUM"
+
+# =========================
+# CLAIM + ACTION
+# =========================
+col1, col2 = st.columns([2, 1])
+
+with col1:
+    st.subheader("📄 Claim Data")
+    st.json(claim)
+
+with col2:
+    st.subheader("🤖 Recommended Action")
+
+    recommended = review.get("recommended_action", "MANUAL_REVIEW")
+
+    if recommended == "APPROVE":
+        st.success("✅ APPROVE")
+    elif recommended == "REJECT":
+        st.error("❌ REJECT")
     else:
-        risk_level = "LOW"
-
-
-    # =========================
-    # STORE RESULT
-    # =========================
-    """
-    Goal:
-    Save the final risk result for this claim.
-
-    Stored fields:
-    - doc_id
-    - risk_score
-    - risk_level
-    - reasons
-    """
-
-    risk_results.append({
-        "doc_id": doc_id,
-        "risk_score": risk_score,
-        "risk_level": risk_level,
-        "reasons": reasons
-    })
+        st.warning("⚠️ MANUAL REVIEW")
 
 
 # =========================
-# SAVE RESULTS
+# SYSTEM TABS
 # =========================
-"""
-Goal:
-Save the risk analysis results into a JSON file.
+st.markdown("---")
+st.header("🖥️ System Components")
 
-indent=2:
-→ makes the file easier for humans to read
-"""
+tab1, tab2, tab3, tab4, tab5 = st.tabs([
+    "🧠 AI Risk",
+    "🔁 AI Stability",
+    "⚖️ Rules & Validation",
+    "👤 Human Review",
+    "🧾 Audit Trail"
+])
 
-with open("data/processed/risk_scores.json", "w") as f:
-    json.dump(risk_results, f, indent=2)
+
+# =========================
+# AI RISK
+# =========================
+with tab1:
+    st.subheader("AI Risk")
+
+    st.write(f"Risk Level: {risk.get('risk_level')}")
+    st.write(f"Risk Score: {risk.get('risk_score')}")
+
+    reasons = risk.get("reasons", [])
+    if reasons:
+        for r in reasons:
+            st.warning(r)
+    else:
+        st.success("No issues detected")
 
 
-print("Risk scoring complete!")
+# =========================
+# AI STABILITY
+# =========================
+with tab2:
+    st.subheader("AI Stability")
+
+    percent = int(consistency_score * 100)
+    st.metric("Consistency Score", f"{percent}%")
+
+    if percent >= 80:
+        st.success("Stable: AI outputs are consistent")
+    elif percent >= 50:
+        st.warning("Moderate: Some variation detected")
+    else:
+        st.error("Unstable: AI outputs are inconsistent")
+
+    colA, colB = st.columns(2)
+
+    with colA:
+        st.write("Original")
+        st.json(claim)
+
+    with colB:
+        st.write("Stable Output")
+        st.json(stable_output)
+
+
+# =========================
+# VALIDATION
+# =========================
+with tab3:
+    st.subheader("Business Validation")
+
+    issues = review.get("issues", [])
+
+    if issues:
+        for issue in issues:
+            st.warning(issue)
+    else:
+        st.success("All rules satisfied")
+
+
+# =========================
+# HUMAN REVIEW (🔥 FIXED WITH AUDIT)
+# =========================
+with tab4:
+    st.subheader("Human Review")
+
+    colA, colB, colC, colD = st.columns(4)
+
+    # APPROVE
+    if colA.button("✅ Approve", key="approve_btn"):
+        save_human_review(claim_id, "approve")
+        log_audit_event(claim_id, "reviewer", "approve", "Claim approved")
+        st.success("Approved")
+
+    # REJECT
+    if colB.button("❌ Reject", key="reject_btn"):
+        save_human_review(claim_id, "reject")
+        log_audit_event(claim_id, "reviewer", "reject", "Claim rejected")
+        st.error("Rejected")
+
+    # CORRECT
+    if colC.button("✏️ Correct", key="correct_btn"):
+        st.session_state["show_correct"] = True
+
+    if st.session_state.get("show_correct"):
+        new_amount = st.number_input("New Amount", value=safe_int(claim.get("amount")))
+
+        if st.button("💾 Save Correction"):
+            save_human_review(
+                claim_id,
+                "correct",
+                corrected_fields={"amount": new_amount},
+                reviewer_note="Manual correction"
+            )
+
+            log_audit_event(
+                claim_id,
+                "reviewer",
+                "correct",
+                f"Amount changed to {new_amount}"
+            )
+
+            st.success("Correction saved")
+
+    # REQUEST INFO
+    if colD.button("📩 Request Info", key="request_btn"):
+        st.session_state["show_request"] = True
+
+    if st.session_state.get("show_request"):
+        msg = st.text_area("Message")
+
+        if st.button("📤 Send Request"):
+            save_human_review(claim_id, "request_info")
+
+            log_audit_event(
+                claim_id,
+                "reviewer",
+                "request_info",
+                msg
+            )
+
+            st.success("Request sent")
+
+
+# =========================
+# AUDIT TRAIL
+# =========================
+with tab5:
+    st.subheader("Audit Trail")
+
+    conn = sqlite3.connect("claims.db")
+
+    # ensure table exists
+    conn.execute("""
+    CREATE TABLE IF NOT EXISTS audit_logs (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        claim_id TEXT,
+        actor TEXT,
+        action TEXT,
+        details TEXT,
+        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
+    """)
+
+    df = pd.read_sql_query(
+        f"""
+        SELECT claim_id, actor, action, details, timestamp
+        FROM audit_logs
+        WHERE claim_id = '{claim_id}'
+        ORDER BY timestamp DESC
+        """,
+        conn
+    )
+
+    conn.close()
+
+    if not df.empty:
+        st.dataframe(df)
+    else:
+        st.info("No audit history yet — perform an action first")

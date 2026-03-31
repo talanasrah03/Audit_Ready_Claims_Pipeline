@@ -142,7 +142,7 @@ def init_db():
     CREATE TABLE IF NOT EXISTS ai_results (
         claim_id TEXT,
         extracted_data TEXT,
-        consistency_score REAL,
+        consistency_score TEXT,
         validation_issues TEXT,
         explanation TEXT
     )
@@ -283,6 +283,46 @@ def insert_claim(claim_id, status="pending", risk_level="LOW"):
 
 
 # =========================
+# GET CLAIM
+# =========================
+def get_claim(claim_id):
+    """
+    Goal:
+    Retrieve one processed claim from the database.
+
+    Logic:
+    - Search the claims table by claim_id
+    - Return a dictionary if found
+    - Return None if no claim exists
+
+    Example:
+    claim_id = "CLM-1001"
+    → {"claim_id": "CLM-1001", "status": "processed", "risk_level": "HIGH"}
+    """
+
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+    SELECT claim_id, status, risk_level
+    FROM claims
+    WHERE claim_id = ?
+    """, (claim_id,))
+
+    row = cursor.fetchone()
+    conn.close()
+
+    if not row:
+        return None
+
+    return {
+        "claim_id": row[0],
+        "status": row[1],
+        "risk_level": row[2]
+    }
+
+
+# =========================
 # SAVE AI RESULT
 # =========================
 def save_ai_result(claim_id, extracted_data, consistency_score, issues, explanation):
@@ -315,7 +355,7 @@ def save_ai_result(claim_id, extracted_data, consistency_score, issues, explanat
     """, (
         claim_id,
         json.dumps(extracted_data),
-        consistency_score,
+        str(consistency_score),
         json.dumps(issues),
         explanation
     ))
